@@ -1,10 +1,10 @@
 
-interface DropdownOption {
+export interface DropdownOption {
   value: string;
   label: string;
 }
 
-interface DropdownFieldProps {
+export interface DropdownFieldProps {
   label: string;
   options: DropdownOption[];
   placeholder: string;
