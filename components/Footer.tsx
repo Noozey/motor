@@ -19,12 +19,12 @@ const socialMediaIcons:SocialMediaProps[]=[
 
 const Footer:React.FC = () => {
   return (
-    <div className='w-full relative  px-20  py-20'>
+    <div className='w-full relative max-w-screen-2xl mx-auto px-2 md:px-6 lg:px-8 py-20'>
         {/* header upper part */}
         <div className='w-full space-y-4'>
             <div className='w-full flex items-center justify-between'>
                 <div className='flex-1'>
-                    <h1 className='font-bold text-3xl '>Join Nepal Motors</h1>
+                    <h1 className='font-bold text-3xl '>Join Nepal Motor</h1>
                     <p className='text-sm'>Recieve pricing updates, shopping tips & more!</p>
                 </div>
                 <button className='px-3 py-2 border rounded-full border-black flex item-center justify-center gap-2 '><span className='text-sm'>Back to top</span><ChevronUp className='cursor-pointer' size={24}/> </button>
