@@ -1,3 +1,5 @@
+import FeaturedContent from '@/components/FeaturedContent';
+import LatestNews from '@/components/LatestNews';
 import Image from 'next/image';
 import React from 'react';
 import { JSX } from 'react';
@@ -70,6 +72,11 @@ export default function CarShowcase(): JSX.Element {
           </div>
         ))}
       </div>
+
+      {/* featured Section */}
+      <FeaturedContent/>
+      {/* latest new section */}
+      <LatestNews/>
     </div>
   );
 }
