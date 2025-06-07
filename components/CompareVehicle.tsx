@@ -1,3 +1,4 @@
+import { ChevronRight } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -13,32 +14,32 @@ type Vehicles=Vehicle[]
 const vehicles:Vehicles = [
 	{
 		label: 'SUVs',
-		img: '/compare/suv.png',
+		img: '/compareVehicleImage/suv.png',
 		href: '/compare/suvs',
 	},
 	{
 		label: 'Trucks',
-		img: '/compare/truck.png',
+		img: '/compareVehicleImage/trucks.png',
 		href: '/compare/trucks',
 	},
 	{
 		label: 'Sedans',
-		img: '/compare/sedan.png',
+		img: '/compareVehicleImage/sedans.png',
 		href: '/compare/sedans',
 	},
 	{
 		label: 'Coupes',
-		img: '/compare/coupe.png',
+		img: '/compareVehicleImage/coupes.png',
 		href: '/compare/coupes',
 	},
 	{
 		label: 'Hatchbacks',
-		img: '/compare/hatchback.png',
+		img: '/compareVehicleImage/Hatchbacks.png',
 		href: '/compare/hatchbacks',
 	},
 	{
 		label: 'Convertibles',
-		img: '/compare/convertible.png',
+		img: '/compareVehicleImage/convertibles.png',
 		href: '/compare/convertibles',
 	},
 ];
@@ -49,7 +50,7 @@ const CompareVehicle = () => {
 			<h2 className="text-xl md:text-2xl font-bold mb-6">
 				Compare popular vehicles
 			</h2>
-			<div className="flex flex-wrap gap-4 md:gap-6 justify-center md:justify-start">
+			<div className="flex flex-wrap gap-4 md:gap-6 justify-center ">
 				{vehicles.map((v) => (
 					<Link
 						key={v.label}
@@ -68,7 +69,7 @@ const CompareVehicle = () => {
 						<span className="text-sm md:text-base font-medium text-center">
 							Compare popular <br />
 							{v.label}{' '}
-							<span className="inline-block align-middle">&gt;</span>
+							<span className="inline-block align-middle"><ChevronRight size={16} /></span>
 						</span>
 					</Link>
 				))}

@@ -11,9 +11,9 @@ const CarGrid:React.FC<CarGridProps> = ({cars}) => {
       {cars.map((car, index) => (
         <div key={index} className="rounded-md p-4 ">
           <img src={car.image} alt={car.name} className="w-full h-40 object-cover rounded-md" />
-          <h3 className="mt-2 font-semibold">{car.name}</h3>
-          <p className="text-gray-600">{car.price}</p>
-          <button className="mt-3 border text-center block cursor-pointer border-red-500 text-red-500 px-4 py-1 rounded hover:bg-red-500 hover:text-white transition">
+          <h3 className="mt-2 font-semibold ">{car.name}</h3>
+          <p className="text-gray-600 ">{car.price}</p>
+          <button className="mt-3 border  cursor-pointer border-red-500 text-red-500 px-4 md:px-10 py-1 rounded-md hover:bg-red-500 hover:text-white transition">
             View May Offers
           </button>
         </div>
