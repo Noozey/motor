@@ -1,3 +1,5 @@
+import CartTabs from '@/components/CartTabs';
+import CompareVehicle from '@/components/CompareVehicle';
 import FeaturedContent from '@/components/FeaturedContent';
 import LatestNews from '@/components/LatestNews';
 import Image from 'next/image';
@@ -72,7 +74,10 @@ export default function CarShowcase(): JSX.Element {
           </div>
         ))}
       </div>
-
+      {/* Car Tabs */}
+        <CartTabs />
+        {/* Car Compare */}
+        <CompareVehicle />
       {/* featured Section */}
       <FeaturedContent/>
       {/* latest new section */}

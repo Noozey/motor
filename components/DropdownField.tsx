@@ -1,4 +1,4 @@
-import { DropdownFieldProps } from "@/app/types";
+import { DropdownFieldProps } from "@/types";
 
 export const DropdownField: React.FC<DropdownFieldProps> = ({ label, options, placeholder, id }) => (
   <div className="flex-1 min-w-[100px] sm:min-w-[120px]">
