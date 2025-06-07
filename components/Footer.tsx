@@ -2,6 +2,7 @@ import { ChevronUp } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import ScrollToTop from './ScrollToTop'
 
 type SocialMediaProps={
     label:string,
@@ -24,16 +25,17 @@ const Footer:React.FC = () => {
         <div className='w-full space-y-4'>
             <div className='w-full flex items-center justify-between'>
                 <div className='flex-1'>
-                    <h1 className='font-bold text-3xl '>Join Nepal Motor</h1>
+                    <h1 className='font-bold text-3xl '>Join Edmunds</h1>
                     <p className='text-sm'>Recieve pricing updates, shopping tips & more!</p>
                 </div>
-                <button className='px-3 py-2 border rounded-full border-black flex item-center justify-center gap-2 '><span className='text-sm'>Back to top</span><ChevronUp className='cursor-pointer' size={24}/> </button>
+                {/* scroll up button */}
+               <ScrollToTop />
             </div>
             <div >
                 <label htmlFor="email" className='text-md pb-2'>Email Address</label>
                 <div className=' w-full rounded-md border border-black md:w-[40%]  overflow-hidden  flex items-center'>
                     <input id='email' type="text" className='border-none py-2 px-2 flex-1 focus:outline-none ' />
-                    <button className='bg-black px-3 py-3 text-white text-sm'>Sign Up</button>
+                    <button className='bg-[#1B72EB] px-3 py-3 text-white text-sm cursor-pointer'>Sign Up</button>
                 </div>
             </div>
         </div>
@@ -50,7 +52,7 @@ const Footer:React.FC = () => {
                 </div >
                 {/* download the app part */}
                 <div className='flex flex-col item-center justify-start gap-2'>
-                    <h1 className='font-extralight text-sm'>Download the Nepal Motors app</h1>
+                    <h1 className='font-extralight text-sm'>Download the Edmunds app</h1>
                     <div className='flex items-center justify-center gap-2'>
                         <div className='flex items-center justify-center bg-black text-white gap-2 p-2 rounded-md'>
                             <Image width={24} height={24} src={'/footerImage/apple.png'} alt={'apple logo'} />
