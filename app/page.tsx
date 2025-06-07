@@ -74,12 +74,12 @@ export default function CarShowcase(): JSX.Element {
           </div>
         ))}
       </div>
-      {/* Car Tabs */}
-        <CartTabs />
         {/* Car Compare */}
         <CompareVehicle />
       {/* featured Section */}
       <FeaturedContent/>
+      {/* Car Tabs */}
+        <CartTabs />
       {/* latest new section */}
       <LatestNews/>
     </div>
