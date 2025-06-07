@@ -1,14 +1,13 @@
 import React from 'react';
-import Image from 'next/image'; // Import next/image
+import Image from 'next/image'; 
 
-// Define an interface for the icon props if using next/image
 interface StepIcon {
     src: string;
     alt: string;
 }
 
 interface Step {
-    icon: StepIcon; // Changed to StepIcon for next/image
+    icon: StepIcon; 
     title: string;
     description: string;
 }
@@ -16,17 +15,17 @@ interface Step {
 const HowItWorksSection: React.FC = () => {
     const steps: Step[] = [
         {
-            icon: { src: '/Location.png', alt: 'Choose Location Icon' }, // Placeholder path
+            icon: { src: '/Location.png', alt: 'Choose Location Icon' }, 
             title: "Choose Location",
             description: "Aliquam erat volutpat. Integer malesuada turpis id fringilla suscipit. Maecenas ultrices, orci vitae convallis mattis.",
         },
         {
-            icon: { src: '/calander.png', alt: 'Pick-up Date Icon' }, // Placeholder path
+            icon: { src: '/calander.png', alt: 'Pick-up Date Icon' },
             title: "Pick-up Date",
             description: "Aliquam erat volutpat. Integer malesuada turpis id fringilla suscipit. Maecenas ultrices, orci vitae convallis mattis.",
         },
         {
-            icon: { src: '/stop.png', alt: 'Book Your Car Icon' }, // Placeholder path
+            icon: { src: '/stop.png', alt: 'Book Your Car Icon' }, 
             title: "Book your car",
             description: "Aliquam erat volutpat. Integer malesuada turpis id fringilla suscipit. Maecenas ultrices, orci vitae convallis mattis.",
         },
@@ -53,7 +52,6 @@ const HowItWorksSection: React.FC = () => {
                 </div>
 
                 <div className="relative">
-                    {/* Connecting Lines SVG: Visible on medium screens and up */}
                     <div className="hidden md:block absolute top-0 left-0 w-full h-24 pointer-events-none">
                         <svg
                             width="100%"
@@ -70,16 +68,12 @@ const HowItWorksSection: React.FC = () => {
                         {steps.map((step, index) => (
                             <div key={index} className="flex flex-col items-center text-center relative z-10">
                                 <div className={`w-20 h-20 md:w-24 md:h-24 rounded-2xl ${iconBgGradient} flex items-center justify-center shadow-md mb-5 md:mb-6`}>
-                                    {/* Use next/image component */}
                                     <Image
                                         src={step.icon.src}
                                         alt={step.icon.alt}
-                                        width={48} // Provide a base width (e.g., largest size icon will be displayed at)
-                                        height={48} // Provide a base height
-                                        className="h-10 w-10 md:h-12 md:w-12" // Control actual displayed size with Tailwind
-                                        // If your PNGs have transparency and you want them to appear white like the SVGs,
-                                        // ensure the PNGs themselves are white.
-                                        // You cannot easily color PNGs with CSS like `text-white` on SVGs.
+                                        width={48} 
+                                        height={48} 
+                                        className="h-10 w-10 md:h-12 md:w-12" 
                                     />
                                 </div>
                                 <h3 className={`text-xl font-semibold ${stepTitleColor} mb-2`}>

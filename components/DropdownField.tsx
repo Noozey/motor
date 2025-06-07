@@ -11,7 +11,6 @@ export const DropdownField: React.FC<DropdownFieldProps> = ({ label, options, pl
         name={id}
         className="w-full p-2 sm:p-2.5 border border-gray-300 rounded-md appearance-none focus:ring-1 focus:ring-[#0f2a3f] focus:border-[#0f2a3f] text-sm text-gray-700 placeholder-gray-400"
         defaultValue=""
-        // If this were a controlled component, you'd have value and onChange props
       >
         <option value="" disabled>
           {placeholder}

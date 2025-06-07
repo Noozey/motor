@@ -19,8 +19,16 @@ const CartTabs:React.FC = () => {
     { name: "Mahindra Scorpio N", price: "₹13.99 - 24.09 Lakh*", image: "carTabsImage/suv/image-2.png" },
     { name: "Mahindra XUV700", price: "₹14.09 - 25.74 Lakh*", image: "carTabsImage/suv/image-3.png" },
     { name: "Hyundai Creta", price: "₹11.11 - 20.50 Lakh*", image: "carTabsImage/suv/image.png" },
+    { name: "Mahindra Thar RDX", price: "₹12.99 - 20.09 Lakh*", image: "carTabsImage/suv/image-1.png" },
+    { name: "Mahindra Scorpio N", price: "₹13.99 - 24.09 Lakh*", image: "carTabsImage/suv/image-2.png" },
+    { name: "Mahindra XUV700", price: "₹14.09 - 25.74 Lakh*", image: "carTabsImage/suv/image-3.png" },
+    { name: "Hyundai Creta", price: "₹11.11 - 20.50 Lakh*", image: "carTabsImage/suv/image.png" },
   ],
   Hatchback: [
+  { name: "Maruti Suzuki Swift", price: "₹6.24 - 9.14 Lakh*", image: "/swift.jpg" },
+  { name: "Hyundai i20", price: "₹7.04 - 11.21 Lakh*", image: "/i20.jpg" },
+  { name: "Tata Altroz", price: "₹6.64 - 10.79 Lakh*", image: "/altroz.jpg" },
+  { name: "Maruti Suzuki Baleno", price: "₹6.66 - 9.83 Lakh*", image: "/baleno.jpg" },
   { name: "Maruti Suzuki Swift", price: "₹6.24 - 9.14 Lakh*", image: "/swift.jpg" },
   { name: "Hyundai i20", price: "₹7.04 - 11.21 Lakh*", image: "/i20.jpg" },
   { name: "Tata Altroz", price: "₹6.64 - 10.79 Lakh*", image: "/altroz.jpg" },
@@ -49,10 +57,11 @@ Luxury: [
 };
 
 const [activeTab,setActiveTab]=useState<CarTabs>(CarTabs.suv)
-const [viewAll,setViewAll]=useState<boolean>(true);
+const [viewAll,setViewAll]=useState<boolean>(false);
 
 const handleTabClick=(tab:CarTabs)=>{
     setActiveTab(tab)
+    setViewAll(false);
 }
   return (
     <div className="w-full max-w-screen-2xl mx-auto px-2 md:px-6 lg:px-8 py-10  ">
@@ -60,7 +69,7 @@ const handleTabClick=(tab:CarTabs)=>{
         <div className="flex w-full gap-6 border-b">
             {/* tab buttons */}
             {tabs.map((tab)=>(
-                <button key={tab} className={`pb-2 ${tab==activeTab?"border-b-2 border-red-500 text-black font-semibold":"text-gray-500"}`} onClick={() => handleTabClick(tab)}>
+                <button key={tab} className={`pb-2 cursor-pointer  ${tab==activeTab?"border-b-2 border-red-500 text-black font-semibold":"text-gray-500"}`} onClick={() => handleTabClick(tab)}>
                     {tab}
                 </button>
             ))}
@@ -69,7 +78,7 @@ const handleTabClick=(tab:CarTabs)=>{
         <div className="mt-6 p-4 bg-[#F8F8F8]">
            { viewAll ? (<CarGrid cars={carData[activeTab]} />):(<CarCarousel cars={carData[activeTab]}/>)}
         </div>
-        {!viewAll && <p className="text-left text-orange-500 py-5">view all cars <ChevronRight className="inline" size={24} /></p>
+        {!viewAll && <p onClick={()=>setViewAll(true)} className="text-left cursor-pointer text-orange-500 py-5">view all cars <ChevronRight className="inline" size={24} /></p>
 }
     </div>
     
