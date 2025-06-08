@@ -1,3 +1,4 @@
+import { typeCarDetail } from '@/types'
 import React, { useRef, useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
@@ -8,18 +9,95 @@ import { Autoplay} from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import SingleCarCard from "./SingleCarCard";
-import { typeCarDetail } from "@/types";
+
+type ResponseResult=typeCarDetail[];
+
+const CarSearchDisplay = () => {
+    const responseResult:ResponseResult=[
+          {
+      imageUrl: '/carTypeImage/ford.png', // Replace with your image path in the /public folder
+      year: 2022,
+      make: 'Ford',
+      model: 'Everest Sport',
+      variant: '(4WD)',
+      mileage: 91628,
+      transmission: 'Automatic',
+      price: 47990,
+    },
+    {
+      imageUrl: '/carTypeImage/mazda922.png',
+      year: 2022,
+      make: 'Mazda',
+      model: 'CX-9',
+      variant: 'Azami (AWD)',
+      mileage: 50402,
+      transmission: 'Automatic',
+      price: 49990,
+    },
+    {
+      imageUrl: '/carTypeImage/mazda3021.png',
+      year: 2021,
+      make: 'Mazda',
+      model: 'CX-30',
+      variant: 'G20 Evolve (FWD)',
+      mileage: 54127,
+      transmission: 'Automatic',
+      price: 26990,
+    },
+    {
+      imageUrl: '/carTypeImage/mazda920.png',
+      year: 2023,
+      make: 'Mazda',
+      model: 'CX-9',
+      variant: 'Touring (FWD)',
+      mileage: 15549,
+      transmission: 'Automatic',
+      price: 46990,
+    }, 
+          {
+      imageUrl: '/carTypeImage/ford.png', // Replace with your image path in the /public folder
+      year: 2022,
+      make: 'Ford',
+      model: 'Everest Sport',
+      variant: '(4WD)',
+      mileage: 91628,
+      transmission: 'Automatic',
+      price: 47990,
+    },
+    {
+      imageUrl: '/carTypeImage/mazda922.png',
+      year: 2022,
+      make: 'Mazda',
+      model: 'CX-9',
+      variant: 'Azami (AWD)',
+      mileage: 50402,
+      transmission: 'Automatic',
+      price: 49990,
+    },
+    {
+      imageUrl: '/carTypeImage/mazda3021.png',
+      year: 2021,
+      make: 'Mazda',
+      model: 'CX-30',
+      variant: 'G20 Evolve (FWD)',
+      mileage: 54127,
+      transmission: 'Automatic',
+      price: 26990,
+    },
+    {
+      imageUrl: '/carTypeImage/mazda920.png',
+      year: 2023,
+      make: 'Mazda',
+      model: 'CX-9',
+      variant: 'Touring (FWD)',
+      mileage: 15549,
+      transmission: 'Automatic',
+      price: 46990,
+    }, 
+    ]
 
 
-
-
-type carCarouselProps={
-    cars:typeCarDetail[];
-}
-
-const TypeCarCarousel = ({cars}:carCarouselProps) => {
-    console.log(cars)
-    const prevRef = useRef(null);
+       const prevRef = useRef(null);
   const nextRef = useRef(null);
   const [swiperReady, setSwiperReady] = useState(false);
 
@@ -27,8 +105,9 @@ const TypeCarCarousel = ({cars}:carCarouselProps) => {
   useEffect(() => {
     setSwiperReady(true);
   }, []);
+    
   return (
-        <div className="relative  py-8">
+   <div className="relative  py-8">
       {/* Custom Navigation Buttons */}
     <div
   ref={prevRef}
@@ -81,7 +160,7 @@ const TypeCarCarousel = ({cars}:carCarouselProps) => {
             },
           }}
         >
-          {cars.map((car, index) => (
+          {responseResult.map((car, index) => (
             <SwiperSlide key={index} className="py-2">
                {/* <CarCard  /> */}
                <SingleCarCard car={car} />
@@ -93,4 +172,12 @@ const TypeCarCarousel = ({cars}:carCarouselProps) => {
   )
 }
 
-export default TypeCarCarousel
+export default CarSearchDisplay
+
+
+
+
+
+
+
+

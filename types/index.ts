@@ -28,3 +28,14 @@ export type CarDetails={
 export type CarData={
     [key in CarTabs]: CarDetails[]
 }
+
+export type typeCarDetail={
+     imageUrl: string;
+  year: number;
+  make: string;
+  model: string;
+  variant: string;
+  mileage: number;
+  transmission: string;
+  price: number;
+}

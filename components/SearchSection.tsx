@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import ModelSearchFrom from './ModelSearchForm';
 import TypeFilter from './TypeFilter';
+import CarSearchDisplay from './CarSearchDisplay';
 
 const SearchSection = () => {
     const [tab,setTab]=useState<"model"| "type">("model");
@@ -20,7 +21,7 @@ const SearchSection = () => {
       </p>
         {/* search input */}
         {tab==="model" && <ModelSearchFrom />}
-        
+        {tab=="model" && <CarSearchDisplay />}
         {tab==="type" && <TypeFilter />}
 
     </div>
