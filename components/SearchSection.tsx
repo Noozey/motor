@@ -1,0 +1,30 @@
+'use client';
+import React, { useState } from 'react'
+import ModelSearchFrom from './ModelSearchForm';
+import TypeFilter from './TypeFilter';
+
+const SearchSection = () => {
+    const [tab,setTab]=useState<"model"| "type">("model");
+  return (
+    <div className='w-full max-w-screen-2xl mx-auto px-2 py-10 md:px-6 lg:px-8'>
+        <h1 className='text-2xl font-bold mb-4'>Research Cars</h1>
+        
+
+        {/* tabs  */}
+        <div className='flex gap-4 mb-6'>
+            <button onClick={()=>setTab("model")} className={`px-4 py-0.5  border-b-2 ${tab==="model"?"border-black":"border-transparent"}`}>By Model</button>
+            <button onClick={()=>setTab("type")} className={`px-4 py-0.5 border-b-2 ${tab==="type"?"border-black":"border-transparent"}`}>By Type</button>
+        </div>
+        <p className="text-sm mb-4 text-gray-600">
+        Learn more about the car you're interested in before you buy.
+      </p>
+        {/* search input */}
+        {tab==="model" && <ModelSearchFrom />}
+        
+        {tab==="type" && <TypeFilter />}
+
+    </div>
+  )
+}
+
+export default SearchSection

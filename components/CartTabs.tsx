@@ -5,10 +5,6 @@ import CarCarousel from "./CarCarousel";
 import { CarData, CarTabs } from "@/types";
 import { ChevronRight } from "lucide-react";
 
-
-
-
-
 const CartTabs:React.FC = () => {
     const tabs:CarTabs[]=[CarTabs.suv, CarTabs.hatchback, CarTabs.sedan, CarTabs.muv, CarTabs.luxury]
 
