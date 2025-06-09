@@ -4,9 +4,10 @@ import { MenuIcon } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
+import SideMenu from './SideMenu';
 
 const Header = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState<boolean>(false);
 
   return (
     <header className="max-w-screen-2xl w-full py-4 bg-[#0f2a3f] flex items-center justify-between px-4 md:px-6 lg:px-8 relative">
@@ -52,7 +53,7 @@ const Header = () => {
       </div>
 
       {/* Mobile Menu */}
-      {menuOpen && (
+      {/* {menuOpen && (
         <div className="md:hidden absolute top-full left-0 w-full bg-[#0f2a3f] shadow-lg z-50 animate-fade-in">
           <nav className="flex flex-col items-start px-6 py-4 space-y-3">
             <Link href="/" className="text-white text-base font-semibold w-full py-1" onClick={() => setMenuOpen(false)}>
@@ -76,7 +77,9 @@ const Header = () => {
             </Link>
           </nav>
         </div>
-      )}
+      )} */}
+      {/* Mobile Menu */}
+      <SideMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
     </header>
   );
 };
