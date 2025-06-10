@@ -53,32 +53,6 @@ const Header = () => {
       </div>
 
       {/* Mobile Menu */}
-      {/* {menuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-[#0f2a3f] shadow-lg z-50 animate-fade-in">
-          <nav className="flex flex-col items-start px-6 py-4 space-y-3">
-            <Link href="/" className="text-white text-base font-semibold w-full py-1" onClick={() => setMenuOpen(false)}>
-              Home
-            </Link>
-            <Link href="/buy" className="text-white text-base font-semibold w-full py-1" onClick={() => setMenuOpen(false)}>
-              Buy
-            </Link>
-            <Link href="/sell" className="text-white text-base font-semibold w-full py-1" onClick={() => setMenuOpen(false)}>
-              Sell
-            </Link>
-            <Link href="/rent" className="text-white text-base font-semibold w-full py-1" onClick={() => setMenuOpen(false)}>
-              Rent
-            </Link>
-            <Link
-              href="/exchange-ev"
-              className="bg-[#a3b18a] text-white px-4 py-2 rounded-md text-base font-semibold hover:bg-[#93a17a] transition-colors w-full mt-2 text-center"
-              onClick={() => setMenuOpen(false)}
-            >
-              Exchange to EV
-            </Link>
-          </nav>
-        </div>
-      )} */}
-      {/* Mobile Menu */}
       <SideMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
     </header>
   );

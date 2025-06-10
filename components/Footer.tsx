@@ -20,7 +20,7 @@ const socialMediaIcons:SocialMediaProps[]=[
 
 const Footer:React.FC = () => {
   return (
-    <div className='w-full relative max-w-screen-2xl mx-auto px-2 md:px-6 lg:px-8 py-20'>
+    <div className='w-full relative max-w-screen-2xl mx-auto px-4 md:px-6 lg:px-8 py-10'>
         {/* header upper part */}
         <div className='w-full space-y-4'>
             <div className='w-full flex items-center justify-between'>
@@ -72,18 +72,18 @@ const Footer:React.FC = () => {
 
                 </div>
             </div>
-            <div className='w-full flex items-center gap-5 lg:gap-0 justify-center text-sm pt-5'>
-                <div className='flex flex-col gap-2 lg:flex-row justify-start items-start md:justify-between lg:gap-5'>
-                    <Link href={'/contact'}>Contact Us</Link>
-                    <Link href={'/contact'}>Careers</Link>
-                    <Link href={'/contact'}>Your Ad Choices</Link>
-                    <Link href={'/contact'}>Privacy Statement</Link>
+            <div className='w-full flex items-start gap-10 lg:gap-8 justify-center text-sm pt-5'>
+                <div className='flex flex-col w-1/2 lg:w-[40%] gap-2 lg:flex-row justify-start items-center text-center xl:justify-between  lg:items-start lg:justify-between'>
+                    <Link href={'/contact'} className='hover:text-[#1B72EB]'>Contact Us</Link>
+                    <Link href={'/contact'} className='hover:text-[#1B72EB]'>Careers</Link>
+                    <Link href={'/contact'} className='hover:text-[#1B72EB]'>Your Ad Choices</Link>
+                    <Link href={'/contact'} className='hover:text-[#1B72EB]'  >Privacy Statement</Link>
                     </div>
-                    <div className='flex flex-col gap-2 lg:flex-row justify-start items-start md:items-center md:justify-between lg:gap-5'>
-                    <Link href={'/contact'}>Visitor Agreement</Link>
-                    <Link href={'/contact'}>Accessibility</Link>
-                    <Link href={'/contact'}>Do Not Sell or Share My Personal Information</Link>
-                    <Link href={'/contact'}>Edmunds Information</Link>
+                    <div className='flex lg:whitespace-nowrap flex-col w-1/2 lg:w-[60%] gap-2 lg:flex-row justify-start items-start text-left  xl:justify-between lg:items-start lg:justify-between'>
+                    <Link href={'/contact'} className='hover:text-[#1B72EB]'>Visitor Agreement</Link>
+                    <Link href={'/contact'} className='hover:text-[#1B72EB]'>Accessibility</Link>
+                    <Link href={'/contact'} className='hover:text-[#1B72EB]'>Do Not Sell or Share My  Personal Information</Link>
+                    <Link href={'/contact'} className='hover:text-[#1B72EB]'>Edmunds Information</Link>
                     </div>
             </div>
         </div>

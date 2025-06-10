@@ -46,16 +46,16 @@ const vehicles:Vehicles = [
 
 const CompareVehicle = () => {
 	return (
-		<section className="w-full max-w-screen-2xl mx-auto px-2 md:px-6 lg:px-8 py-8">
+		<section className="w-full pb-10">
 			<h2 className="text-xl md:text-2xl font-bold mb-6">
 				Compare popular vehicles
 			</h2>
-			<div className="flex flex-wrap gap-4 md:gap-6 justify-center ">
+			<div className="flex flex-wrap gap-6 justify-center ">
 				{vehicles.map((v) => (
 					<Link
 						key={v.label}
 						href={v.href}
-						className="flex flex-col items-center w-32 sm:w-36 md:w-40 bg-white rounded-lg shadow hover:shadow-lg transition-shadow p-3"
+						className="flex flex-col items-center w-40 sm:w-36 md:w-40 bg-white rounded-lg shadow hover:shadow-lg transition-shadow p-3"
 					>
 						<div className="w-full h-20 sm:h-24 md:h-28 flex items-center justify-center mb-2">
 							<Image

@@ -413,11 +413,12 @@ const TypeFilter = () => {
     const [activeTab,setActiveTab]=useState<carTypes>(carTypes.suv)
 
     const handleTabClick=(tab:carTypes)=>{
+      console.log("clicked",tab)
         setActiveTab(tab)
     }
   return (
       <div className="w-full py-5  ">
-        <div className="flex w-full gap-6 items-center justify-between border-b">
+        <div className=" w-full gap-6 hidden md:flex items-center justify-between border-b">
             {/* tab buttons */}
             {tabs.map((tab)=>(
                 <button key={tab} className={`pb-2 cursor-pointer  ${tab==activeTab?"border-b-2 border-red-500 text-black font-semibold":"text-gray-500"}`} onClick={() => handleTabClick(tab)}>
@@ -425,8 +426,29 @@ const TypeFilter = () => {
                 </button>
             ))}
         </div>
+        <div className=" w-full flex  md:hidden items-center justify-center">
+            {/* tab buttons */}
+              <select
+  id="tab-select"
+  value={activeTab}
+  onChange={(e) => handleTabClick(e.target.value as carTypes)}
+  className="border border-gray-300 p-2 rounded-md text-sm text-gray-700 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+>
+  {tabs.map((tab) => (
+    <option key={tab} value={tab}>
+      {tab
+        .split('_')
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ')}
+    </option>
+  ))}
+</select>
+        </div>
+   
+
+
         {/* corousal part now */}
-        <div className="mt-6 p-4 ">
+        <div className="mt-4 p-4 ">
                 <TypeCarCarousel cars={carTypeData[activeTab]}/>
             </div>
         </div>

@@ -18,7 +18,6 @@ type carCarouselProps={
 }
 
 const TypeCarCarousel = ({cars}:carCarouselProps) => {
-    console.log(cars)
     const prevRef = useRef(null);
   const nextRef = useRef(null);
   const [swiperReady, setSwiperReady] = useState(false);
@@ -28,7 +27,7 @@ const TypeCarCarousel = ({cars}:carCarouselProps) => {
     setSwiperReady(true);
   }, []);
   return (
-        <div className="relative  py-8">
+        <div className="relative  py-2 md:py-8">
       {/* Custom Navigation Buttons */}
     <div
   ref={prevRef}

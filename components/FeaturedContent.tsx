@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
+import LogoScroller from './LogoScroller';
 
 const carImageSrc = "/images/car-image.png"; 
 
@@ -15,13 +16,14 @@ const FeaturedContent: React.FC = () => {
         </h2>
         <div className="flex justify-center items-center px-4">
           {/* Single image for all logos */}
-          <Image
+          {/* <Image
             src={'/featuredImage/featuredLogos.png'} 
             alt="Featured publications logos"
             width={1200}
             height={60}
             className="object-contain w-full h-auto max-w-4xl"
-          />
+          /> */}
+          <LogoScroller />
         </div>
       </section>
 
@@ -41,13 +43,13 @@ const FeaturedContent: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <button
                 type="button"
-                className="px-6 py-3 border border-black text-black font-semibold rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black transition-colors duration-150 ease-in-out w-full sm:w-auto"
+                className="px-6 py-3 border cursor-pointer border-black text-black font-semibold rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black transition-colors duration-150 ease-in-out w-full sm:w-auto"
               >
                 See all tariff news
               </button>
               <button
                 type="button"
-                className="px-6 py-3 bg-black text-white font-semibold rounded-md hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 transition-colors duration-150 ease-in-out w-full sm:w-auto"
+                className="px-6 py-3 cursor-pointer bg-black text-white font-semibold rounded-md hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 transition-colors duration-150 ease-in-out w-full sm:w-auto"
               >
                 Shop American-made cars
               </button>
@@ -55,16 +57,16 @@ const FeaturedContent: React.FC = () => {
           </div>
 
           {/* Right Image Area - Simplified */}
-          <div className="lg:w-1/2 relative flex items-center justify-center p-6 sm:p-8 md:p-10 lg:p-0 min-h-[250px] sm:min-h-[300px] lg:min-h-0 bg-gray-100 lg:bg-transparent">
+          <div className="lg:w-1/2 relative flex items-center justify-center p-6 sm:p-8 md:p-10 lg:p-0 min-h-[200px] sm:min-h-[250px] lg:min-h-0 bg-gray-100 lg:bg-transparent">
             {/* Car Image Placeholder */}
-            <div className="relative z-10 w-full max-w-md lg:max-w-lg">
+            <div className="relative z-10 w-full h-full max-w-md lg:max-w-lg">
              
               <Image
                 src={'/featuredImage/inclinedCar.png'} 
                 alt="Car" 
                 width={800} 
                 height={500} 
-                className="object-contain w-full h-auto"
+                className="object-cover md:object-contain w-full h-full"
                 priority 
               />
             </div>

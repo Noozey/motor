@@ -62,10 +62,10 @@ const handleTabClick=(tab:CarTabs)=>{
   return (
     <div className="w-full max-w-screen-2xl mx-auto px-2 md:px-6 lg:px-8 py-10  ">
       <h4 className="text-left mb-5 text-[20px] font-semibold text-[#535353]">The most searched cars</h4>
-        <div className="flex w-full gap-6 border-b">
+        <div className="flex w-full justify-center md:justify-around gap-6 border-b">
             {/* tab buttons */}
             {tabs.map((tab)=>(
-                <button key={tab} className={`pb-2 cursor-pointer  ${tab==activeTab?"border-b-2 border-red-500 text-black font-semibold":"text-gray-500"}`} onClick={() => handleTabClick(tab)}>
+                <button key={tab} className={`pb-2 cursor-pointer  ${tab==activeTab?"border-b-2 border-gray-500 text-black font-semibold":"text-gray-500"}`} onClick={() => handleTabClick(tab)}>
                     {tab}
                 </button>
             ))}
@@ -74,7 +74,7 @@ const handleTabClick=(tab:CarTabs)=>{
         <div className="mt-6 p-4 bg-[#F8F8F8]">
            { viewAll ? (<CarGrid cars={carData[activeTab]} />):(<CarCarousel cars={carData[activeTab]}/>)}
         </div>
-        {!viewAll && <p onClick={()=>setViewAll(true)} className="text-left cursor-pointer text-orange-500 py-5">view all cars <ChevronRight className="inline" size={24} /></p>
+        {!viewAll && <p onClick={()=>setViewAll(true)} className="text-left cursor-pointer text-gray-500 py-5">view all cars <ChevronRight className="inline" size={24} /></p>
 }
     </div>
     

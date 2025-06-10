@@ -2,6 +2,7 @@ import CartTabs from '@/components/CartTabs';
 import CompareVehicle from '@/components/CompareVehicle';
 import FeaturedContent from '@/components/FeaturedContent';
 import LatestNews from '@/components/LatestNews';
+import LogoScroller from '@/components/LogoScroller';
 import SearchSection from '@/components/SearchSection';
 import Image from 'next/image';
 import React from 'react';
