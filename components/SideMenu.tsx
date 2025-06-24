@@ -8,15 +8,16 @@
 
     type Category={ 
         name:string;
+        link:string;
     }
 
     type Categories=Category[];
 
     const categories: Categories = [
-    {name:'Home'},
-    {name:'Buy'},
-    {name:'Sell'},
-        {name:'Rent'},
+    {name:'Home',link:'/'},
+    {name:'Buy',link:'/buy'},
+    {name:'Sell',link:'/sell'},
+        {name:'Rent',link:'/rent'},
     ];
 
     interface SideMenuProps{
@@ -85,7 +86,7 @@
                         <ul className="space-y-2.5 hide-scrollbar">
                             {categories.map((cat, idx) => (
                                 <li key={cat.name}>
-                                    <Link href={'/'} onClick={()=>setMenuOpen(false)}
+                                    <Link href={cat.link} onClick={()=>setMenuOpen(false)}
                                         className="flex items-center justify-between py-3 px-3 rounded-md hover:bg-sky-500 transition-colors duration-150 ease-in-out group cursor-pointer"
                                     >
                                         <span

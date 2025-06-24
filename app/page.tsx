@@ -1,6 +1,7 @@
 import CartTabs from '@/components/CartTabs';
 import CompareVehicle from '@/components/CompareVehicle';
 import FeaturedContent from '@/components/FeaturedContent';
+import HeroSection from '@/components/HeroSection';
 import LatestNews from '@/components/LatestNews';
 import LogoScroller from '@/components/LogoScroller';
 import SearchSection from '@/components/SearchSection';
@@ -22,8 +23,12 @@ const cars: Car[] = [
 
 export default function CarShowcase(): JSX.Element {
   return (
-    <div className="w-full max-w-screen-2xl mx-auto px-2 md:px-6 lg:px-8 py-10">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+    <div className="w-full">
+      {/* Hero Section */}
+      <HeroSection />
+
+    <div className='w-full max-w-screen-2xl mx-auto px-2 md:px-6 lg:px-8 py-10'>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
         {/* Left Panel */}
         <div className="bg-[#1B2A34] text-white p-6 rounded-xl space-y-4">
           <div className="text-sm font-semibold text-gray-400">SPONSORED CONTENT</div>
@@ -86,6 +91,7 @@ export default function CarShowcase(): JSX.Element {
         <CartTabs />
       {/* latest new section */}
       <LatestNews/>
+    </div>
     </div>
   );
 }
