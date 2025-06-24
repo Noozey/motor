@@ -25,7 +25,7 @@ const Footer:React.FC = () => {
         <div className='w-full space-y-4'>
             <div className='w-full flex items-center justify-between'>
                 <div className='flex-1'>
-                    <h1 className='font-bold text-3xl '>Join Edmunds</h1>
+                    <h1 className='font-bold text-3xl '>Join Nepal Motors</h1>
                     <p className='text-sm'>Recieve pricing updates, shopping tips & more!</p>
                 </div>
                 {/* scroll up button */}
@@ -52,7 +52,7 @@ const Footer:React.FC = () => {
                 </div >
                 {/* download the app part */}
                 <div className='flex flex-col item-center justify-start gap-2'>
-                    <h1 className='font-extralight text-sm'>Download the Edmunds app</h1>
+                    <h1 className='font-extralight text-sm'>Download the Nepal Motor App</h1>
                     <div className='flex items-center justify-center gap-2'>
                         <div className='flex items-center justify-center bg-black text-white gap-2 p-2 rounded-md'>
                             <Image width={24} height={24} src={'/footerImage/apple.png'} alt={'apple logo'} />
@@ -62,7 +62,7 @@ const Footer:React.FC = () => {
                             </div>
                         </div>
                         <div className='flex items-center justify-center bg-black text-white gap-2 p-2 rounded-md'>
-                            <Image width={24} height={24} src={'/footerImage/google.png'} alt={'google logo'} />
+                            <Image width={24} height={24} src={'/footerImage/playstore.png'} alt={'google logo'} />
                             <div className='flex flex-col justify-start item-center '>
                                 <h6 className='text-sm'>Get it on</h6>
                                  <h1 className='font-bold text-md'>Play Store</h1>
@@ -77,13 +77,13 @@ const Footer:React.FC = () => {
                     <Link href={'/contact'} className='hover:text-[#1B72EB]'>Contact Us</Link>
                     <Link href={'/contact'} className='hover:text-[#1B72EB]'>Careers</Link>
                     <Link href={'/contact'} className='hover:text-[#1B72EB]'>Your Ad Choices</Link>
-                    <Link href={'/contact'} className='hover:text-[#1B72EB]'  >Privacy Statement</Link>
+                    <Link href={'/contact'} className='hover:text-[#1B72EB]'>Privacy Statement</Link>
                     </div>
                     <div className='flex lg:whitespace-nowrap flex-col w-1/2 lg:w-[60%] gap-2 lg:flex-row justify-start items-start text-left  xl:justify-between lg:items-start lg:justify-between'>
                     <Link href={'/contact'} className='hover:text-[#1B72EB]'>Visitor Agreement</Link>
                     <Link href={'/contact'} className='hover:text-[#1B72EB]'>Accessibility</Link>
                     <Link href={'/contact'} className='hover:text-[#1B72EB]'>Do Not Sell or Share My  Personal Information</Link>
-                    <Link href={'/contact'} className='hover:text-[#1B72EB]'>Edmunds Information</Link>
+                    <Link href={'/contact'} className='hover:text-[#1B72EB]'>Motor Information</Link>
                     </div>
             </div>
         </div>

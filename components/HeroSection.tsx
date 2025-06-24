@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-const imageUrl = '/hero-car-image.jpg';
+const imageUrl = '/hero-car-image2.jpg';
 
 const HeroSection = () => {
   return (
