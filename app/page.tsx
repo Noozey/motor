@@ -1,3 +1,4 @@
+import AdBanner from '@/components/AdBanner';
 import CartTabs from '@/components/CartTabs';
 import CompareVehicle from '@/components/CompareVehicle';
 import FeaturedContent from '@/components/FeaturedContent';
@@ -85,6 +86,8 @@ export default function CarShowcase(): JSX.Element {
       <SearchSection />
         {/* Car Compare */}
         <CompareVehicle />
+        {/* sponsored Section */}
+        <AdBanner/>
       {/* featured Section */}
       <FeaturedContent/>
       {/* Car Tabs */}

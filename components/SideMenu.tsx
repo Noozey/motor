@@ -17,7 +17,7 @@
     {name:'Home',link:'/'},
     {name:'Buy',link:'/buy'},
     {name:'Sell',link:'/sell'},
-        {name:'Rent',link:'/rent'},
+    {name:'Rent',link:'/rent'},
     ];
 
     interface SideMenuProps{
@@ -105,8 +105,9 @@
                             ))}
                         </ul>
                         <Link
-            href="/exchange-ev"
+            href="/exchange"
             className="bg-[#a3b18a] text-center text-white px-3 sm:px-4 lg:ml-8 py-2 rounded-md text-sm md:text-base font-semibold hover:bg-[#93a17a] transition-colors whitespace-nowrap"
+            onClick={()=> setMenuOpen(false)}
             >
             Exchange to EV
             </Link>

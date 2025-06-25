@@ -8,6 +8,12 @@ interface InputFieldProps {
   required?: boolean;
 }
 
+// useEffect(()=>{
+
+  
+
+// },[])
+
 const InputField: React.FC<InputFieldProps> = ({ id, label, placeholder, type = 'text', required = false }) => (
   <div>
     <label htmlFor={id} className="block text-sm font-medium text-gray-700 mb-1">
