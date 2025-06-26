@@ -30,88 +30,100 @@ const TypeFilter = () => {
     const tabs:carTypes[]=[carTypes.suv, carTypes.hatch, carTypes.sedan, carTypes.van, carTypes.coupe, carTypes.wagon, carTypes.peopleMover]
 
     const carTypeData:CarTypeData= {
-      SUV: [
-         {
-      imageUrl: '/carTypeImage/ford.png', // Replace with your image path in the /public folder
-      year: 2022,
-      make: 'Ford',
-      model: 'Everest Sport',
-      variant: '(4WD)',
-      mileage: 91628,
-      transmission: 'Automatic',
-      price: 47990,
-    },
-    {
-      imageUrl: '/carTypeImage/mazda922.png',
-      year: 2022,
-      make: 'Mazda',
-      model: 'CX-9',
-      variant: 'Azami (AWD)',
-      mileage: 50402,
-      transmission: 'Automatic',
-      price: 49990,
-    },
-    {
-      imageUrl: '/carTypeImage/mazda3021.png',
-      year: 2021,
-      make: 'Mazda',
-      model: 'CX-30',
-      variant: 'G20 Evolve (FWD)',
-      mileage: 54127,
-      transmission: 'Automatic',
-      price: 26990,
-    },
-    {
-      imageUrl: '/carTypeImage/mazda920.png',
-      year: 2023,
-      make: 'Mazda',
-      model: 'CX-9',
-      variant: 'Touring (FWD)',
-      mileage: 15549,
-      transmission: 'Automatic',
-      price: 46990,
-    }, 
-         {
-      imageUrl: '/carTypeImage/ford.png', // Replace with your image path in the /public folder
-      year: 2022,
-      make: 'Ford',
-      model: 'Everest Sport',
-      variant: '(4WD)',
-      mileage: 91628,
-      transmission: 'Automatic',
-      price: 47990,
-    },
-    {
-      imageUrl: '/carTypeImage/mazda922.png',
-      year: 2022,
-      make: 'Mazda',
-      model: 'CX-9',
-      variant: 'Azami (AWD)',
-      mileage: 50402,
-      transmission: 'Automatic',
-      price: 49990,
-    },
-    {
-      imageUrl: '/carTypeImage/mazda3021.png',
-      year: 2021,
-      make: 'Mazda',
-      model: 'CX-30',
-      variant: 'G20 Evolve (FWD)',
-      mileage: 54127,
-      transmission: 'Automatic',
-      price: 26990,
-    },
-    {
-      imageUrl: '/carTypeImage/mazda920.png',
-      year: 2023,
-      make: 'Mazda',
-      model: 'CX-9',
-      variant: 'Touring (FWD)',
-      mileage: 15549,
-      transmission: 'Automatic',
-      price: 46990,
-    }, 
-      ],
+      // Define the type for clarity and type-safety
+SUV :[
+  {
+    imageUrl: '/carTypeImage/hyundai-creta.png',
+    year: 2022,
+    make: 'Hyundai',
+    model: 'Creta',
+    variant: 'SX (O)',
+    mileage: 35000,
+    transmission: 'Automatic',
+    price: 4850000, // 48.5 Lakhs NPR
+  },
+  {
+    imageUrl: '/carTypeImage/mahindra-xuv700.png',
+    year: 2023,
+    make: 'Mahindra',
+    model: 'Scorpio-N',
+    variant: 'Z8 L 4WD',
+    mileage: 18500,
+    transmission: 'Automatic',
+    price: 11500000, // 1.15 Crore NPR
+  },
+  {
+    imageUrl: '/carTypeImage/suzuki-brezza.png',
+    year: 2023,
+    make: 'Suzuki',
+    model: 'Brezza',
+    variant: 'ZXi+ AT',
+    mileage: 15200,
+    transmission: 'Automatic',
+    price: 4400000, // 44 Lakhs NPR
+  },
+  {
+    imageUrl: '/carTypeImage/tata-nexon-ev.png',
+    year: 2022,
+    make: 'Tata',
+    model: 'Nexon EV',
+    variant: 'XZ+ Lux (Prime)',
+    mileage: 29800,
+    transmission: 'Automatic',
+    price: 3750000, // 37.5 Lakhs NPR
+  },
+  {
+    imageUrl: '/carTypeImage/ford-endeavour.png', // Using the popular South Asian name
+    year: 2020,
+    make: 'Ford',
+    model: 'Endeavour',
+    variant: 'Titanium+ 4x4',
+    mileage: 62500,
+    transmission: 'Automatic',
+    price: 9500000, // 95 Lakhs NPR
+  },
+  
+  {
+    imageUrl: '/carTypeImage/hyundai-creta.png',
+    year: 2022,
+    make: 'Hyundai',
+    model: 'Creta',
+    variant: 'SX (O)',
+    mileage: 35000,
+    transmission: 'Automatic',
+    price: 4850000, // 48.5 Lakhs NPR
+  },
+  {
+    imageUrl: '/carTypeImage/mahindra-xuv700.png',
+    year: 2023,
+    make: 'Mahindra',
+    model: 'Scorpio-N',
+    variant: 'Z8 L 4WD',
+    mileage: 18500,
+    transmission: 'Automatic',
+    price: 11500000, // 1.15 Crore NPR
+  },
+  {
+    imageUrl: '/carTypeImage/suzuki-brezza.png',
+    year: 2023,
+    make: 'Suzuki',
+    model: 'Brezza',
+    variant: 'ZXi+ AT',
+    mileage: 15200,
+    transmission: 'Automatic',
+    price: 4400000, // 44 Lakhs NPR
+  },
+  {
+    imageUrl: '/carTypeImage/tata-nexon-ev.png',
+    year: 2022,
+    make: 'Tata',
+    model: 'Nexon EV',
+    variant: 'XZ+ Lux (Prime)',
+    mileage: 29800,
+    transmission: 'Automatic',
+    price: 3750000, // 37.5 Lakhs NPR
+  },
+],
       Ute:[ {
     imageUrl: '/cars/toyota-hilux-ute.png',
     year: 2021,

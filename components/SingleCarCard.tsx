@@ -102,7 +102,7 @@ const SingleCarCard = ({car}: CarCardProps) => {
 
         {/* Price */}
         <p className="mt-4 text-2xl font-bold text-black">
-          ${price.toLocaleString('en-US')}
+          Rs. {price.toLocaleString('en-US')}
         </p>
       </div>
     </div>

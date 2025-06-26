@@ -115,6 +115,27 @@ const VehicleValuationForm = () => {
     {value:'above 1 crore', label:'Above 1 crore'},
   ];
 
+  const carColorOptions = [
+  "White",
+  "Black",
+  "Silver",
+  "Grey",
+  "Red",
+  "Blue",
+  "Maroon",
+  "Brown",
+  "Green",
+  "Yellow",
+  "Orange",
+  "Gold",
+  "Beige",
+  "Sky Blue",
+  "Pearl White",
+  "Metallic Silver",
+  "Gunmetal Grey",
+  "Navy Blue"
+];
+
   return (
     <div className='w-full max-w-screen-2xl mx-auto px-2 md:px-6 lg:px-8 py-10'>
       <div className='flex flex-col justify-center items-center gap-4'>
@@ -154,7 +175,15 @@ const VehicleValuationForm = () => {
               required
             />
 <InputField id="makeYear" label="Make year"  placeholder="e.g., 2078 (2021)" required />
-<InputField id="vehicleColor" label="Vehicle Color" placeholder="e.g., Metallic Silver" required />
+{/* <InputField id="vehicleColor" label="Vehicle Color" placeholder="e.g., Metallic Silver" required />
+ */}
+<SelectField
+              id="vehicleColor"
+              label="Vehicle Color"
+              options={carColorOptions.map(color => ({ value: color.toLowerCase(), label: color }))}
+              placeholder="Select vehicle color"
+              required
+            />
 <InputField id="kmDriven" label="KM driven"  placeholder="e.g., 35,000" required />
 <InputField id="expectedValuation" label="Expected Valuation amount (in NPR)" type="text" placeholder="e.g., NPR 12,50,000" required />
 

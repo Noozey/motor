@@ -1,8 +1,9 @@
 import React from 'react';
 import Image from 'next/image';
 
-const imageUrl = '/hero-car-image2.jpg';
+const imageUrl = '/hero-car-image2.jpg'; // Assuming this is the correct path in your /public folder
 
+// The car identified is a BMW X5 xDrive40e (F15)
 const HeroSection = () => {
   return (
     <section className="relative w-full h-screen font-sans">
@@ -28,7 +29,7 @@ const HeroSection = () => {
             
             {/* Stat 1: Motor Power */}
             <div className="text-center">
-              <h3 className="text-3xl font-bold md:text-4xl lg:text-5xl">XX kW</h3>
+              <h3 className="text-3xl font-bold md:text-4xl lg:text-5xl">83 kW</h3>
               <p className="mt-1 text-xs text-gray-200 md:text-sm">
                 Maximum
                 <br />
@@ -38,7 +39,7 @@ const HeroSection = () => {
 
             {/* Stat 2: Range */}
             <div className="text-center sm:border-l sm:border-white/40 sm:pl-4 md:pl-8">
-              <h3 className="text-3xl font-bold md:text-4xl lg:text-5xl">XX KM</h3>
+              <h3 className="text-3xl font-bold md:text-4xl lg:text-5xl">31 KM</h3>
               <p className="mt-1 text-xs text-gray-200 md:text-sm">
                 Run Maximum Distance
                 <br />
@@ -48,7 +49,7 @@ const HeroSection = () => {
             
             {/* Stat 3: Ground Clearance */}
             <div className="text-center sm:border-l sm:border-white/40 sm:pl-4 md:pl-8">
-              <h3 className="text-3xl font-bold md:text-4xl lg:text-5xl">XX mm</h3>
+              <h3 className="text-3xl font-bold md:text-4xl lg:text-5xl">209 mm</h3>
               <p className="mt-1 text-xs text-gray-200 md:text-sm">
                 Ground Clearance
               </p>
@@ -67,3 +68,5 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+
+// BMW X5 xDrive40e 
