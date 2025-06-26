@@ -13,8 +13,8 @@ const SearchSection = () => {
 
         {/* tabs  */}
         <div className='flex gap-4 mb-6'>
-            <button onClick={()=>setTab("model")} className={`px-4 py-0.5  border-b-2 ${tab==="model"?"border-black":"border-transparent"}`}>By Model</button>
-            <button onClick={()=>setTab("type")} className={`px-4 py-0.5 border-b-2 ${tab==="type"?"border-black":"border-transparent"}`}>By Type</button>
+            <button onClick={()=>setTab("model")} className={`px-4 py-0.5 cursor-pointer  border-b-2 ${tab==="model"?"border-black":"border-transparent"}`}>By Model</button>
+            <button onClick={()=>setTab("type")} className={`px-4 py-0.5 cursor-pointer border-b-2 ${tab==="type"?"border-black":"border-transparent"}`}>By Type</button>
         </div>
         <p className="text-sm mb-4 text-gray-600">
         Learn more about the car you're interested in before you buy.

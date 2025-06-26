@@ -108,6 +108,13 @@ const VehicleValuationForm = () => {
     { value: 'peoplemover', label: 'People Mover' },
   ];
 
+  const priceRangeOptions = [
+   {value:'above 30 lakhs', label:'Above 30 lakhs'},
+   {value:'above 50 lakhs', label:'Above 50 lakhs'},
+   {value:'above 75 lakhs', label:'Above 75 lakhs'},
+    {value:'above 1 crore', label:'Above 1 crore'},
+  ];
+
   return (
     <div className='w-full max-w-screen-2xl mx-auto px-2 md:px-6 lg:px-8 py-10'>
       <div className='flex flex-col justify-center items-center gap-4'>
@@ -137,12 +144,19 @@ const VehicleValuationForm = () => {
             
             {/* --- Section 2: Vehicle Details --- */}
             <h2 className="text-xl font-semibold text-gray-800 md:col-span-2 mt-4">2. Vehicle Details</h2>
-            <InputField id="vehicleModel" label="Vehicle Model" placeholder="e.g., Tesla Model 3" required />
-            <InputField id="vehicleType" label="Vehicle Type" placeholder="e.g., Sedan, SUV" required />
-            <InputField id="makeYear" label="Make year" type="number" placeholder="e.g., 2022" required />
-            <InputField id="vehicleColor" label="Vehicle Color" placeholder="e.g., Pearl White" required />
-            <InputField id="kmDriven" label="KM driven" type="number" placeholder="e.g., 15000" required />
-            <InputField id="expectedValuation" label="Expected Valuation amount (in NPR)" type="text" placeholder="e.g., 4,500,000" required />
+           <InputField id="vehicleModel" label="Vehicle Model" placeholder="e.g., Maruti Suzuki Alto 800" required />
+{/* <InputField id="vehicleType" label="Vehicle Type" placeholder="e.g., Hatchback, SUV" required /> */}
+ <SelectField
+              id="vehicleType"
+              label="Vehicle Type"
+              options={carTypesOptions}
+              placeholder="Select your vehicle type"
+              required
+            />
+<InputField id="makeYear" label="Make year"  placeholder="e.g., 2078 (2021)" required />
+<InputField id="vehicleColor" label="Vehicle Color" placeholder="e.g., Metallic Silver" required />
+<InputField id="kmDriven" label="KM driven"  placeholder="e.g., 35,000" required />
+<InputField id="expectedValuation" label="Expected Valuation amount (in NPR)" type="text" placeholder="e.g., NPR 12,50,000" required />
 
             <RadioGroup
               label="Features:"
@@ -153,7 +167,17 @@ const VehicleValuationForm = () => {
                 { value: 'unknown', label: "I don't know" },
               ]}
             />
-
+            <RadioGroup
+              label="Fuel Type:"
+              name="fuelType"
+              options={[
+                { value: 'petrol', label: 'Petrol' },
+                { value: 'diesel', label: 'Diesel' },
+                { value: 'electric', label: 'Electric' },
+                { value: 'hybrid', label: 'Hybrid' },
+              ]}
+            />
+{/* 
             <div className="flex items-center gap-4">
               <label htmlFor="fuel" className="text-base font-semibold text-gray-700">Fuel type:</label>
               <select
@@ -167,7 +191,7 @@ const VehicleValuationForm = () => {
                 <option value="electric">Electric</option>
                 <option value="hybrid">Hybrid</option>
               </select>
-            </div>
+            </div> */}
             <hr className="my-2 md:col-span-2" />
 
             <RadioGroup
@@ -208,13 +232,20 @@ const VehicleValuationForm = () => {
             <h2 className="text-xl font-semibold text-gray-800 md:col-span-2 mt-4">3. New Vehicle Details</h2>
             <InputField id="newVehicleBrand" label="Vehicle Brand" placeholder="Leave empty if not applicable" />
             <InputField id="newVehicleModel" label="Vehicle Model" placeholder="Leave empty if not applicable" />
-            <div className="md:col-span-2">
+            {/* <div className="md:col-span-2">
               <label className="block text-sm font-medium text-gray-700 mb-1">Price Range</label>
               <div className="flex flex-col md:flex-row gap-4">
                 <input placeholder="Minimum Price" className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" type="number" />
                 <input placeholder="Maximum Price" className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" type="number" />
               </div>
-            </div>
+            </div> */}
+            <SelectField
+              id="newVehiclePriceRange"
+              label="Price Range"
+              options={priceRangeOptions}
+              placeholder="Select price range"
+            />
+            <InputField id="downpayment" label="Downpayment amount" type="number" placeholder="NPR" />
 
             <RadioGroup
               label="Looking to Finance?:"
@@ -224,7 +255,6 @@ const VehicleValuationForm = () => {
                 { value: 'no', label: 'No' },
               ]}
             />
-            <InputField id="downpayment" label="Downpayment amount" type="number" placeholder="If financing, enter amount" />
             <div className="md:col-span-2">
               <label htmlFor="additionalInfo" className="block text-sm font-medium text-gray-700 mb-1">Additional Information</label>
               <textarea id="additionalInfo" placeholder="Any other requirements or details..." className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" rows={3}></textarea>
