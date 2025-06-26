@@ -32,7 +32,7 @@ const Footer:React.FC = () => {
                <ScrollToTop />
             </div>
             <div >
-                <label htmlFor="email" className='text-md pb-2'>Email Address</label>
+                <label htmlFor="email" className='text-md pb-2 block'>Email Address</label>
                 <div className=' w-full rounded-md border border-black md:w-[40%]  overflow-hidden  flex items-center'>
                     <input id='email' type="text" className='border-none py-2 px-2 flex-1 focus:outline-none ' />
                     <button className='bg-[#1B72EB] px-3 py-3 text-white text-sm cursor-pointer'>Sign Up</button>
@@ -54,20 +54,20 @@ const Footer:React.FC = () => {
                 <div className='flex flex-col item-center justify-start gap-2'>
                     <h1 className='font-extralight text-sm'>Download the Nepal Motor App</h1>
                     <div className='flex items-center justify-center gap-2'>
-                        <div className='flex items-center justify-center bg-black text-white gap-2 p-2 rounded-md'>
+                        <Link href={'/#'} className='flex items-center justify-center bg-black text-white gap-2 p-2 rounded-md'>
                             <Image width={24} height={24} src={'/footerImage/apple.png'} alt={'apple logo'} />
                             <div className='flex flex-col justify-start item-center '>
                                 <h6 className='text-sm'>Downlaod the app</h6>
                                  <h1 className='font-bold text-md'>App Store</h1>
                             </div>
-                        </div>
-                        <div className='flex items-center justify-center bg-black text-white gap-2 p-2 rounded-md'>
+                        </Link>
+                        <Link href={'/#'} className='flex items-center justify-center bg-black text-white gap-2 p-2 rounded-md'>
                             <Image width={24} height={24} src={'/footerImage/playstore.png'} alt={'google logo'} />
                             <div className='flex flex-col justify-start item-center '>
                                 <h6 className='text-sm'>Get it on</h6>
                                  <h1 className='font-bold text-md'>Play Store</h1>
                             </div>
-                        </div>
+                        </Link>
                     </div>
 
                 </div>

@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 import LogoScroller from './LogoScroller';
+import Link from 'next/link';
 
 const carImageSrc = "/images/car-image.png"; 
 
@@ -12,7 +13,7 @@ const FeaturedContent: React.FC = () => {
       {/* Featured In Section */}
       <section className="mb-12 md:mb-16 text-center">
         <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-8">
-          Featured in
+          Featured In
         </h2>
         <div className="flex justify-center items-center px-4">
           {/* Single image for all logos */}
@@ -32,27 +33,27 @@ const FeaturedContent: React.FC = () => {
         <div className="flex flex-col lg:flex-row">
           {/* Left Content Area */}
           <div className="p-6 sm:p-8 md:p-10 lg:p-12 lg:w-1/2 flex flex-col justify-center">
-            <p className="text-sm text-gray-500 mb-1">Cars.com news</p>
+            <p className="text-sm text-gray-500 mb-1">Nepal Motor News</p>
             <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
-              Auto tariffs explained
+              Auto Tariffs Explained
             </h3>
             <p className="text-gray-700 mb-6 text-base md:text-lg">
               How will automotive tariffs affect your next car purchase?
               Our experts explain everything you need to know.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-              <button
-                type="button"
+              <Link
+                href={'/readMore'}
                 className="px-6 py-3 border cursor-pointer border-black text-black font-semibold rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black transition-colors duration-150 ease-in-out w-full sm:w-auto"
               >
-                See all tariff news
-              </button>
-              <button
-                type="button"
+                Read More
+              </Link>
+              <Link
+                href="/exchange"
                 className="px-6 py-3 cursor-pointer bg-black text-white font-semibold rounded-md hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 transition-colors duration-150 ease-in-out w-full sm:w-auto"
               >
-                Shop American-made cars
-              </button>
+                Exchange To Ev
+              </Link>
             </div>
           </div>
 

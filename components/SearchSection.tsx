@@ -7,8 +7,8 @@ import CarSearchDisplay from './CarSearchDisplay';
 const SearchSection = () => {
     const [tab,setTab]=useState<"model"| "type">("model");
   return (
-    <div className='w-full max-w-screen-2xl mx-auto px-2 py-10 md:px-6 lg:px-8'>
-        <h1 className='text-2xl font-bold mb-4'>Research Cars</h1>
+    <div className='w-full max-w-screen-2xl mx-auto px-2  md:px-6 lg:px-8'>
+        <h1 className='text-2xl text-center md:text-3xl font-bold mb-4'>Find Cars</h1>
         
 
         {/* tabs  */}

@@ -129,9 +129,9 @@ const CarResearchForm = () => {
       <button
         type="submit"
         // The background color #93a478 is taken from the image
-        className="bg-[#93a478] p-4 text-center font-bold text-black transition-colors hover:bg-opacity-90 md:px-10"
+        className="bg-[#93a478] cursor-pointer p-4 text-center font-bold text-black transition-colors hover:bg-opacity-90 md:px-10"
       >
-        Research
+        Search
       </button>
     </div>
   );

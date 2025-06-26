@@ -58,10 +58,12 @@ const [viewAll,setViewAll]=useState<boolean>(false);
 const handleTabClick=(tab:CarTabs)=>{
     setActiveTab(tab)
     setViewAll(false);
+
 }
+// text-[#535353]
   return (
-    <div className="w-full max-w-screen-2xl mx-auto px-2 md:px-6 lg:px-8 py-10  ">
-      <h4 className="text-left mb-5 text-[20px] font-semibold text-[#535353]">The most searched cars</h4>
+    <div className="w-full max-w-screen-2xl mx-auto px-2 md:px-6 lg:px-8 py-8 ">
+      <h4 className="text-2xl text-center md:text-3xl mb-5 font-semibold py-5  text-black">Best Seller Cars</h4>
         <div className="flex w-full justify-center md:justify-around gap-6 border-b">
             {/* tab buttons */}
             {tabs.map((tab)=>(

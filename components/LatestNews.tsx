@@ -22,9 +22,9 @@ const news = [
 
 const LatestNews = () => {
   return (
-    <div className="w-full max-w-screen-2xl mx-auto px-2 md:px-6 py-5 lg:px-8">
-      <h2 className="text-2xl md:text-3xl font-bold mb-6 text-black">
-        Latest Car News From Our Experts
+    <div className="w-full max-w-screen-2xl mx-auto px-2 md:px-6 lg:px-8">
+      <h2 className="text-2xl text-center md:text-3xl font-bold mb-10 text-black">
+        Latest Updates
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {/* Left big news image */}

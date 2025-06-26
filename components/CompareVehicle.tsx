@@ -47,8 +47,8 @@ const vehicles:Vehicles = [
 const CompareVehicle = () => {
 	return (
 		<section className="w-full pb-10">
-			<h2 className="text-xl md:text-2xl font-bold mb-6">
-				Compare popular vehicles
+			<h2 className="text-xl md:text-2xl text-center font-bold mb-6">
+				New Arrivals
 			</h2>
 			<div className="flex flex-wrap gap-6 justify-center ">
 				{vehicles.map((v) => (
