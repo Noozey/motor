@@ -28,17 +28,17 @@ const FeaturedContent: React.FC = () => {
         </div>
       </section>
 
-      {/* Auto Tariffs Card Section */}
+      {/* Car Price in Nepal Section */}
       <section className="bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden">
         <div className="flex flex-col lg:flex-row">
           {/* Left Content Area */}
           <div className="p-6 sm:p-8 md:p-10 lg:p-12 lg:w-1/2 flex flex-col justify-center">
             <p className="text-sm text-gray-500 mb-1">Nepal Motor News</p>
             <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
-              Auto Tariffs Explained
+              Car Prices in Nepal
             </h3>
             <p className="text-gray-700 mb-6 text-base md:text-lg">
-              How will automotive tariffs affect your next car purchase?
+              How will car prices in Nepal affect your next purchase?
               Our experts explain everything you need to know.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">

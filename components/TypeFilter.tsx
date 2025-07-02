@@ -30,8 +30,7 @@ const TypeFilter = () => {
     const tabs:carTypes[]=[carTypes.suv, carTypes.hatch, carTypes.sedan, carTypes.van, carTypes.coupe, carTypes.wagon, carTypes.peopleMover]
 
     const carTypeData:CarTypeData= {
-      // Define the type for clarity and type-safety
-SUV :[
+      SUV :[
   {
     imageUrl: '/carTypeImage/hyundai-creta.png',
     year: 2022,
@@ -40,7 +39,7 @@ SUV :[
     variant: 'SX (O)',
     mileage: 35000,
     transmission: 'Automatic',
-    price: 4850000, // 48.5 Lakhs NPR
+    price: 4850000, 
   },
   {
     imageUrl: '/carTypeImage/mahindra-xuv700.png',
@@ -50,7 +49,7 @@ SUV :[
     variant: 'Z8 L 4WD',
     mileage: 18500,
     transmission: 'Automatic',
-    price: 11500000, // 1.15 Crore NPR
+    price: 11500000, 
   },
   {
     imageUrl: '/carTypeImage/suzuki-brezza.png',
@@ -60,7 +59,7 @@ SUV :[
     variant: 'ZXi+ AT',
     mileage: 15200,
     transmission: 'Automatic',
-    price: 4400000, // 44 Lakhs NPR
+    price: 4400000, 
   },
   {
     imageUrl: '/carTypeImage/tata-nexon-ev.png',
@@ -70,17 +69,17 @@ SUV :[
     variant: 'XZ+ Lux (Prime)',
     mileage: 29800,
     transmission: 'Automatic',
-    price: 3750000, // 37.5 Lakhs NPR
+    price: 3750000, 
   },
   {
-    imageUrl: '/carTypeImage/ford-endeavour.png', // Using the popular South Asian name
+    imageUrl: '/carTypeImage/ford-endeavour.png', 
     year: 2020,
     make: 'Ford',
     model: 'Endeavour',
     variant: 'Titanium+ 4x4',
     mileage: 62500,
     transmission: 'Automatic',
-    price: 9500000, // 95 Lakhs NPR
+    price: 9500000, 
   },
   
   {
@@ -91,7 +90,7 @@ SUV :[
     variant: 'SX (O)',
     mileage: 35000,
     transmission: 'Automatic',
-    price: 4850000, // 48.5 Lakhs NPR
+    price: 4850000, 
   },
   {
     imageUrl: '/carTypeImage/mahindra-xuv700.png',
@@ -101,7 +100,7 @@ SUV :[
     variant: 'Z8 L 4WD',
     mileage: 18500,
     transmission: 'Automatic',
-    price: 11500000, // 1.15 Crore NPR
+    price: 11500000, 
   },
   {
     imageUrl: '/carTypeImage/suzuki-brezza.png',
@@ -111,7 +110,7 @@ SUV :[
     variant: 'ZXi+ AT',
     mileage: 15200,
     transmission: 'Automatic',
-    price: 4400000, // 44 Lakhs NPR
+    price: 4400000, 
   },
   {
     imageUrl: '/carTypeImage/tata-nexon-ev.png',
@@ -121,9 +120,9 @@ SUV :[
     variant: 'XZ+ Lux (Prime)',
     mileage: 29800,
     transmission: 'Automatic',
-    price: 3750000, // 37.5 Lakhs NPR
+    price: 3750000, 
   },
-],
+    ],
       Ute:[ {
     imageUrl: '/cars/toyota-hilux-ute.png',
     year: 2021,
@@ -425,7 +424,6 @@ SUV :[
     const [activeTab,setActiveTab]=useState<carTypes>(carTypes.suv)
 
     const handleTabClick=(tab:carTypes)=>{
-      console.log("clicked",tab)
         setActiveTab(tab)
     }
   return (
@@ -456,9 +454,6 @@ SUV :[
   ))}
 </select>
         </div>
-   
-
-
         {/* corousal part now */}
         <div className="mt-4 p-4 ">
                 <TypeCarCarousel cars={carTypeData[activeTab]}/>

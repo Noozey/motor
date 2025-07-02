@@ -103,12 +103,11 @@ type CarDetails = {
   make: string;
   model: string;
   variant: string;
-  mileage: number; // in Kilometers (km)
+  mileage: number; 
   transmission: 'Automatic' | 'Manual';
-  price: number; // in Nepalese Rupees (NPR)
+  price: number; 
 };
 
-// This would be your ResponseResult type
 type ResponseResult = CarDetails[];
 
 const responseResult: ResponseResult = [
@@ -120,7 +119,7 @@ const responseResult: ResponseResult = [
     variant: 'ZXI+',
     mileage: 42500,
     transmission: 'Manual',
-    price: 2650000, // 26.5 Lakhs NPR
+    price: 2650000, 
   },
   {
     imageUrl: '/carTypeImage/hyundai-i22.png',
@@ -130,7 +129,7 @@ const responseResult: ResponseResult = [
     variant: 'Asta (O)',
     mileage: 28150,
     transmission: 'Automatic',
-    price: 3490000, // 34.9 Lakhs NPR
+    price: 3490000, 
   },
   {
     imageUrl: '/carTypeImage/tata-nexon-ev.png',
@@ -140,7 +139,7 @@ const responseResult: ResponseResult = [
     variant: 'XZ+ Lux (Prime)',
     mileage: 21800,
     transmission: 'Automatic',
-    price: 3875000, // 38.75 Lakhs NPR
+    price: 3875000, 
   },
   {
     imageUrl: '/carTypeImage/suzuki-brezza.png',
@@ -150,7 +149,7 @@ const responseResult: ResponseResult = [
     variant: 'VXi Smart Hybrid',
     mileage: 14600,
     transmission: 'Automatic',
-    price: 4150000, // 41.5 Lakhs NPR
+    price: 4150000, 
   },
   {
     imageUrl: '/carTypeImage/hyundai-creta.png',
@@ -160,7 +159,7 @@ const responseResult: ResponseResult = [
     variant: 'SX (O)',
     mileage: 35940,
     transmission: 'Automatic',
-    price: 4590000, // 45.9 Lakhs NPR
+    price: 4590000, 
   },
   {
     imageUrl: '/carTypeImage/kia-seltos.png',
@@ -170,7 +169,7 @@ const responseResult: ResponseResult = [
     variant: 'HTX+',
     mileage: 31200,
     transmission: 'Automatic',
-    price: 4850000, // 48.5 Lakhs NPR
+    price: 4850000, 
   },
   {
     imageUrl: '/carTypeImage/byd-atto-3.png',
@@ -180,7 +179,7 @@ const responseResult: ResponseResult = [
     variant: 'Superior',
     mileage: 11500,
     transmission: 'Automatic',
-    price: 5500000, // 55 Lakhs NPR
+    price: 5500000, 
   },
   {
     imageUrl: '/carTypeImage/mahindra-xuv700.png',
@@ -190,7 +189,7 @@ const responseResult: ResponseResult = [
     variant: 'AX7 L (AWD)',
     mileage: 29800,
     transmission: 'Automatic',
-    price: 7900000, // 79 Lakhs NPR
+    price: 7900000, 
   },
 ];
 
@@ -199,7 +198,6 @@ const responseResult: ResponseResult = [
   const nextRef = useRef(null);
   const [swiperReady, setSwiperReady] = useState(false);
 
-  // Delay rendering swiper until refs are ready
   useEffect(() => {
     setSwiperReady(true);
   }, []);

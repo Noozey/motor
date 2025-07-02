@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 
-// You can create a new file like `CarResearchForm.tsx` and paste this code.
 const CarResearchForm = () => {
-  // Dummy data for the dropdowns. You can replace this with your actual data.
   const makes = ['Sabaru', 'Toyota', 'Honda', 'Ford', 'BMW'];
   const modelsByMake: { [key: string]: string[] } = {
     Sabaru: ['Forester Hybrid', 'Crosstrek', 'Outback', 'Impreza'],
@@ -38,7 +36,6 @@ const CarResearchForm = () => {
 
   return (
     // Main container for the form
-    // Handles the overall layout, border, and responsive behavior
     <div
       className="flex w-full flex-col overflow-hidden rounded-lg border border-gray-300 bg-white
                  md:flex-row"
@@ -128,7 +125,6 @@ const CarResearchForm = () => {
       {/* --- Research Button --- */}
       <button
         type="submit"
-        // The background color #93a478 is taken from the image
         className="bg-[#93a478] cursor-pointer p-4 text-center font-bold text-black transition-colors hover:bg-opacity-90 md:px-10"
       >
         Search

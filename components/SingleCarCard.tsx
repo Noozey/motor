@@ -65,7 +65,6 @@ const SingleCarCard = ({car}: CarCardProps) => {
   price,}=car
     
   return (
-    // Main container for the card with hover effects
     <div className="group flex w-full max-w-sm flex-col overflow-hidden rounded-xl bg-white p-4 shadow-sm transition-shadow duration-300 hover:shadow-lg">
       
       {/* Car Image Section */}
@@ -74,7 +73,7 @@ const SingleCarCard = ({car}: CarCardProps) => {
           src={imageUrl}
           alt={`${year} ${make} ${model}`}
           layout="fill"
-          objectFit="contain" // Ensures the whole car is visible without distortion
+          objectFit="contain" 
         />
       </div>
 
@@ -84,7 +83,7 @@ const SingleCarCard = ({car}: CarCardProps) => {
           {/* Title and Favorite Icon */}
           <div className="flex items-start justify-between">
             <div>
-              <h3 className="text-sm font-bold uppercase tracking-wider text-gray-800">
+              <h3 className="text-sm font-bold line-clamp-1 uppercase tracking-wider text-gray-800">
                 {year} {make} {model}
               </h3>
               <p className="text-xs uppercase text-gray-500">{variant}</p>

@@ -1,14 +1,12 @@
 import AdBanner from '@/components/AdBanner';
 import CartTabs from '@/components/CartTabs';
-import CompareVehicle from '@/components/CompareVehicle';
 import FeaturedContent from '@/components/FeaturedContent';
 import HeroSection from '@/components/HeroSection';
 import LatestNews from '@/components/LatestNews';
-import LogoScroller from '@/components/LogoScroller';
 import SearchSection from '@/components/SearchSection';
-import Image from 'next/image';
 import React from 'react';
 import { JSX } from 'react';
+import NewArrivalCars from '@/components/NewArrivalCars';
 
 type Car = {
   name: string;
@@ -33,7 +31,7 @@ export default function CarShowcase(): JSX.Element {
       {/* car research and type search */}
       <SearchSection />
         {/* Car Compare */}
-        <CompareVehicle />
+        <NewArrivalCars />
         {/* sponsored Section */}
         <AdBanner/>
       {/* featured Section */}

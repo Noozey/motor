@@ -20,9 +20,11 @@ const Header = () => {
   }, []);
   
   return (
-    <header className={`max-w-screen-2xl mx-auto w-full py-4 bg-gradient-to-r from-gray-700 to-gray-900 lg:bg-[#626568] flex items-center justify-between px-4 md:px-6 lg:px-16 sticky top-0 z-50 backdrop-blur-md transition-opacity duration-300 ${
+    <header className='w-full bg-gradient-to-r from-gray-700 to-gray-900 sticky top-0 z-50 lg:bg-[#626568] '>
+    <div className={`max-w-screen-2xl mx-auto w-full py-4  flex items-center justify-between px-4 md:px-6 lg:px-16  backdrop-blur-md transition-opacity duration-300 ${
         isScrolled ? 'opacity-90' : 'opacity-100'
       }`}>
+        {/* <div className='max-w-screen-2xl mx-auto w-full sm:px-4'></div> */}
       {/* Hamburger Menu (Mobile) */}
       <button
         className="md:hidden flex items-center mr-2 focus:outline-none"
@@ -41,8 +43,8 @@ const Header = () => {
       </Link>
 
       {/* Desktop Navigation */}
-      <div className="hidden md:flex items-center space-x-3 sm:space-x-4 md:space-x-6">
-        <nav className="flex items-center space-x-2 sm:space-x-3 md:space-x-4">
+      <div className="hidden md:flex items-center space-x-3 sm:space-x-4 md:space-x-9">
+        <nav className="flex items-center space-x-2 sm:space-x-3 md:space-x-6">
           <Link href="/" className="text-white hover:text-gray-300 text-sm md:text-base font-semibold transition-colors">
             Home
           </Link>
@@ -55,6 +57,9 @@ const Header = () => {
           <Link href="/rent" className="text-white hover:text-gray-300 text-sm md:text-base font-semibold transition-colors">
             Rent
           </Link>
+          <Link href="/about" className="text-white hover:text-gray-300 text-sm md:text-base font-semibold transition-colors">
+            About Us
+          </Link>
         </nav>
         <Link
           href="/exchange"
@@ -66,6 +71,7 @@ const Header = () => {
 
       {/* Mobile Menu */}
       <SideMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+    </div>
     </header>
   );
 };

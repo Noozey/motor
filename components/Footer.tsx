@@ -50,25 +50,31 @@ const Footer:React.FC = () => {
                         {socialMediaIcons.map((socialIcon)=><Image key={socialIcon.label} height={24} width={24} src={socialIcon.src} alt={socialIcon.label}/>)}
                     </div>  
                 </div >
-                {/* download the app part */}
                 <div className='flex flex-col item-center justify-start gap-2'>
                     <h1 className='font-extralight text-sm'>Download the Nepal Motor App</h1>
-                    <div className='flex items-center justify-center gap-2'>
-                        <Link href={'/#'} className='flex items-center justify-center bg-black text-white gap-2 p-2 rounded-md'>
-                            <Image width={24} height={24} src={'/footerImage/apple.png'} alt={'apple logo'} />
-                            <div className='flex flex-col justify-start item-center '>
-                                <h6 className='text-sm'>Downlaod the app</h6>
-                                 <h1 className='font-bold text-md'>App Store</h1>
-                            </div>
-                        </Link>
-                        <Link href={'/#'} className='flex items-center justify-center bg-black text-white gap-2 p-2 rounded-md'>
-                            <Image width={24} height={24} src={'/footerImage/playstore.png'} alt={'google logo'} />
-                            <div className='flex flex-col justify-start item-center '>
-                                <h6 className='text-sm'>Get it on</h6>
-                                 <h1 className='font-bold text-md'>Play Store</h1>
-                            </div>
-                        </Link>
-                    </div>
+                    
+                    <div className='flex flex-col sm:flex-row items-center justify-center gap-4'>
+            <Link href={'/#'} aria-label="Download on the App Store">
+    <Image
+      src={'/footerImage/apple.png'} 
+      width={160} 
+      height={54}  
+      alt={'Download on the App Store'}
+      className="h-12 w-auto" 
+    />
+  </Link>
+
+  <Link href={'/#'} aria-label="Get it on Google Play">
+    <Image
+      src={'/footerImage/google.png'}
+      width={180}
+      height={54}
+      alt={'Get it on Google Play'}
+      className="h-12 w-auto" 
+    />
+  </Link>
+</div>
+
 
                 </div>
             </div>

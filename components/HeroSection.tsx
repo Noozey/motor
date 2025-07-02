@@ -1,36 +1,37 @@
 import React from 'react';
 import Image from 'next/image';
 
-const imageUrl = '/hero-car-image2.jpg'; // Assuming this is the correct path in your /public folder
+const imageUrl = '/hero-car-image2.jpg'; 
 
-// The car identified is a BMW X5 xDrive40e (F15)
 const HeroSection = () => {
   return (
-    <section className="relative w-full h-screen font-sans">
+    <section className="relative w-full h-[90vh] font-sans">
       {/* Background Image */}
       <Image
         src={imageUrl}
         alt="Side view of a modern silver SUV"
         layout="fill"
         objectFit="cover"
+        objectPosition="left"
         quality={100}
         priority 
-        className="-z-10" 
+        className="-z-10"
       />
 
       {/* Dark Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent sm:from-black/50" />
 
       {/* Content Container */}
-      <div className="relative z-10 flex flex-col justify-end h-full p-6 text-white sm:p-8 md:p-12">
+      <div className="relative z-10 flex flex-col justify-end h-full px-4 pb-10 pt-16 text-white sm:p-8 md:p-12">
         <div className="w-full max-w-7xl mx-auto">
+          
           {/* Stats Section */}
-          <div className="flex flex-col items-center gap-6 mb-6 sm:flex-row sm:justify-center lg:justify-end sm:gap-4 md:gap-8">
+          <div className="flex flex-col items-center gap-8 mb-10 sm:flex-row sm:justify-center lg:justify-end sm:gap-4 md:gap-8">
             
             {/* Stat 1: Motor Power */}
             <div className="text-center">
-              <h3 className="text-3xl font-bold md:text-4xl lg:text-5xl">83 kW</h3>
-              <p className="mt-1 text-xs text-gray-200 md:text-sm">
+              <h3 className="text-2xl font-bold sm:text-3xl md:text-4xl lg:text-5xl">83 kW</h3>
+              <p className="mt-1 text-[10px] sm:text-xs text-gray-200 md:text-sm leading-tight">
                 Maximum
                 <br />
                 Motor Power
@@ -39,8 +40,8 @@ const HeroSection = () => {
 
             {/* Stat 2: Range */}
             <div className="text-center sm:border-l sm:border-white/40 sm:pl-4 md:pl-8">
-              <h3 className="text-3xl font-bold md:text-4xl lg:text-5xl">31 KM</h3>
-              <p className="mt-1 text-xs text-gray-200 md:text-sm">
+              <h3 className="text-2xl font-bold sm:text-3xl md:text-4xl lg:text-5xl">31 KM</h3>
+              <p className="mt-1 text-[10px] sm:text-xs text-gray-200 md:text-sm leading-tight">
                 Run Maximum Distance
                 <br />
                 Per Charge/Per Time
@@ -49,8 +50,8 @@ const HeroSection = () => {
             
             {/* Stat 3: Ground Clearance */}
             <div className="text-center sm:border-l sm:border-white/40 sm:pl-4 md:pl-8">
-              <h3 className="text-3xl font-bold md:text-4xl lg:text-5xl">209 mm</h3>
-              <p className="mt-1 text-xs text-gray-200 md:text-sm">
+              <h3 className="text-2xl font-bold sm:text-3xl md:text-4xl lg:text-5xl">209 mm</h3>
+              <p className="mt-1 text-[10px] sm:text-xs text-gray-200 md:text-sm leading-tight">
                 Ground Clearance
               </p>
             </div>
@@ -58,7 +59,7 @@ const HeroSection = () => {
           </div>
 
           {/* Disclaimer */}
-          <p className="w-full text-xs text-center text-gray-400">
+          <p className="w-full text-[10px] sm:text-xs text-center text-gray-400">
             The product featured is for reference only, and the appearance, colour, features and configuration may differ from the final delivered product. Please refer to the actual product for details.
           </p>
         </div>
@@ -68,5 +69,6 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+
 
 // BMW X5 xDrive40e 

@@ -1,4 +1,3 @@
-// components/HyundaiAdBanner.tsx
 
 import Image from 'next/image';
 import React from 'react';
@@ -16,7 +15,7 @@ const AdBanner = () => {
                 alt="A teal Hyundai Kona Electric car"
                 width={500}
                 height={281}
-                priority // Preload this image as it's likely above the fold
+                priority
                 className="object-contain"
               />
             </div>

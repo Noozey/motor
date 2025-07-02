@@ -1,6 +1,5 @@
 import React from 'react';
 
-// --- Reusable InputField Component ---
 interface InputFieldProps {
   id: string;
   label: string;
@@ -25,7 +24,6 @@ const InputField: React.FC<InputFieldProps> = ({ id, label, placeholder, type = 
   </div>
 );
 
-// --- NEW: Reusable SelectField (Dropdown) Component ---
 interface SelectFieldProps {
   id: string;
   label: string;
@@ -43,7 +41,7 @@ const SelectField: React.FC<SelectFieldProps> = ({ id, label, options, required 
       id={id}
       name={id}
       required={required}
-      defaultValue="" // Important for placeholder to work with 'required'
+      defaultValue="" 
       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
     >
       {placeholder && <option value="" disabled>{placeholder}</option>}
@@ -57,7 +55,6 @@ const SelectField: React.FC<SelectFieldProps> = ({ id, label, options, required 
 );
 
 
-// --- Reusable RadioGroup Component ---
 interface RadioGroupProps {
   label: string;
   name: string;
