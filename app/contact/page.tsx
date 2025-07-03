@@ -3,7 +3,7 @@ import { Phone, Mail, MapPin } from 'lucide-react';
 
 const ContactUs = () => {
   return (
-    <div className="bg-gray-50 font-sans">
+    <div className="bg-gray-50 font-sans w-full max-w-screen-2xl mx-auto ">
       {/* Hero Section with Background Image */}
       <div 
         className="relative bg-cover  bg-center h-72 md:h-96" 
