@@ -1,18 +1,20 @@
-
 import React from 'react';
 import Image from 'next/image';
 import { Clock, UserCircle, Calendar } from 'lucide-react';
-import LatestUsedCar from '@/components/blogsComponents/LatestUsedCar';
 import BlogLayout from '@/components/blogsComponents/BlogLayout';
 
 // --- Mock Data for the Sidebar ---
+// import { useRouter } from 'next/router'
 
 
 
-
-const BlogArticlePage =async ({params}:{params:string}) => {
-    const blogId= params;
-    console.log(blogId)
+const BlogArticlePage = async ({params}:{params:Promise<{blogid:string}>}) => {
+  console.log(params)
+  const {blogid}= await params
+  console.log(blogid)
+    // const router = useRouter();
+    // const { blogid } = router.query;
+    // console.log(blogid)
   return (
     // <div className="bg-gray-50 py-12 sm:py-16">
     //   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

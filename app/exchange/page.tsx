@@ -1,6 +1,6 @@
 import React from 'react';
 
-export interface InputFieldProps {
+interface InputFieldProps {
   id: string;
   label: string;
   placeholder?: string;
@@ -8,7 +8,7 @@ export interface InputFieldProps {
   required?: boolean;
 }
 
-export const InputField: React.FC<InputFieldProps> = ({ id, label, placeholder, type = 'text', required = false }) => (
+ const InputField: React.FC<InputFieldProps> = ({ id, label, placeholder, type = 'text', required = false }) => (
   <div>
     <label htmlFor={id} className="block text-sm font-medium text-gray-700 mb-1">
       {label}
@@ -24,7 +24,7 @@ export const InputField: React.FC<InputFieldProps> = ({ id, label, placeholder, 
   </div>
 );
 
-export interface SelectFieldProps {
+interface SelectFieldProps {
   id: string;
   label: string;
   options: { value: string; label:string }[];
@@ -32,7 +32,7 @@ export interface SelectFieldProps {
   placeholder?: string;
 }
 
-export const SelectField: React.FC<SelectFieldProps> = ({ id, label, options, required = false, placeholder }) => (
+const SelectField: React.FC<SelectFieldProps> = ({ id, label, options, required = false, placeholder }) => (
   <div>
     <label htmlFor={id} className="block text-sm font-medium text-gray-700 mb-1">
       {label}
@@ -55,13 +55,13 @@ export const SelectField: React.FC<SelectFieldProps> = ({ id, label, options, re
 );
 
 
-export interface RadioGroupProps {
+ interface RadioGroupProps {
   label: string;
   name: string;
   options: { value: string; label: string }[];
 }
 
-export const RadioGroup: React.FC<RadioGroupProps> = ({ label, name, options }) => (
+ const RadioGroup: React.FC<RadioGroupProps> = ({ label, name, options }) => (
   <div className="md:col-span-2 flex flex-col md:flex-row md:items-center">
     <label className="text-base font-semibold text-gray-700 md:w-1/3">{label}</label>
     <div className="flex flex-col md:flex-row md:flex-wrap md:w-2/3 mt-2 md:mt-0">
