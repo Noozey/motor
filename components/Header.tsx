@@ -20,10 +20,10 @@ const Header = () => {
   }, []);
   
   return (
-    <header className='w-full bg-gradient-to-r from-gray-700 to-gray-900 sticky top-0 z-50 lg:bg-[#626568] '>
-    <div className={`max-w-screen-2xl mx-auto w-full py-4  flex items-center justify-between px-4 md:px-6 lg:px-16  backdrop-blur-md transition-opacity duration-300 ${
-        isScrolled ? 'opacity-90' : 'opacity-100'
+    <header className={`w-full bg-gradient-to-r from-gray-700 to-gray-900 sticky top-0 z-50 lg:bg-[#626568]  backdrop-blur-md transition-opacity duration-300 ${
+        isScrolled ? 'opacity-85' : 'opacity-100'
       }`}>
+    <div className={`max-w-screen-2xl mx-auto w-full py-4  flex items-center justify-between px-4 md:px-6 lg:px-16 `}>
         {/* <div className='max-w-screen-2xl mx-auto w-full sm:px-4'></div> */}
       {/* Hamburger Menu (Mobile) */}
       <button

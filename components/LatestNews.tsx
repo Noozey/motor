@@ -1,21 +1,26 @@
 
 import Image from "next/image";
+import Link from "next/link";
 
 const nepalCarNews = [
   {
     image: "/news/byd-atto-4.jpg",
+    slug:"/blogs/atto3",
     title: "BYD Atto 3 EV Sees Price Drop in Nepal: What It Means for Buyers",
   },
   {
     image: "/news/Tata-Nexon-Headlift.jpg",
+    slug:"/blogs/tata-nexon",
     title: "Tata Nexon Facelift Launched: New Features & Pricing Details",
   },
   {
     image: "/news/Suzuki-Fronx.jpg",
+    slug:"/blogs/firstDrive",
     title: "First Drive: Is the new Suzuki Fronx the perfect city SUV for Kathmandu?",
   },
   {
     image: "/news/Vehicle-Tax-Revisions.jpg",
+    slug:"blogs/tax-revisions",
     title: "Understanding the Latest Vehicle Tax Revisions in Nepal for 2081/82",
   },
 ];
@@ -30,7 +35,7 @@ const LatestNews = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:items-start">
         
         {/* Left big news item */}
-        <div className="md:row-span-2 md:col-span-1">
+        <Link href={nepalCarNews[0].slug} className="md:row-span-2 md:col-span-1">
           {/* Image Container */}
           <div className="relative h-64 md:h-[30rem] w-full rounded-lg overflow-hidden bg-gray-200">
             <Image
@@ -49,14 +54,14 @@ const LatestNews = () => {
               {nepalCarNews[0].title}
             </h3>
           </div>
-        </div>
+        </Link>
 
         {/* Right side: two on top, one on bottom */}
         <div className="flex flex-col gap-8 md:col-span-2">
           {/* Top two small items */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
             {nepalCarNews.slice(1, 3).map((item, i) => (
-              <div key={i}>
+              <Link href={item.slug} key={i}>
                 {/* Image Container - Height increased and consistent */}
                 <div className="relative h-48 w-full rounded-lg overflow-hidden bg-gray-200">
                   <Image
@@ -74,11 +79,11 @@ const LatestNews = () => {
                     {item.title}
                   </h3>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
           {/* Bottom single item */}
-          <div>
+          <Link href={nepalCarNews[3].slug} >
             {/* Image Container - Height increased and consistent */}
             <div className="relative h-48 w-full rounded-lg overflow-hidden bg-gray-200">
               <Image
@@ -96,7 +101,7 @@ const LatestNews = () => {
                 {nepalCarNews[3].title}
               </h3>
             </div>
-          </div>
+          </Link >
         </div>
       </div>
     </div>
