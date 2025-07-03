@@ -1,5 +1,6 @@
 
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 const AdBanner = () => {
@@ -25,12 +26,12 @@ const AdBanner = () => {
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#1a202c]">
                 Hyundai Kona
               </h2>
-              <button
+              <Link href={'/testdrive'}
                 type="button"
                 className="mt-4 px-8 py-2.5 border border-gray-400 rounded-md text-base font-semibold cursor-pointer text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 transition-colors"
               >
                 Book a Test Drive
-              </button>
+              </Link>
             </div>
 
             {/* 3. Sponsor Info */}
