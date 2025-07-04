@@ -50,7 +50,7 @@ const LatestNews = () => {
           {/* Text content BELOW the image */}
           <div className="mt-4">
             {/* Type badge has been removed */}
-            <h3 className="text-xl font-bold text-gray-900">
+            <h3 className="text-base font-bold text-gray-900">
               {nepalCarNews[0].title}
             </h3>
           </div>
