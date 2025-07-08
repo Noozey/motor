@@ -73,7 +73,7 @@ const handleTabClick=(tab:CarTabs)=>{
             ))}
         </div>
         {/* carshow section */} 
-        <div className="mt-6 p-4 bg-[#F8F8F8]">
+        <div className="mt-6 p-4 ">
            { viewAll ? (<CarGrid cars={carData[activeTab]} />):(<CarCarousel cars={carData[activeTab]}/>)}
         </div>
         {!viewAll && <p onClick={()=>setViewAll(true)} className="text-left cursor-pointer text-gray-500 py-5">view all cars <ChevronRight className="inline" size={24} /></p>
