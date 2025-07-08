@@ -20,16 +20,16 @@ const vehicles:Vehicles = [
 		price: '56.99 lakhs Onwards',
 	},
 	{
-		label: 'Trucks',
+		label: 'Maxus eTerron 9',
 		img: '/compareVehicleImage/Maxus-eTerron-9.png',
 		href: '/compare/trucks',
-		price: '56.99 lakhs Onwards',
+		price: '70 lakhs Onwards',
 	},
 	{
-		label: 'Sedans',
+		label: 'Tata corv Ev',
 		img: '/compareVehicleImage/proton-eMas-7.png',
 		href: '/compare/sedans',
-		price: '56.99 lakhs Onwards',
+		price: '38 lakhs Onwards',
 	},
 	// {
 	// 	label: 'Coupes',
@@ -37,10 +37,10 @@ const vehicles:Vehicles = [
 	// 	href: '/compare/coupes',
 	// },
 	{
-		label: 'Hatchbacks',
+		label: 'Hyundai Kona',
 		img: '/compareVehicleImage/Tata-Curvv-EV.png',
 		href: '/compare/hatchbacks',
-		price:'56.99 lakhs Onwards'
+		price:'48 lakhs Onwards'
 	},
 	// {
 	// 	label: 'Convertibles',
@@ -51,8 +51,8 @@ const vehicles:Vehicles = [
 
 const NewArrivalCars = () => {
 	return (
-		<section className="w-full pb-10">
-			<h2 className="text-xl md:text-2xl text-center font-bold mb-6">
+		<section className="w-full pb-10  bg-gray-50">
+			<h2 className="text-xl md:text-2xl text-center font-bold mb-6 pt-5">
 				New Arrivals
 			</h2>
 			{/* <div className="flex flex-wrap gap-6 justify-center ">
@@ -79,7 +79,8 @@ const NewArrivalCars = () => {
 					</Link>
 				))}
 			</div> */}
-			<div className="flex flex-wrap gap-8 justify-center p-4 bg-gray-50">
+			<div className='w-full max-w-screen-2xl mx-auto px-2 md:px-6 lg:px-8'>
+			<div className="flex flex-wrap gap-8 justify-center p-4">
 	{vehicles.map((v) => (
 		<Link
 			key={v.label}
@@ -105,7 +106,8 @@ const NewArrivalCars = () => {
 			</div>
 		</Link>
 	))}
-</div>
+			</div>
+			</div>
 		</section>
 	);
 };

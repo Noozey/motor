@@ -26,7 +26,7 @@ export default function CarShowcase(): JSX.Element {
       {/* Hero Section */}
       <HeroSection />
 
-    <div className='w-full max-w-screen-2xl mx-auto px-2 md:px-6 lg:px-8 py-10'>
+    {/* <div className='w-full max-w-screen-2xl mx-auto px-2 md:px-6 lg:px-8 py-10'> */}
        
       {/* car research and type search */}
       <SearchSection />
@@ -41,6 +41,6 @@ export default function CarShowcase(): JSX.Element {
       {/* latest new section */}
       <LatestNews/>
     </div>
-    </div>
+    // </div>
   );
 }

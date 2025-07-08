@@ -9,7 +9,8 @@ const logosStripImageSrc = "/images/featured-logos-strip.png";
 
 const FeaturedContent: React.FC = () => {
   return (
-    <div className="w-full max-w-screen-2xl mx-auto px-2 md:px-6 lg:px-8 py-10 bg-gray-50"> {/* Optional: bg-gray-50 for contrast */}
+    <div className='w-full bg-gray-50'>
+    <div className="w-full max-w-screen-2xl mx-auto px-2 md:px-6 lg:px-8 py-10"> {/* Optional: bg-gray-50 for contrast */}
       {/* Featured In Section */}
       <section className="mb-12 md:mb-16 text-center">
         <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-8">
@@ -75,6 +76,7 @@ const FeaturedContent: React.FC = () => {
           </div>
         </div>
       </section>
+    </div>
     </div>
   );
 };
