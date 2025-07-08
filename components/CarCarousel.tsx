@@ -14,7 +14,6 @@ type carCarouselProps = {
 };
 
 const CarCarousel = ({ cars }: carCarouselProps) => {
-  console.log(cars)
   const prevRef = useRef(null);
   const nextRef = useRef(null);
   const [swiperReady, setSwiperReady] = useState(false);
