@@ -190,8 +190,8 @@ const CartTabs: React.FC = () => {
             key={tab}
             className={`pb-2 cursor-pointer  ${
               tab == activeTab
-                ? "border-b-2 border-gray-500 text-black font-semibold"
-                : "text-gray-500"
+                ? "border-b-2 border-gray-500 text-black font-semibold "
+                : "text-gray-500 hover:text-gray-700"
             }`}
             onClick={() => handleTabClick(tab)}
           >
