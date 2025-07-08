@@ -103,7 +103,7 @@ export const articles: Article[] = [
     readTime: '4 min read',
     slug: "tax-revisions",
     image: {
-      src: '/news/Vehicle-Tax-Revisions.jpg',
+      src: '/news/vehicle-tax-revision.jpg',
       alt: 'A person reviewing financial documents and tax forms with a calculator and a pen.',
     },
     body: `

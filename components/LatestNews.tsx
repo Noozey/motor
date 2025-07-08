@@ -19,7 +19,7 @@ const nepalCarNews = [
     title: "First Drive: Is the new Suzuki Fronx the perfect city SUV for Kathmandu?",
   },
   {
-    image: "/news/Vehicle-Tax-Revisions.jpg",
+    image: "/news/vehicle-tax-revision.jpg",
     slug:"blogs/tax-revisions",
     title: "Understanding the Latest Vehicle Tax Revisions in Nepal for 2081/82",
   },
