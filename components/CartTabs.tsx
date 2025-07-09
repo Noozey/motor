@@ -98,44 +98,44 @@ const CartTabs:React.FC = () => {
       {
         name: "Honda City",
         price: "₹11.82 - 16.30 Lakh*",
-        image: "carTabsImage/sedan/honda_city.png",
+        image: "carTabsImage/Sedan/honda_city.png",
       },
       {
         name: "Hyundai Verna",
         price: "₹11.00 - 17.42 Lakh*",
-        image: "carTabsImage/sedan/hyundai_verna.png",
+        image: "carTabsImage/Sedan/hyundai_verna.png",
       },
       {
         name: "Skoda Slavia",
         price: "₹11.63 - 19.12 Lakh*",
-        image: "carTabsImage/sedan/skoda_slavia.png",
+        image: "carTabsImage/Sedan/skoda_slavia.png",
       },
       {
         name: "Volkswagen Virtus",
         price: "₹11.56 - 19.15 Lakh*",
-        image: "carTabsImage/sedan/volkswagen_virtus.png",
+        image: "carTabsImage/Sedan/volkswagen_virtus.png",
       },
     ],
     MUV: [
       {
         name: "Maruti Ertiga",
         price: "₹8.69 - 13.03 Lakh*",
-        image: "carTabsImage/muv/maruti_ertiga.png",
+        image: "carTabsImage/MUV/maruti_ertiga.png",
       },
       {
         name: "Toyota Innova Crysta",
         price: "₹19.99 - 26.05 Lakh*",
-        image: "carTabsImage/muv/toyota_innova_crysta.png",
+        image: "carTabsImage/MUV/toyota_innova_crysta.png",
       },
       {
         name: "Renault Triber",
         price: "₹6.33 - 8.97 Lakh*",
-        image: "carTabsImage/muv/renault_triber.png",
+        image: "carTabsImage/MUV/renault_triber.png",
       },
       {
         name: "Kia Carens",
         price: "₹10.52 - 19.67 Lakh*",
-        image: "carTabsImage/muv/kia_carens.png",
+        image: "carTabsImage/MUV/kia_carens.png",
       },
     ],
     Luxury: [
