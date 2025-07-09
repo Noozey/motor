@@ -22,21 +22,53 @@ const CarCarousel = ({ cars }: carCarouselProps) => {
   useEffect(() => {
     setSwiperReady(true);
   }, []);
+  const buttonBaseClass =
+  "absolute z-10 top-1/3 w-12 h-12 flex items-center justify-center rounded-full cursor-pointer transition-all duration-300 ease-in-out";
+  
+  
   return (
     <div className="relative  py-8">
       <div
         ref={prevRef}
-        className="absolute z-10 -left-6 top-1/2  w-12 h-12 flex  items-center justify-center rounded-full bg-white shadow-lg border border-gray-300 text-black hover:bg-secondary hover:shadow-xl cursor-pointer transition transform hover:scale-110"
+        className="absolute z-10 -left-10 top-1/3  w-12 h-12 flex  items-center justify-center rounded-full bg-white shadow-lg border border-gray-300 text-black hover:bg-secondary hover:shadow-xl cursor-pointer transition transform hover:scale-110"
       >
         <ArrowLeft className="w-5 h-5 text-black" />
       </div>
 
       <div
         ref={nextRef}
-        className="absolute z-10 -right-6 top-1/2  w-12 h-12 flex items-center justify-center rounded-full bg-white shadow-lg border border-gray-300 text-black hover:bg-secondary hover:shadow-xl cursor-pointer transition transform hover:scale-110"
+        className="absolute z-10 -right-10 top-1/3  w-12 h-12 flex items-center justify-center rounded-full bg-white shadow-lg border border-gray-300 text-black hover:bg-secondary hover:shadow-xl cursor-pointer transition transform hover:scale-110"
       >
         <ArrowRight className="w-5 h-5 text-black" />
       </div>
+      {/* design on hover */}
+      {/* <div
+  ref={prevRef}
+  className={`
+    ${buttonBaseClass}
+    -left-10
+    // Style (subtle by default)
+    bg-gray-900/0 text-gray-900/50 
+    // Interaction (comes to life on hover)
+    hover:bg-gray-900/100 hover:text-white hover:shadow-xl hover:scale-110
+  `}
+>
+  <ArrowLeft className="w-5 h-5" />
+</div>
+
+<div
+  ref={nextRef}
+  className={`
+    ${buttonBaseClass}
+    -right-10
+    // Style (subtle by default)
+    bg-gray-900/0 text-gray-900/50
+    // Interaction (comes to life on hover)
+    hover:bg-gray-900/100 hover:text-white hover:shadow-xl hover:scale-110
+  `}
+>
+  <ArrowRight className="w-5 h-5" />
+</div> */}
 
       {swiperReady && (
         <Swiper
