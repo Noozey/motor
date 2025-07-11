@@ -142,22 +142,22 @@ const CartTabs:React.FC = () => {
       {
         name: "Mercedes-Benz S-Class",
         price: "₹1.71 - 2.17 Crore*",
-        image: "carTabsImage/luxury/mercedes_benz_s_class.png",
+        image: "carTabsImage/Luxury/mercedes_benz_s_class.png",
       },
       {
         name: "BMW 7 Series",
         price: "₹1.82 - 1.84 Crore*",
-        image: "carTabsImage/luxury/bmw_7_series.png",
+        image: "carTabsImage/Luxury/bmw_7_series.png",
       },
       {
         name: "Audi A8 L",
         price: "₹1.34 - 1.63 Crore*",
-        image: "carTabsImage/luxury/audi_a8_l.png",
+        image: "carTabsImage/Luxury/audi_a8_l.png",
       },
       {
         name: "Lexus LS",
         price: "₹1.96 - 2.27 Crore*",
-        image: "carTabsImage/luxury/lexus_ls.png",
+        image: "carTabsImage/Luxury/lexus_ls.png",
       },
     ],
 
