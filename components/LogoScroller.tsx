@@ -5,7 +5,7 @@ import 'swiper/css';
 
 const logosData = [
     { id: 1, src: '/scrollLogoImages/Bloomberg.png', alt: 'Dell' },
-    { id: 2, src: '/scrollLogoImages/businessLogo.png', alt: 'Asus' },
+    { id: 2, src: '/scrollLogoImages/businesslogo.png', alt: 'Asus' },
     { id: 3, src: '/scrollLogoImages/emrates.png', alt: 'JBL' },
     { id: 4, src: '/scrollLogoImages/forbes.png', alt: 'Apple' },
     { id: 5, src: '/scrollLogoImages/gulflogo.png', alt: 'Samsung' },
