@@ -4,24 +4,24 @@ import Link from "next/link";
 
 const teamMembers = [
   {
-    name: "Ashis Sharma",
-    role: "Founder & CEO",
-    imageUrl: "https://i.pravatar.cc/150?u=asha",
+    name: "Prakash Upreti",
+    role: "C.T.O",
+    imageUrl: "/teamImage/prakash_upreti.png",
   },
   {
-    name: "Rajan Shrestha",
-    role: "Chief Technology Officer",
-    imageUrl: "https://i.pravatar.cc/150?u=yamuna",
+    name: "Niranjan Sharma",
+    role: "Project Manager",
+    imageUrl: "/teamImage/niranjan_sharma.png",
   },
   {
-    name: "Bikash Thapa",
-    role: "Head of Dealer Relations",
-    imageUrl: "https://i.pravatar.cc/150?u=sunita",
+    name: "Rohan Upreti",
+    role: "Web Developer",
+    imageUrl: "/teamImage/rohan_upreti.png",
   },
   {
-    name: "Sunita Gurung",
-    role: "Head of Marketing",
-    imageUrl: "https://i.pravatar.cc/150?u=bikash",
+    name: "Prajwol Shrestha",
+    role: "Web Developer",
+    imageUrl: "/teamImage/prajwol_shrestha.png",
   },
 ];
 
@@ -70,7 +70,7 @@ const IconPlaceholder = ({ character }: { character: string }) => (
 
 export default function AboutPage() {
   return (
-    <main className="bg-white text-gray-800 max-w-screen-2xl mx-auto w-full">
+    <main className="bg-white text-gray-800 mx-auto w-full">
       <section
         className="relative overflow-hidden"
         style={{ backgroundColor: "#008080" }}
@@ -103,7 +103,7 @@ export default function AboutPage() {
                   </a>
                   <a
                     href="#team"
-                    className="px-8 py-4 rounded-full text-lg font-semibold border-2 text-white transition-all duration-300 hover:bg-white hover:text-gray-900"
+                    className="px-8 py-4 rounded-full text-lg font-semibold border-2 text-white transition-all duration-300 hover:bg-[#00F3FF] hover:text-[#004D40]"
                     style={{ borderColor: "#00F3FF" }}
                   >
                     Meet the Team
@@ -111,12 +111,12 @@ export default function AboutPage() {
                 </div>
               </div>
               <div className="relative">
-                <div className="w-full h-96 rounded-3xl overflow-hidden shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500">
+                <div className="w-full h-96 overflow-hidden shadow-2xl transform rotate-3 rounded-3xl hover:rotate-0 transition-transform duration-500">
                   <Image
                     src="https://hips.hearstapps.com/hmg-prod/images/2022-mercedes-benz-s500-4matic-123-1642184026.jpg?crop=0.458xw:0.387xh;0.316xw,0.418xh&resize=1200:*"
                     alt="Nepal Motor Office"
                     fill
-                    className="object-cover"
+                    className="object-cover rounded-3xl"
                   />
                 </div>
               </div>
@@ -262,7 +262,7 @@ export default function AboutPage() {
             </a>
             <Link
               href="/contact"
-              className="w-full rounded-md border px-6 py-3 text-base font-semibold text-white shadow-sm transition-colors hover:bg-white/10 focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-white sm:w-auto"
+              className="w-fit rounded-md border px-6 py-3 text-base font-semibold text-white shadow-sm transition-all duration-300 hover:bg-[#00F3FF] hover:text-[#004D40]"
               style={{ borderColor: "#00F3FF" }}
             >
               Contact us
