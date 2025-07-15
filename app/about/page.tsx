@@ -71,6 +71,7 @@ const IconPlaceholder = ({ character }: { character: string }) => (
 export default function AboutPage() {
   return (
     <main className="bg-white text-gray-800 mx-auto w-full">
+      <Link href="/about">/about-us</Link>
       <section
         className="relative overflow-hidden"
         style={{ backgroundColor: "#008080" }}
