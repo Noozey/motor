@@ -46,16 +46,14 @@ const testimonialsData = [
 
 const Testimonials = () => {
   return (
-    <section className="bg-white py-20 sm:py-24">
+    <section className="bg-white pt-10 pb-10 sm:pb-20">
       <div className="container mx-auto px-6 lg:px-8">
+        <h1 className='text-center pb-10 text-4xl font-bold tracking-tight text-slate-800 sm:text-5xl  '>Testimonials</h1>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
           {/* Left Column: Content */}
-          <div className="text-center lg:text-left">
-            <p className="font-semibold text-orange-500 uppercase tracking-wider">
-              Testimonials
-            </p>
-            <h2 className="mt-2 text-4xl font-bold tracking-tight text-slate-800 sm:text-5xl">
+          <div className="text-center lg:text-left self-start">
+            <h2 className="mt-2 text-1xl font-bold tracking-tight text-[#93A17A] sm:text-2xl">
               Reviewed by Our Clients
             </h2>
             <p className="mt-6 text-lg leading-8 text-gray-600">
@@ -64,7 +62,7 @@ const Testimonials = () => {
             <div className="mt-10">
               <a
                 href="#"
-                className="inline-block rounded-md bg-orange-500 px-8 py-4 text-base font-semibold text-white shadow-sm hover:bg-orange-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600 transition-colors"
+                className="inline-block rounded-md bg-[#93A17A] px-8 py-4 text-base font-semibold text-white shadow-sm hover:bg-orange-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600 transition-colors"
               >
                 Discover More —
               </a>
