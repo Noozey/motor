@@ -79,10 +79,10 @@ const WhyChooseUs = () => {
     <section className="bg-white py-16 lg:py-20">
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 lg:mb-16">
-          <p className="font-semibold text-4xl text-[#1E2939] tracking-normal">
+          <p className="font-bold text-3xl sm:text-4xl text-[#1E2939] tracking-normal">
             WHY CHOOSE US
           </p>
-          <h2 className="mt-2  font-semibold tracking-tight text-[#93A17A] ">
+          <h2 className="mt-2  font-semibold tracking-tight text-[#93A17A] captialize ">
             Providing Reliable Car Rentals
           </h2>
         </div>

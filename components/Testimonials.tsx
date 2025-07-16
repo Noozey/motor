@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import { MoveRightIcon } from 'lucide-react';
 
 const StarIcon = ({ className }: { className: string }) => (
   <svg
@@ -62,9 +63,9 @@ const Testimonials = () => {
             <div className="mt-10">
               <a
                 href="#"
-                className="inline-block rounded-md bg-[#93A17A] px-8 py-4 text-base font-semibold text-white shadow-sm hover:bg-orange-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600 transition-colors"
+                className="inline-block rounded-md bg-[#93A17A] px-8 py-4 text-base font-semibold group text-white shadow-sm hover:bg-gray-700 transition-all duration-500 transform hover:-translate-y-1 ease-out "
               >
-                Discover More —
+                Discover More <MoveRightIcon className="inline-block ml-2 group-hover:translate-x-1 transition-all duration-400" />
               </a>
             </div>
           </div>

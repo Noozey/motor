@@ -1,21 +1,22 @@
 import React from 'react';
 import Image from 'next/image';
 import { FaPlay, FaArrowRight } from 'react-icons/fa';
+import Link from 'next/link';
 
 interface AboutUsProps {}
 
 const AboutUs: React.FC<AboutUsProps> = () => {
   return (
-    <section className="bg-white font-sans">
-      <div className="container mx-auto px-4 py-16 md:py-24">
+    <section className="bg-white w-full font-sans">
+      <div className="max-w-screen-2xl w-full mx-auto px-4 md:px-6 lg:px-8 py-16 md:py-24">
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
           
           {/* Left Column: Text Content & View More Button */}
          <div className="lg:w-1/2 w-full lg:pr-8 self-start">
-  <h1 className="text-3xl sm:text-4xl text-[#93A17A] font-bold uppercase tracking-wider  mb-3">
+  <h1 className="text-3xl sm:text-5xl text-[#93A17A] font-bold uppercase tracking-wider  mb-3">
     About Us
   </h1>
-  <p className="text-2xl font-bold text-gray-900 mb-6 leading-tight">
+  <p className="text-xl sm:text-2xl font-bold text-gray-900 mb-6 leading-tight">
     PROVIDING RELIABLE CAR EXCHANGE SERVICES
   </p>
   <p className="text-gray-600 leading-relaxed mb-4">
@@ -26,13 +27,13 @@ const AboutUs: React.FC<AboutUsProps> = () => {
   </p>
 
   {/* View More Button - Replaces the icons and signature */}
-  <button
+  <Link href={'/about'}
     className="group inline-flex items-center gap-3 bg-[#93A17A] text-white font-bold py-4 px-8 rounded-lg shadow-lg hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-300 transition-all duration-300 ease-in-out transform hover:-translate-y-1"
     aria-label="View more about our car rentals"
   >
     <span>View More</span>
     <FaArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
-  </button>
+  </Link>
 </div>
 
 
