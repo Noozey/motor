@@ -59,7 +59,7 @@ const HeroSection = () => {
           </div>
 
           {/* Disclaimer */}
-          <p className="w-full text-[10px] sm:text-xs text-center text-gray-400">
+          <p className="w-full text-[10px] sm:text-xs text-right text-gray-400">
             The product featured is for reference only, and the appearance, colour, features and configuration may differ from the final delivered product. Please refer to the actual product for details.
           </p>
         </div>

@@ -48,12 +48,12 @@ const Header = () => {
           <Link href="/" className="text-white hover:text-gray-300 text-sm md:text-base font-semibold transition-colors">
             Home
           </Link>
-          <Link href="/buy" className="text-white hover:text-gray-300 text-sm md:text-base font-semibold transition-colors">
+          {/* <Link href="/buy" className="text-white hover:text-gray-300 text-sm md:text-base font-semibold transition-colors">
             Buy
           </Link>
           <Link href="/sell" className="text-white hover:text-gray-300 text-sm md:text-base font-semibold transition-colors">
             Sell
-          </Link>
+          </Link> */}
           <Link href="/rent" className="text-white hover:text-gray-300 text-sm md:text-base font-semibold transition-colors">
             Rent
           </Link>
