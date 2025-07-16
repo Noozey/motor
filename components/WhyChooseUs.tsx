@@ -82,7 +82,7 @@ const WhyChooseUs = () => {
           <p className="font-semibold text-4xl text-[#1E2939] tracking-normal">
             WHY CHOOSE US
           </p>
-          <h2 className="mt-2  font-semibold tracking-tight text-slate-900 ">
+          <h2 className="mt-2  font-semibold tracking-tight text-[#93A17A] ">
             Providing Reliable Car Rentals
           </h2>
         </div>
