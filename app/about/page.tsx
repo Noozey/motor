@@ -79,7 +79,7 @@ export default function AboutPage() {
 
         <div className="relative z-10 max-w-4xl mx-auto">
           {/* Breadcrumb */}
-          <nav className="mb-8 flex items-center space-x-2 text-sm font-medium">
+          <nav className="mb-8 flex space-x-2 text-sm font-medium w-full items-center justify-center">
             <Link
               href="/"
               className="text-[#008080] hover:text-[#004D40] transition-colors duration-200 flex items-center"
