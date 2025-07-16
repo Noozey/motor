@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-
+import inter from "@/components/fonts";
 const teamMembers = [
   {
     name: "Prakash Upreti",
@@ -70,7 +70,9 @@ const IconPlaceholder = ({ character }: { character: string }) => (
 
 export default function AboutPage() {
   return (
-    <main className="bg-white text-gray-800 mx-auto w-full">
+    <main
+      className={`bg-white text-gray-800 mx-auto w-full ${inter.className}`}
+    >
       <section className="relative overflow-hidden bg-gradient-to-br from-[#F3F4F6] via-[#E5E7EB] to-[#F9FAFB] py-16 px-4 sm:px-8 lg:px-16">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-0 left-0 w-96 h-96 bg-[#008080] rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
