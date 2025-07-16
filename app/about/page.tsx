@@ -71,7 +71,142 @@ const IconPlaceholder = ({ character }: { character: string }) => (
 export default function AboutPage() {
   return (
     <main className="bg-white text-gray-800 mx-auto w-full">
-      <Link href="/about">/about-us</Link>
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#F3F4F6] via-[#E5E7EB] to-[#F9FAFB] py-16 px-4 sm:px-8 lg:px-16">
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-[#008080] rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#004D40] rounded-full blur-3xl transform translate-x-1/2 translate-y-1/2"></div>
+        </div>
+
+        <div className="relative z-10 max-w-4xl mx-auto">
+          {/* Breadcrumb */}
+          <nav className="mb-8 flex items-center space-x-2 text-sm font-medium">
+            <Link
+              href="/"
+              className="text-[#008080] hover:text-[#004D40] transition-colors duration-200 flex items-center"
+            >
+              <svg
+                className="w-4 h-4 mr-1"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+              </svg>
+              Home
+            </Link>
+            <svg
+              className="w-4 h-4 text-gray-400"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fillRule="evenodd"
+                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                clipRule="evenodd"
+              />
+            </svg>
+            <span className="text-gray-600">About</span>
+          </nav>
+
+          {/* Main Title */}
+          <div className="text-center mb-8">
+            <h1 className="text-6xl md:text-7xl font-black mb-6 leading-tight">
+              <span className="bg-gradient-to-r from-[#004D40] via-[#008080] to-[#00BCD4] bg-clip-text text-transparent">
+                About-us
+              </span>
+            </h1>
+
+            {/* Decorative line */}
+            <div className="flex items-center justify-center mb-8">
+              <div className="h-1 w-16 bg-gradient-to-r from-[#008080] to-[#00BCD4] rounded-full"></div>
+              <div className="h-3 w-3 bg-[#008080] rounded-full mx-4"></div>
+              <div className="h-1 w-16 bg-gradient-to-r from-[#00BCD4] to-[#008080] rounded-full"></div>
+            </div>
+
+            <p className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-medium">
+              Discover the story behind Nepal's most trusted automotive
+              marketplace and the passionate team driving innovation in the
+              industry.
+            </p>
+          </div>
+
+          {/* Feature highlights */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+            <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 hover:shadow-lg transition-all duration-300">
+              <div className="w-12 h-12 bg-gradient-to-br from-[#008080] to-[#00BCD4] rounded-xl flex items-center justify-center mb-4">
+                <svg
+                  className="w-6 h-6 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-lg font-semibold text-[#004D40] mb-2">
+                Est. 2018
+              </h3>
+              <p className="text-gray-600 text-sm">
+                Leading the digital transformation of Nepal's automotive
+                industry
+              </p>
+            </div>
+
+            <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 hover:shadow-lg transition-all duration-300">
+              <div className="w-12 h-12 bg-gradient-to-br from-[#008080] to-[#00BCD4] rounded-xl flex items-center justify-center mb-4">
+                <svg
+                  className="w-6 h-6 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-lg font-semibold text-[#004D40] mb-2">
+                100k+ Users
+              </h3>
+              <p className="text-gray-600 text-sm">
+                Trusted by thousands of customers across all 77 districts
+              </p>
+            </div>
+
+            <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 hover:shadow-lg transition-all duration-300">
+              <div className="w-12 h-12 bg-gradient-to-br from-[#008080] to-[#00BCD4] rounded-xl flex items-center justify-center mb-4">
+                <svg
+                  className="w-6 h-6 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-lg font-semibold text-[#004D40] mb-2">
+                500+ Dealers
+              </h3>
+              <p className="text-gray-600 text-sm">
+                Verified network of trusted automotive professionals
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section
         className="relative overflow-hidden"
         style={{ backgroundColor: "#008080" }}
