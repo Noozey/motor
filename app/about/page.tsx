@@ -115,13 +115,6 @@ export default function AboutPage() {
               </span>
             </h1>
 
-            {/* Decorative line */}
-            <div className="flex items-center justify-center mb-8">
-              <div className="h-1 w-16 bg-gradient-to-r from-[#008080] to-[#00BCD4] rounded-full"></div>
-              <div className="h-3 w-3 bg-[#008080] rounded-full mx-4"></div>
-              <div className="h-1 w-16 bg-gradient-to-r from-[#00BCD4] to-[#008080] rounded-full"></div>
-            </div>
-
             <p className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-medium">
               Discover the story behind Nepal's most trusted automotive
               marketplace and the passionate team driving innovation in the
