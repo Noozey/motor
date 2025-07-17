@@ -21,7 +21,7 @@ const stats: StatItem[] = [
   {
     label: "Satisfied Clients",
     value: 235,
-    color: "text-[#7E8969]", 
+    color: "text-gradient", 
   },
   {
     label: "Years Experience",

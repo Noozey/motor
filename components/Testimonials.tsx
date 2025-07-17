@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { MoveRightIcon } from 'lucide-react';
+import Link from 'next/link';
 
 const StarIcon = ({ className }: { className: string }) => (
   <svg
@@ -53,19 +54,19 @@ const Testimonials = () => {
           
           {/* Left Column: Content */}
           <div className="text-center lg:text-left self-start">
-            <h2 className="mt-2 text-1xl font-bold tracking-tight text-[#93A17A] sm:text-2xl">
+            <h2 className="mt-2 text-1xl font-bold tracking-tight text-gradient sm:text-2xl">
               Reviewed by Our Clients
             </h2>
             <p className="mt-6 text-lg leading-8 text-gray-600">
               Discover why our customers trust us for their automotive needs in Nepal. From rugged mountain adventures to daily city commutes, we deliver reliability and quality service.
             </p>
             <div className="mt-10">
-              <a
+              <Link
                 href="#"
-                className="inline-block rounded-md bg-[#93A17A] px-8 py-4 text-base font-semibold group text-white shadow-sm hover:bg-gray-700 transition-all duration-500 transform hover:-translate-y-1 ease-out "
+                className="inline-block rounded-md bg-button px-8 py-4 text-base font-semibold group text-white shadow-sm hover:bg-gray-700 transition-all duration-500 transform hover:-translate-y-1 ease-out "
               >
                 Discover More <MoveRightIcon className="inline-block ml-2 group-hover:translate-x-1 transition-all duration-400" />
-              </a>
+              </Link>
             </div>
           </div>
 

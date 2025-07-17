@@ -13,7 +13,7 @@ const AboutUs: React.FC<AboutUsProps> = () => {
           
           {/* Left Column: Text Content & View More Button */}
          <div className="lg:w-1/2 w-full lg:pr-8 self-start">
-  <h1 className="text-3xl sm:text-5xl text-[#93A17A] font-bold uppercase tracking-wider  mb-3">
+  <h1 className="text-3xl sm:text-5xl text-gradient font-bold uppercase tracking-wider  mb-3">
     About Us
   </h1>
   <p className="text-xl sm:text-2xl font-bold text-gray-900 mb-6 leading-tight">
@@ -28,7 +28,7 @@ const AboutUs: React.FC<AboutUsProps> = () => {
 
   {/* View More Button - Replaces the icons and signature */}
   <Link href={'/about'}
-    className="group inline-flex items-center gap-3 bg-[#93A17A] text-white font-bold py-4 px-8 rounded-lg shadow-lg hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-300 transition-all duration-300 ease-in-out transform hover:-translate-y-1"
+    className="group inline-flex items-center gap-3 bg-button text-white font-bold py-4 px-8 rounded-lg shadow-lg hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-300 transition-all duration-300 ease-in-out transform hover:-translate-y-1"
     aria-label="View more about our car rentals"
   >
     <span>View More</span>
@@ -41,7 +41,7 @@ const AboutUs: React.FC<AboutUsProps> = () => {
           <div className="lg:w-1/2 w-full mt-12 lg:mt-0">
             <div className="relative">
               <Image
-                src="/aboutbannerimg.png" // IMPORTANT: Replace with your image in the /public folder
+                src="https://hips.hearstapps.com/hmg-prod/images/2022-mercedes-benz-s500-4matic-123-1642184026.jpg?crop=0.458xw:0.387xh;0.316xw,0.418xh&resize=1200:*" 
                 alt="Happy customer driving a rental car"
                 width={800}
                 height={800}
