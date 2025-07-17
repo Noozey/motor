@@ -29,20 +29,19 @@ const TypeCarCarousel = ({cars}:carCarouselProps) => {
   return (
         <div className="relative  py-2 md:py-8">
       {/* Custom Navigation Buttons */}
-    <div
-  ref={prevRef}
-  className="absolute z-10 -left-5 top-1/2 bg-transparent -translate-y-1/2 w-10 h-10  flex items-center justify-center rounded-sm  text-black hover:text-secondary hover:border-secondary cursor-pointer transition"
->
-  <ArrowLeft className="w-5 h-5" />
-</div>
-
-
-<div
-  ref={nextRef}
-  className="absolute z-10 -right-5 top-1/2 -translate-y-1/2 w-10 h-10  flex items-center justify-center rounded-sm bg-transparent text-black hover:text-secondary hover:border-secondary cursor-pointer transition"
->
-  <ArrowRight className="w-5 h-5" />
-</div>
+  <div
+         ref={prevRef}
+         className="absolute z-10 -left-10 top-1/3  w-12 h-12 flex  items-center justify-center rounded-full bg-white shadow-lg border border-gray-300 text-black hover:bg-secondary hover:shadow-xl cursor-pointer transition transform hover:scale-110"
+       >
+         <ArrowLeft className="w-5 h-5 text-black" />
+       </div>
+ 
+       <div
+         ref={nextRef}
+         className="absolute z-10 -right-10 top-1/3  w-12 h-12 flex items-center justify-center rounded-full bg-white shadow-lg border border-gray-300 text-black hover:bg-secondary hover:shadow-xl cursor-pointer transition transform hover:scale-110"
+       >
+         <ArrowRight className="w-5 h-5 text-black" />
+       </div>
 
 
       {swiperReady && (

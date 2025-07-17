@@ -4,7 +4,7 @@ import TestDrivePage from '@/components/TestDriveForm';
 
 const TestDrive = () => {
   return (
-    <div className="bg-gray-50 font-sans max-w-screen-2xl mx-auto">
+    <div className="bg-gray-50  max-w-screen-2xl mx-auto">
       {/* Hero Section with Background Image */}
       <div 
         className="relative bg-cover  bg-center h-72 md:h-96" 

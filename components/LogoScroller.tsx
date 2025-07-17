@@ -5,14 +5,14 @@ import 'swiper/css';
 
 const logosData = [
     { id: 1, src: '/scrollLogoImages/Bloomberg.png', alt: 'Dell' },
-    { id: 2, src: '/scrollLogoImages/businessLogo.png', alt: 'Asus' },
+    { id: 2, src: '/scrollLogoImages/businesslogo.png', alt: 'Asus' },
     { id: 3, src: '/scrollLogoImages/emrates.png', alt: 'JBL' },
     { id: 4, src: '/scrollLogoImages/forbes.png', alt: 'Apple' },
     { id: 5, src: '/scrollLogoImages/gulflogo.png', alt: 'Samsung' },
     { id: 6, src: '/scrollLogoImages/gulfnewlogo.png', alt: 'LG' },
-    { id: 7, src: '/scrollLogoImages/linelogo.png', alt: 'Dell (copy 1)' },
+    { id: 7, src: '/scrollLogoImages/timeslogo.png', alt: 'Dell (copy 1)' },
     { id: 8, src: '/scrollLogoImages/Bloomberg.png', alt: 'Asus (copy 1)' },
-    { id: 9, src: '/scrollLogoImages/businessLogo.png', alt: 'JBL (copy 1)' },
+    { id: 9, src: '/scrollLogoImages/businesslogo.png', alt: 'JBL (copy 1)' },
     { id: 10, src: '/scrollLogoImages/forbes.png', alt: 'Apple (copy 1)' },
     { id: 11, src: '/scrollLogoImages/gulflogo.png', alt: 'Samsung (copy 1)' },
     { id: 12, src: '/scrollLogoImages/gulfnewlogo.png', alt: 'LG (copy 1)' },

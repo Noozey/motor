@@ -19,7 +19,7 @@ const nepalCarNews = [
     title: "First Drive: Is the new Suzuki Fronx the perfect city SUV for Kathmandu?",
   },
   {
-    image: "/news/Vehicle-Tax-Revisions.jpg",
+    image: "/news/vehicle-tax-revision.jpg",
     slug:"blogs/tax-revisions",
     title: "Understanding the Latest Vehicle Tax Revisions in Nepal for 2081/82",
   },
@@ -27,7 +27,7 @@ const nepalCarNews = [
 
 const LatestNews = () => {
   return (
-    <div className="w-full max-w-screen-2xl mx-auto px-4 md:px-6 lg:px-8 py-12">
+    <div className="w-full max-w-screen-2xl mx-auto px-4 md:px-6 lg:px-8 pb-10">
       <h2 className="text-2xl text-center md:text-3xl font-bold mb-10 text-black">
         Latest Updates
       </h2>

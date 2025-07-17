@@ -7,6 +7,11 @@ import SearchSection from '@/components/SearchSection';
 import React from 'react';
 import { JSX } from 'react';
 import NewArrivalCars from '@/components/NewArrivalCars';
+import StatsSection from '@/components/StatsSection';
+import WhyChooseUs from '@/components/WhyChooseUs';
+import AboutUs from '@/components/About';
+import Testimonials from '@/components/Testimonials';
+import BlogSection from '@/components/BlogSection';
 
 type Car = {
   name: string;
@@ -25,9 +30,10 @@ export default function CarShowcase(): JSX.Element {
     <div className="w-full">
       {/* Hero Section */}
       <HeroSection />
-
-    <div className='w-full max-w-screen-2xl mx-auto px-2 md:px-6 lg:px-8 py-10'>
-       
+      {/* stats section */}
+      <StatsSection />
+       {/* About Us Section */}
+      <AboutUs />
       {/* car research and type search */}
       <SearchSection />
         {/* Car Compare */}
@@ -36,11 +42,16 @@ export default function CarShowcase(): JSX.Element {
         <AdBanner/>
       {/* featured Section */}
       <FeaturedContent/>
+      {/* Why Choose Us Section */}
+      <WhyChooseUs />
       {/* Car Tabs */}
         <CartTabs />
+      {/* Testimonials Section */}
+      <Testimonials />
       {/* latest new section */}
       <LatestNews/>
-    </div>
+      {/* blog section */}
+      <BlogSection /> 
     </div>
   );
 }

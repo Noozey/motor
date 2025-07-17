@@ -45,25 +45,25 @@ const Header = () => {
       {/* Desktop Navigation */}
       <div className="hidden md:flex items-center space-x-3 sm:space-x-4 md:space-x-9">
         <nav className="flex items-center space-x-2 sm:space-x-3 md:space-x-6">
-          <Link href="/" className="text-white hover:text-gray-300 text-sm md:text-base font-semibold transition-colors">
+          <Link href="/" className="text-white hover:text-[#008080] text-sm md:text-base font-semibold transition-colors">
             Home
           </Link>
-          <Link href="/buy" className="text-white hover:text-gray-300 text-sm md:text-base font-semibold transition-colors">
+          {/* <Link href="/buy" className="text-white hover:text-gray-300 text-sm md:text-base font-semibold transition-colors">
             Buy
           </Link>
           <Link href="/sell" className="text-white hover:text-gray-300 text-sm md:text-base font-semibold transition-colors">
             Sell
-          </Link>
-          <Link href="/rent" className="text-white hover:text-gray-300 text-sm md:text-base font-semibold transition-colors">
+          </Link> */}
+          <Link href="/rent" className="text-white hover:text-[#008080] text-sm md:text-base font-semibold transition-colors">
             Rent
           </Link>
-          <Link href="/about" className="text-white hover:text-gray-300 text-sm md:text-base font-semibold transition-colors">
+          <Link href="/about" className="text-white hover:text-[#008080] text-sm md:text-base font-semibold transition-colors">
             About Us
           </Link>
         </nav>
         <Link
           href="/exchange"
-          className="bg-[#a3b18a] text-white px-3 sm:px-4 lg:ml-8 py-2 rounded-md text-sm md:text-base font-semibold hover:bg-[#93a17a] transition-colors whitespace-nowrap"
+          className="bg-gradient-to-r from-[#004D40] via-[#008080] to-[#00BCD4] text-white px-3 sm:px-4 lg:ml-8 py-2 rounded-md text-sm md:text-base font-semibold hover:bg-[#93a17a] transition-colors whitespace-nowrap"
         >
           Exchange to EV
         </Link>

@@ -1,20 +1,14 @@
-"use client";
+'use client'
 import { useState } from "react";
 import CarGrid from "./CarGrid";
 import CarCarousel from "./CarCarousel";
 import { CarData, CarTabs } from "@/types";
 import { ChevronRight } from "lucide-react";
 
-const CartTabs: React.FC = () => {
-  const tabs: CarTabs[] = [
-    CarTabs.suv,
-    CarTabs.hatchback,
-    CarTabs.sedan,
-    CarTabs.muv,
-    CarTabs.luxury,
-  ];
+const CartTabs:React.FC = () => {
+    const tabs:CarTabs[]=[CarTabs.suv, CarTabs.hatchback, CarTabs.sedan, CarTabs.muv, CarTabs.luxury]
 
-  // Sample car data
+    // Sample car data
   const carData: CarData = {
     SUV: [
       {
@@ -104,119 +98,100 @@ const CartTabs: React.FC = () => {
       {
         name: "Honda City",
         price: "₹11.82 - 16.30 Lakh*",
-        image: "carTabsImage/sedan/honda_city.png",
+        image: "carTabsImage/Sedan/honda_city.png",
       },
       {
         name: "Hyundai Verna",
         price: "₹11.00 - 17.42 Lakh*",
-        image: "carTabsImage/sedan/hyundai_verna.png",
+        image: "carTabsImage/Sedan/hyundai_verna.png",
       },
       {
         name: "Skoda Slavia",
         price: "₹11.63 - 19.12 Lakh*",
-        image: "carTabsImage/sedan/skoda_slavia.png",
+        image: "carTabsImage/Sedan/skoda_slavia.png",
       },
       {
         name: "Volkswagen Virtus",
         price: "₹11.56 - 19.15 Lakh*",
-        image: "carTabsImage/sedan/volkswagen_virtus.png",
+        image: "carTabsImage/Sedan/volkswagen_virtus.png",
       },
     ],
     MUV: [
       {
         name: "Maruti Ertiga",
         price: "₹8.69 - 13.03 Lakh*",
-        image: "carTabsImage/muv/maruti_ertiga.png",
+        image: "carTabsImage/MUV/maruti_ertiga.png",
       },
       {
         name: "Toyota Innova Crysta",
         price: "₹19.99 - 26.05 Lakh*",
-        image: "carTabsImage/muv/toyota_innova_crysta.png",
+        image: "carTabsImage/MUV/toyota_innova_crysta.png",
       },
       {
         name: "Renault Triber",
         price: "₹6.33 - 8.97 Lakh*",
-        image: "carTabsImage/muv/renault_triber.png",
+        image: "carTabsImage/MUV/renault_triber.png",
       },
       {
         name: "Kia Carens",
         price: "₹10.52 - 19.67 Lakh*",
-        image: "carTabsImage/muv/kia_carens.png",
+        image: "carTabsImage/MUV/kia_carens.png",
       },
     ],
     Luxury: [
       {
         name: "Mercedes-Benz S-Class",
         price: "₹1.71 - 2.17 Crore*",
-        image: "carTabsImage/luxury/mercedes_benz_s_class.png",
+        image: "carTabsImage/Luxury/mercedes_benz_s_class.png",
       },
       {
         name: "BMW 7 Series",
         price: "₹1.82 - 1.84 Crore*",
-        image: "carTabsImage/luxury/bmw_7_series.png",
+        image: "carTabsImage/Luxury/bmw_7_series.png",
       },
       {
         name: "Audi A8 L",
         price: "₹1.34 - 1.63 Crore*",
-        image: "carTabsImage/luxury/audi_a8_l.png",
+        image: "carTabsImage/Luxury/audi_a8_l.png",
       },
       {
         name: "Lexus LS",
         price: "₹1.96 - 2.27 Crore*",
-        image: "carTabsImage/luxury/lexus_ls.png",
+        image: "carTabsImage/Luxury/lexus_ls.png",
       },
     ],
 
-    // other categories...
   };
 
-  const [activeTab, setActiveTab] = useState<CarTabs>(CarTabs.suv);
-  const [viewAll, setViewAll] = useState<boolean>(false);
+const [activeTab,setActiveTab]=useState<CarTabs>(CarTabs.suv)
+const [viewAll,setViewAll]=useState<boolean>(false);
 
-  const handleTabClick = (tab: CarTabs) => {
-    setActiveTab(tab);
+const handleTabClick=(tab:CarTabs)=>{
+    setActiveTab(tab)
     setViewAll(false);
-  };
-  // text-[#535353]
+
+}
+// text-[#535353]
   return (
     <div className="w-full max-w-screen-2xl mx-auto px-2 md:px-6 lg:px-8 py-8 ">
-      <h4 className="text-2xl text-center md:text-3xl mb-5 font-semibold py-5  text-black">
-        Best Seller Cars
-      </h4>
-      <div className="flex w-full justify-center md:justify-around gap-6 border-b">
-        {/* tab buttons */}
-        {tabs.map((tab) => (
-          <button
-            key={tab}
-            className={`pb-2 cursor-pointer  ${
-              tab == activeTab
-                ? "border-b-2 border-gray-500 text-black font-semibold "
-                : "text-gray-500 hover:text-gray-700"
-            }`}
-            onClick={() => handleTabClick(tab)}
-          >
-            {tab}
-          </button>
-        ))}
-      </div>
-      {/* carshow section */}
-      <div className="mt-6 p-4 bg-[#F8F8F8]">
-        {viewAll ? (
-          <CarGrid cars={carData[activeTab]} />
-        ) : (
-          <CarCarousel cars={carData[activeTab]} />
-        )}
-      </div>
-      {!viewAll && (
-        <p
-          onClick={() => setViewAll(true)}
-          className="text-left cursor-pointer text-gray-500 py-5"
-        >
-          view all cars <ChevronRight className="inline" size={24} />
-        </p>
-      )}
+      <h4 className="text-2xl text-center md:text-3xl mb-5 font-semibold py-5  text-black">Best Seller Cars</h4>
+        <div className="flex w-full justify-center md:justify-around gap-6 border-b">
+            {/* tab buttons */}
+            {tabs.map((tab)=>(
+                <button key={tab} className={`pb-2 cursor-pointer  ${tab==activeTab?"border-b-2 border-gray-500 text-black font-semibold":"text-gray-500"}`} onClick={() => handleTabClick(tab)}>
+                    {tab}
+                </button>
+            ))}
+        </div>
+        {/* carshow section */} 
+        <div className=" p-4 ">
+           { viewAll ? (<CarGrid cars={carData[activeTab]} />):(<CarCarousel cars={carData[activeTab]}/>)}
+        </div>
+        {!viewAll && <p onClick={()=>setViewAll(true)} className="text-left cursor-pointer text-gray-500 py-5">view all cars <ChevronRight className="inline" size={24} /></p>
+}
     </div>
-  );
-};
+    
+  )
+}
 
-export default CartTabs;
+export default CartTabs
