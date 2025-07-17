@@ -5,7 +5,8 @@
   --foreground: #171717;
 }
 html {
-  overflow-x: hidden; 
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 * {
@@ -29,4 +30,3 @@ html {
 .swiper-wrapper {
   transition-timing-function: linear !important;
 }
-
