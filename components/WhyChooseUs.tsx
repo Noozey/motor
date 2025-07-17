@@ -77,7 +77,7 @@ const WhyChooseUs = () => {
 
   return (
     <section className="bg-white py-16 lg:py-20">
-      <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 lg:mb-16">
           <p className="font-bold text-3xl sm:text-4xl text-[#1E2939] tracking-normal">
             WHY CHOOSE US

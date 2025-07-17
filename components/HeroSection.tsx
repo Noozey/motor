@@ -5,7 +5,7 @@ const imageUrl = '/hero-car-image2.jpg';
 
 const HeroSection = () => {
   return (
-    <section className="relative w-full h-[90vh] font-sans">
+    <section className="relative w-full h-[90vh] ">
       {/* Background Image */}
       <Image
         src={imageUrl}

@@ -7,7 +7,7 @@ interface AboutUsProps {}
 
 const AboutUs: React.FC<AboutUsProps> = () => {
   return (
-    <section className="bg-white w-full font-sans">
+    <section className="bg-white w-full ">
       <div className="max-w-screen-2xl w-full mx-auto px-4 md:px-6 lg:px-8 py-16 md:py-24">
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
           

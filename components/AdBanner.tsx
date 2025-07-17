@@ -5,7 +5,7 @@ import React from 'react';
 
 const AdBanner = () => {
   return (
-    <section className="bg-white font-sans w-full border-y border-gray-200">
+    <section className="bg-white w-full border-y border-gray-200">
       <div className="max-w-7xl mx-auto">
         <div className="py-8 px-4 sm:px-6">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
