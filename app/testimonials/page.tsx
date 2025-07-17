@@ -1,0 +1,213 @@
+// app/testimonials/page.tsx - Next.js App Router page component with Tailwind CSS and TypeScript
+"use client";
+
+import React from "react";
+import Link from "next/link";
+
+interface Testimonial {
+  id: number;
+  text: string;
+  author: string;
+  image: string;
+  rating: number;
+}
+
+interface StarRatingProps {
+  rating: number;
+}
+
+const TestimonialsPage: React.FC = () => {
+  const testimonials: Testimonial[] = [
+    {
+      id: 1,
+      text: "Suru dekhi samma sabai kura ekdum ramro thiyo. Customer service ra professionalism le dherai impress gare.",
+      author: "Sita Joshi",
+      image: "https://i.pravatar.cc/150?img=13",
+      rating: 4,
+    },
+    {
+      id: 2,
+      text: "Quality dami cha! Budget vitra kaam sakera diyeko ma dherai khusi lagyo. Dherai dhanyabad!",
+      author: "Milan Raut",
+      image: "https://i.pravatar.cc/150?img=2",
+      rating: 1,
+    },
+    {
+      id: 3,
+      text: "Maile dherai company sanga kaam gareko chu tara yo team jasto professional aru kahile bheteko chaina.",
+      author: "Elina Chhetri",
+      image: "https://i.pravatar.cc/150?img=11",
+      rating: 5,
+    },
+    {
+      id: 4,
+      text: "Result nai boldai cha. Ek quarter ma nai hamro ROI 300% le badhyo. Dherai ramro experience.",
+      author: "Dipesh Thapa",
+      image: "https://i.pravatar.cc/150?img=4",
+      rating: 4,
+    },
+    {
+      id: 5,
+      text: "Start dekhi end samma sabai kura perfect thiyo. Uniharuko creative idea le hamro problem haru solution bhayo.",
+      author: "Anita Lama",
+      image: "https://i.pravatar.cc/150?img=5",
+      rating: 3,
+    },
+    {
+      id: 6,
+      text: "Yo company sanga kaam garera hami dherai agadi badheka chau. Reliable ani innovative ni chhan!",
+      author: "Jivan Wagle",
+      image: "https://i.pravatar.cc/150?img=14",
+      rating: 2,
+    },
+  ];
+
+  const StarRating: React.FC<StarRatingProps> = ({ rating }) => {
+    return (
+      <div className="flex gap-1 mb-5">
+        {[...Array(5)].map((_, index: number) => (
+          <span
+            key={index}
+            className={`text-lg ${
+              index < rating ? "text-amber-300" : "text-[#E6E8EC]"
+            }`}
+          >
+            ★
+          </span>
+        ))}
+      </div>
+    );
+  };
+
+  return (
+    <div className="min-h-screen bg-[#F3F4F6]">
+      {/* Header - Deep Teal */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#F3F4F6] via-[#E5E7EB] to-[#F9FAFB] py-16 px-4 sm:px-8 lg:px-16">
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-[#008080] rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#004D40] rounded-full blur-3xl transform translate-x-1/2 translate-y-1/2"></div>
+        </div>
+
+        <div className="relative z-10 max-w-4xl mx-auto">
+          {/* Breadcrumb */}
+          <nav className="mb-8 flex space-x-2 text-sm font-medium w-full items-center justify-center">
+            <Link
+              href="/"
+              className="text-[#008080] hover:text-[#004D40] transition-colors duration-200 flex items-center"
+            >
+              <svg
+                className="w-4 h-4 mr-1"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+              </svg>
+              Home
+            </Link>
+            <svg
+              className="w-4 h-4 text-gray-400"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fillRule="evenodd"
+                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                clipRule="evenodd"
+              />
+            </svg>
+            <span className="text-gray-600">testimonials</span>
+          </nav>
+
+          {/* Main Title */}
+          <div className="text-center mb-8">
+            <h1 className="text-6xl md:text-7xl font-black mb-6 leading-tight">
+              <span className="bg-gradient-to-r from-[#004D40] via-[#008080] to-[#00BCD4] bg-clip-text text-transparent">
+                Customer Testimonials
+              </span>
+            </h1>
+
+            <p className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-medium">
+              Discover what our valued customers have to say about their
+              experience
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Main Testimonials Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-5">
+          {/* Section Title */}
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#008080] mb-6">
+              What Our Customers Say
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Real feedback from real people who have experienced our
+              exceptional service and products
+            </p>
+          </div>
+
+          {/* Testimonials Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            {testimonials.map((testimonial: Testimonial) => (
+              <div
+                key={testimonial.id}
+                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 relative overflow-hidden group"
+              >
+                {/* Top accent border */}
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#00F3FF] to-[#008080]"></div>
+
+                {/* Quote icon */}
+                <div className="text-5xl text-[#00F3FF] opacity-70 mb-5 font-serif">
+                  "
+                </div>
+
+                {/* Star Rating */}
+                <StarRating rating={testimonial.rating} />
+
+                {/* Testimonial Text */}
+                <p className="text-gray-700 text-lg leading-relaxed mb-6 italic">
+                  {testimonial.text}
+                </p>
+
+                {/* Author Info */}
+                <div className="flex items-center gap-4">
+                  <div className="w-14 h-14 bg-gradient-to-br from-[#00F3FF] to-[#008080] rounded-full flex items-center justify-center text-white font-bold text-lg">
+                    <img
+                      src={testimonial.image}
+                      className="w-full h-full rounded-full"
+                    />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-[#008080] text-lg">
+                      {testimonial.author}
+                    </h4>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section - Gradient from Dark Slate Green to Deep Teal */}
+      <section className="bg-gradient-to-br from-[#004D40] to-[#008080] text-white py-20">
+        <div className="max-w-4xl mx-auto px-5 text-center">
+          <h3 className="text-3xl md:text-4xl font-bold mb-6">
+            Ready to Join Our Success Stories?
+          </h3>
+          <p className="text-lg md:text-xl opacity-90 mb-8 max-w-2xl mx-auto">
+            Experience the same exceptional service that our customers rave
+            about
+          </p>
+          <button className="bg-[#00F3FF] text-[#004D40] px-10 py-4 rounded-2xl font-bold text-lg hover:bg-[#33F5FF] transition-all duration-300 hover:-translate-y-1 shadow-lg hover:shadow-xl">
+            Get Started Today
+          </button>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default TestimonialsPage;
