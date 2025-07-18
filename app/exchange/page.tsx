@@ -92,7 +92,7 @@ interface CustomSelectProps {
 
 const CustomSelect: FC<CustomSelectProps> = ({ id, label, options, selectedValue, onSelect, placeholder }) => {
     const [isOpen, setIsOpen] = useState(false);
-    const selectRef = useRef<HTMLDivElement>(null);
+    const selectRef = useRef<HTMLDivElement>(null) as RefObject<HTMLDivElement>;
     useOnClickOutside(selectRef, () => setIsOpen(false));
 
     const selectedLabel = options.find(opt => opt.value === selectedValue)?.label || placeholder;
