@@ -3,6 +3,7 @@ import {Inter} from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { Toaster } from "react-hot-toast";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -10,7 +11,6 @@ const inter = Inter({
   display: "swap",
 });
 
-console.log(inter)
 
 export const metadata: Metadata = {
   title: "Nepal Motor",
@@ -33,7 +33,9 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <Toaster />
         <div id="portal"></div>
+        <div id="submit-portal"></div>
       </body>
     </html>
   );

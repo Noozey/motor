@@ -144,7 +144,7 @@ const CarResearchForm: React.FC = () => {
 
       <button
         type="submit"
-        className="cursor-pointer bg-gradient-to-r from-[#004D40] via-[#008080] to-[#00BCD4] p-4 text-center font-bold text-black transition-colors hover:bg-opacity-90 md:px-10"
+        className="cursor-pointer text-white bg-gradient-to-r from-[#004D40] via-[#008080] to-[#00BCD4] p-4 text-center font-bold  transition-colors hover:bg-opacity-90 md:px-10"
       >
         Search
       </button>

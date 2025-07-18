@@ -51,7 +51,7 @@ const FeaturedContent: React.FC = () => {
               </Link>
               <Link
                 href="/exchange"
-                className="px-6 py-3 cursor-pointer bg-black text-white font-semibold rounded-md hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 transition-colors duration-150 ease-in-out w-full sm:w-auto"
+                className="px-6 py-3 cursor-pointer bg-button text-white font-semibold rounded-md hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 transition-colors duration-150 ease-in-out w-full sm:w-auto"
               >
                 Exchange To Ev
               </Link>
