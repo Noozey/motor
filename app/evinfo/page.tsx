@@ -27,36 +27,6 @@ const ElectricVehicleGuide: React.FC = () => {
     setOpenFAQ(openFAQ === index ? null : index);
   };
 
-  const scrollToSection = (sectionId: string): void => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  };
-
-  useEffect(() => {
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: "0px 0px -50px 0px",
-    };
-
-    const observer = new IntersectionObserver(
-      (entries: IntersectionObserverEntry[]) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("animate-fade-in-up");
-          }
-        });
-      },
-      observerOptions
-    );
-
-    const elements = document.querySelectorAll(".animate-on-scroll");
-    elements.forEach((el: Element) => observer.observe(el));
-
-    return () => observer.disconnect();
-  }, []);
-
   const benefits: Benefit[] = [
     {
       icon: Leaf,
