@@ -89,7 +89,7 @@ const BlogSection = () => {
           <h2 className="mt-2 text-3xl font-bold uppercase tracking-tight text-slate-800 sm:text-4xl">
             Our Recently Post
           </h2>
-          <p className="font-semibold text-gradient uppercase tracking-wider">
+          <p className="font-semibold text-[#93A17A] uppercase tracking-wider">
             Blog & News
           </p>
         </div>
