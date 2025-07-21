@@ -107,7 +107,7 @@ const Footer: React.FC = () => {
             <Link href={"/contact"} className="hover:text-[#1B72EB]">
               Your Ad Choices
             </Link>
-            <Link href={"/contact"} className="hover:text-[#1B72EB]">
+            <Link href={"/privacy-policy"} className="hover:text-[#1B72EB]">
               Privacy Statement
             </Link>
           </div>
