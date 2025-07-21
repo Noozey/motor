@@ -1,7 +1,7 @@
-import React from 'react';
-import Image from 'next/image';
-import { MoveRightIcon } from 'lucide-react';
-import Link from 'next/link';
+import React from "react";
+import Image from "next/image";
+import { MoveRightIcon } from "lucide-react";
+import Link from "next/link";
 
 const StarIcon = ({ className }: { className: string }) => (
   <svg
@@ -21,27 +21,29 @@ const StarIcon = ({ className }: { className: string }) => (
 const testimonialsData = [
   {
     id: 1,
-    name: 'Alex Rai',
-    role: 'Adventure Rider',
-    quote: 'Renting a Royal Enfield for my trip to Mustang was the best decision. The bike was in perfect condition, and the team provided excellent support. Unforgettable views and a reliable ride!',
+    name: "Alex Rai",
+    role: "Adventure Rider",
+    quote:
+      "Renting a Royal Enfield for my trip to Mustang was the best decision. The bike was in perfect condition, and the team provided excellent support. Unforgettable views and a reliable ride!",
     rating: 5.0,
     // Using a placeholder image service. Replace with your actual image paths.
-    imageUrl: 'https://i.pravatar.cc/150?u=alexrai', 
-    bgColor: 'bg-white',
-    shadow: 'shadow-xl',
-    roleColor: 'text-orange-500',
+    imageUrl: "https://i.pravatar.cc/150?u=alexrai",
+    bgColor: "bg-white",
+    shadow: "shadow-xl",
+    roleColor: "text-orange-500",
   },
   {
     id: 2,
-    name: 'Pratik Kc',
-    role: 'Lawyer & Commuter',
-    quote: 'We bought our first family SUV from them. The process was smooth, transparent, and they helped us find the perfect vehicle for Kathmandu\'s roads. Highly recommended for their professional service.',
+    name: "Pratik Kc",
+    role: "Lawyer & Commuter",
+    quote:
+      "We bought our first family SUV from them. The process was smooth, transparent, and they helped us find the perfect vehicle for Kathmandu's roads. Highly recommended for their professional service.",
     rating: 5.0,
     // Using a placeholder image service. Replace with your actual image paths.
-    imageUrl: 'https://i.pravatar.cc/150?u=girl', 
-    bgColor: 'bg-slate-100',
-    shadow: 'shadow-lg',
-    roleColor: 'text-slate-500',
+    imageUrl: "https://i.pravatar.cc/150?u=girl",
+    bgColor: "bg-slate-100",
+    shadow: "shadow-lg",
+    roleColor: "text-slate-500",
   },
 ];
 
@@ -49,23 +51,27 @@ const Testimonials = () => {
   return (
     <section className="bg-white w-full pt-10 pb-10 sm:pb-20">
       <div className="max-w-screen-2xl w-full mx-auto px-6 lg:px-8">
-        <h1 className='text-center pb-10 text-4xl font-bold tracking-tight text-slate-800 sm:text-5xl  '>Testimonials</h1>
+        <h1 className="text-center pb-10 text-4xl font-bold tracking-tight text-slate-800 sm:text-5xl  ">
+          Testimonials
+        </h1>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          
           {/* Left Column: Content */}
           <div className="text-center lg:text-left self-start">
             <h2 className="mt-2 text-1xl font-bold tracking-tight text-gradient sm:text-2xl">
               Reviewed by Our Clients
             </h2>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              Discover why our customers trust us for their automotive needs in Nepal. From rugged mountain adventures to daily city commutes, we deliver reliability and quality service.
+              Discover why our customers trust us for their automotive needs in
+              Nepal. From rugged mountain adventures to daily city commutes, we
+              deliver reliability and quality service.
             </p>
             <div className="mt-10">
               <Link
-                href="#"
+                href="/testimonials"
                 className="inline-block rounded-md bg-button px-8 py-4 text-base font-semibold group text-white shadow-sm hover:bg-gray-700 transition-all duration-500 transform hover:-translate-y-1 ease-out "
               >
-                Discover More <MoveRightIcon className="inline-block ml-2 group-hover:translate-x-1 transition-all duration-400" />
+                Discover More{" "}
+                <MoveRightIcon className="inline-block ml-2 group-hover:translate-x-1 transition-all duration-400" />
               </Link>
             </div>
           </div>
@@ -86,8 +92,14 @@ const Testimonials = () => {
                     height={56}
                   />
                   <div>
-                    <p className="text-lg font-bold text-slate-800">{testimonial.name}</p>
-                    <p className={`text-sm font-medium ${testimonial.roleColor}`}>{testimonial.role}</p>
+                    <p className="text-lg font-bold text-slate-800">
+                      {testimonial.name}
+                    </p>
+                    <p
+                      className={`text-sm font-medium ${testimonial.roleColor}`}
+                    >
+                      {testimonial.role}
+                    </p>
                   </div>
                 </div>
                 <blockquote className="mt-6 text-gray-700 italic">
@@ -106,7 +118,6 @@ const Testimonials = () => {
               </div>
             ))}
           </div>
-
         </div>
       </div>
     </section>

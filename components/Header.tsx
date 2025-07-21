@@ -42,57 +42,32 @@ const Header = () => {
           </span>
         </Link>
 
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-3 sm:space-x-4 md:space-x-9">
-          <nav className="flex items-center space-x-2 sm:space-x-3 md:space-x-6">
-            <Link
-              href="/"
-              className={`text-sm md:text-base font-semibold transition-colors ${
-                pathname === '/' ? 'text-[#008080]' : 'text-white hover:text-[#008080]'
-              }`}
-            >
-              Home
-            </Link>
-            <Link
-              href="/buy"
-              className={`text-sm md:text-base font-semibold transition-colors ${
-                pathname === '/buy' ? 'text-[#008080]' : 'text-white hover:text-[#008080]'
-              }`}
-            >
-              Buy
-            </Link>
-            <Link
-              href="/sell"
-              className={`text-sm md:text-base font-semibold transition-colors ${
-                pathname === '/sell' ? 'text-[#008080]' : 'text-white hover:text-[#008080]'
-              }`}
-            >
-              Sell
-            </Link>
-            <Link
-              href="/rent"
-              className={`text-sm md:text-base font-semibold transition-colors ${
-                pathname === '/rent' ? 'text-[#008080]' : 'text-white hover:text-[#008080]'
-              }`}
-            >
-              Rent
-            </Link>
-            <Link
-              href="/about"
-              className={`text-sm md:text-base font-semibold transition-colors ${
-                pathname === '/about' ? 'text-[#008080]' : 'text-white hover:text-[#008080]'
-              }`}
-            >
-              About Us
-            </Link>
-          </nav>
-          <Link
-            href="/exchange"
-            className="bg-gradient-to-r from-[#004D40] via-[#008080] to-[#00BCD4]  text-white px-3 sm:px-4 lg:ml-8 py-2 rounded-md text-sm md:text-base font-semibold hover:bg-[#93a17a] transition-colors whitespace-nowrap"
-          >
-            Exchange to EV
+      {/* Desktop Navigation */}
+      <div className="hidden md:flex items-center space-x-3 sm:space-x-4 md:space-x-9">
+        <nav className="flex items-center space-x-2 sm:space-x-3 md:space-x-6">
+          <Link href="/" className="text-white hover:text-[#008080] text-sm md:text-base font-semibold transition-colors">
+            Home
           </Link>
-        </div>
+          {/* <Link href="/buy" className="text-white hover:text-gray-300 text-sm md:text-base font-semibold transition-colors">
+            Buy
+          </Link>
+          <Link href="/sell" className="text-white hover:text-gray-300 text-sm md:text-base font-semibold transition-colors">
+            Sell
+          </Link> */}
+          <Link href="/rent" className="text-white hover:text-[#008080] text-sm md:text-base font-semibold transition-colors">
+            Rent
+          </Link>
+          <Link href="/about" className="text-white hover:text-[#008080] text-sm md:text-base font-semibold transition-colors">
+            About Us
+          </Link>
+        </nav>
+        <Link
+          href="/exchange"
+          className="bg-gradient-to-r from-[#004D40] via-[#008080] to-[#00BCD4] text-white px-3 sm:px-4 lg:ml-8 py-2 rounded-md text-sm md:text-base font-semibold hover:bg-[#93a17a] transition-colors whitespace-nowrap"
+        >
+          Exchange to EV
+        </Link>
+      </div>
 
         {/* Mobile Menu */}
         <SideMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />

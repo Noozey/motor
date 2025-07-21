@@ -12,6 +12,7 @@ const inter = Inter({
 });
 
 
+
 export const metadata: Metadata = {
   title: "Nepal Motor",
   description: "Explore Nepal's trusted marketplace for buying, selling, and renting vehicles. Find your perfect ride with Nepal Motor — reliable, fast, and local.",

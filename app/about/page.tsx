@@ -70,9 +70,7 @@ const IconPlaceholder = ({ character }: { character: string }) => (
 
 export default function AboutPage() {
   return (
-    <main
-      className={`bg-white text-gray-800 mx-auto w-full`}
-    >
+    <main className={`bg-white text-gray-800 mx-auto w-full`}>
       <section className="relative overflow-hidden bg-gradient-to-br from-[#F3F4F6] via-[#E5E7EB] to-[#F9FAFB] py-16 px-4 sm:px-8 lg:px-16">
         {/* <div className="absolute inset-0 opacity-5">
           <div className="absolute top-0 left-0 w-96 h-96 bg-[#008080] rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
@@ -224,9 +222,9 @@ export default function AboutPage() {
                   Transforming how Nepal buys, sells, and experiences vehicles
                   since 2018.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex flex-col sm:flex-row gap-4 items-center">
                   <a
-                    className="px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-lg"
+                    className="px-10 py-4 rounded-2xl text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-lg"
                     style={{ backgroundColor: "#00F3FF", color: "#004D40" }}
                     href="#mission"
                   >
@@ -234,7 +232,7 @@ export default function AboutPage() {
                   </a>
                   <a
                     href="#team"
-                    className="px-8 py-4 rounded-xl text-lg font-semibold border-2 text-white transition-all duration-300 hover:bg-[#00F3FF] hover:text-[#004D40]"
+                    className="px-8 py-4 rounded-2xl text-lg font-semibold border-2 text-white transition-all duration-300 hover:bg-[#00F3FF] hover:text-[#004D40]"
                     style={{ borderColor: "#00F3FF" }}
                   >
                     Meet the Team
