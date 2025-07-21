@@ -93,6 +93,7 @@ const Header = () => {
             Exchange to EV
           </Link>
         </div>
+        {/* this is only for test purpose */}
 
         {/* Mobile Menu */}
         <SideMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
