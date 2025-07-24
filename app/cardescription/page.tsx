@@ -143,7 +143,7 @@ const CarDetailsPage: React.FC = () => {
           <div className="lg:col-span-2 space-y-8">
             {/* Image Gallery */}
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
-              <div className="flex items-center justify-center">
+              <div className="flex items-center justify-center aspect-video">
                 <img
                   src={carData.images[currentImageIndex]}
                   alt={carData.title}
