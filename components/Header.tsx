@@ -53,30 +53,31 @@ const Header = () => {
             >
               Home
             </Link>
+              <Link
+              href="/sell"
+              className={`text-sm md:text-base font-semibold transition-colors ${
+                pathname === '/sell' ? 'text-[#008080]' : 'text-white hover:text-[#008080]'
+              }`}
+            >
+              Sell Old Cars
+            </Link>
             <Link
               href="/buy"
               className={`text-sm md:text-base font-semibold transition-colors ${
                 pathname === '/buy' ? 'text-[#008080]' : 'text-white hover:text-[#008080]'
               }`}
             >
-              Buy
+              Buy Old Cars
             </Link>
-            <Link
-              href="/sell"
-              className={`text-sm md:text-base font-semibold transition-colors ${
-                pathname === '/sell' ? 'text-[#008080]' : 'text-white hover:text-[#008080]'
-              }`}
-            >
-              Sell
-            </Link>
-            <Link
+          
+            {/* <Link
               href="/rent"
               className={`text-sm md:text-base font-semibold transition-colors ${
                 pathname === '/rent' ? 'text-[#008080]' : 'text-white hover:text-[#008080]'
               }`}
             >
               Rent
-            </Link>
+            </Link> */}
             <Link
               href="/about"
               className={`text-sm md:text-base font-semibold transition-colors ${
