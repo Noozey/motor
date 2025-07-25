@@ -16,7 +16,7 @@
     const categories: Categories = [
     {name:'Home',link:'/'},
     {name:'Buy',link:'/buy'},
-    {name:'Sell',link:'/sell'},
+    {name:'SellOldCars',link:'/sellcars'},
     {name:'Rent',link:'/rent'},
     ];
 

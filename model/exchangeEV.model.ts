@@ -5,8 +5,12 @@ const ExchangeFormSchema = new mongoose.Schema({
       type:mongoose.Schema.Types.ObjectId,
       ref:"User",
       required:true,
-   }
-   ,
+   },
+   sellCar:{
+      type:mongoose.Schema.Types.ObjectId,
+      ref:"SellCar",
+      required:true,
+   },
    newVehicleBrand:{
         type: String,
         required: true,
@@ -20,7 +24,7 @@ const ExchangeFormSchema = new mongoose.Schema({
         required: true,
      },
      downPayment:{
-        type: Number,
+        type: String,
         required: true,
      },
      finance:{

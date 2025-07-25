@@ -9,12 +9,12 @@ export async function POST(req: NextRequest) {
         const result= await registerEvExchangeDetails(data);
           if (!result.success) {
             return NextResponse.json(
-                { error: result.message || "Failed to fetch categories" },
-                { status: 500 }
+                { message: result.message || "something went wrong" } ,
+                { status: 400 }
             );
         }
 
-        return NextResponse.json({ result }, { status: 200 });
+        return NextResponse.json( result, { status: 201});
         
     }catch(error){
         console.error('Error in exchange ev request:', error);

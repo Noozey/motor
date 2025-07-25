@@ -333,6 +333,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import SubmitPortal from '@/components/SubmitPortal';
 import Image from 'next/image';
 import { FaCheckCircle } from 'react-icons/fa';
+import { useExchangeStore } from '@/store/useExchangeStore';
 
 interface OptionType {
   value: string;
@@ -512,6 +513,28 @@ interface FormDataState {
   downpayment: string;
   finance: string;
   additionalInfo: string;
+  //  fullName:string
+  // email:string
+  // phone:string
+  // city:string
+  // vehicleModel:string
+  // accidents:string
+  // accidentInfo?:string
+  // additionalInfo?:string
+  // condition:string
+  // downpayment:Number
+  // expectedValuation:Number
+  // features:string
+  // finance:string
+  // fuelType:string
+  // kmDriven:Number
+  // makeYear:string
+  // newVehicleBrand:string
+  // newVehicleModel:string
+  // newVehiclePriceRange:string
+  // transmission:string
+  // vehicleColor:string
+  // vehicleType:string
 }
 
 // Define the initial state for the form
@@ -524,11 +547,10 @@ const initialFormState: FormDataState = {
 };
 
 const VehicleValuationForm: FC = () => {
-    const [isSubmitting, setIsSubmitting] = useState(false);
+  const {isSubmitLoading, isSubmitSuccess, isSubmitError ,singleCarExchangeData,exchangeEvSubmit}=useExchangeStore()
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [formData, setFormData] = useState<FormDataState>(initialFormState);
 
-    // Generic handler for text inputs, textareas, and radio buttons
     const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
       const { name, value } = e.target;
       setFormData(prev => ({ ...prev, [name]: value }));
@@ -538,18 +560,23 @@ const VehicleValuationForm: FC = () => {
     const handleSelectChange = (field: keyof FormDataState) => (value: string) => {
         setFormData(prev => ({ ...prev, [field]: value }));
     };
+    
 
     const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
-        setIsSubmitting(true);
 
         console.log('Submitting Form Data:', formData);
+         await exchangeEvSubmit(formData);
 
-        await new Promise(resolve => setTimeout(resolve, 1500)); // Simulate API call
-
-        setIsSubmitting(false);
-        setIsModalOpen(true); // Open success modal
+        // await new Promise(resolve => setTimeout(resolve, 1500)); // Simulate API call
+      
     };
+
+    useEffect(()=>{
+       if(isSubmitSuccess){
+        setIsModalOpen(true);
+       } 
+    },[isSubmitSuccess])
     
     const handleReset = () => {
         setFormData(initialFormState);
@@ -572,6 +599,9 @@ const VehicleValuationForm: FC = () => {
     ];
     const carColorOptions: OptionType[] = [ "White", "Black", "Silver", "Grey", "Red", "Blue", "Maroon", "Brown", "Green", "Yellow", "Orange", "Gold", "Beige", "Sky Blue", "Pearl White", "Metallic Silver", "Gunmetal Grey", "Navy Blue"
     ].map(color => ({ value: color.toLowerCase(), label: color }));
+
+    console.log(singleCarExchangeData)
+    console.log(isSubmitSuccess)
 
     return (
         <main style={{ backgroundColor: '#E8EDEE' }} className="py-16 w-full">
@@ -641,8 +671,8 @@ const VehicleValuationForm: FC = () => {
                             </div>
 
                             <div className="flex items-center mt-6 md:col-span-2">
-                                <button onClick={handleSubmit} disabled={isSubmitting} className="cursor-pointer text-white bg-teal-600 font-medium py-2.5 px-8 rounded-lg transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-teal-500 hover:bg-teal-700 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed">
-                                    {isSubmitting ? 'Submitting...' : 'Submit'}
+                                <button onClick={handleSubmit} disabled={isSubmitLoading} className="cursor-pointer text-white bg-teal-600 font-medium py-2.5 px-8 rounded-lg transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-teal-500 hover:bg-teal-700 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed">
+                                    {isSubmitLoading ? 'Submitting...' : 'Submit'}
                                 </button>
                                 <button type="button" onClick={handleReset} className="cursor-pointer text-gray-200 font-medium ml-4 border-2 border-white/20 py-2.5 px-8 rounded-lg transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-gray-400 hover:bg-white/10">
                                     Reset

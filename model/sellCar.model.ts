@@ -30,7 +30,7 @@ const sellCarSchema = new mongoose.Schema({
         type: String,
         required: false,
      },
-     feature:{
+     features:{
         type: String,
         required: true,
      },

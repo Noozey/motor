@@ -2,6 +2,7 @@ import { connectdb} from "@/lib/db";
 import ExchangeEV from "@/model/exchangeEV.model";
 import SellCar from "@/model/sellCar.model";
 import User from "@/model/user.model";
+import { ExchangeEVDataDetail } from "@/types";
 
 export async function getAllNewEVVehicleDetails() {
     try {
@@ -14,26 +15,25 @@ export async function getAllNewEVVehicleDetails() {
     }
 }
 
-export async function registerEvExchangeDetails(data:any){
+export async function registerEvExchangeDetails(data:ExchangeEVDataDetail){
     try{
         await connectdb();
-        const {fullname, email, phone,city,vehicleModel, accidents,accidentInfo, additionalInfo, condition,downpayment,expectedValuation,features,finance, fuelType,kmDriven, makeYear, newVehicleBrand, newVehicleModel,newVehiclePriceRange,transmission,vehicleColor,vehicleType}=data;
-
-        console.log({fullname, email, phone,city,vehicleModel, accidents,accidentInfo, additionalInfo, condition,downpayment,expectedValuation,features,finance, fuelType,kmDriven, makeYear, newVehicleBrand, newVehicleModel,newVehiclePriceRange,transmission,vehicleColor,vehicleType})
-
-        if(!fullname || !email || !phone || !city){
+        const {fullName, email, phone,city,vehicleModel, accidents,accidentInfo, additionalInfo, condition,downpayment:downPayment,expectedValuation,features,finance, fuelType,kmDriven, makeYear, newVehicleBrand, newVehicleModel,newVehiclePriceRange,transmission,vehicleColor,vehicleType}=data;
+        
+        // console.log({fullName, email, phone,city,vehicleModel, accidents,accidentInfo, additionalInfo, condition,downPayment,expectedValuation,features,finance, fuelType,kmDriven, makeYear, newVehicleBrand, newVehicleModel,newVehiclePriceRange,transmission,vehicleColor,vehicleType})
+        if(!fullName || !email || !phone || !city){
           return { success: false, message: `All fields are required` };
         }
         
         if(!vehicleModel || !condition || !fuelType || !kmDriven || !makeYear || !vehicleColor || !vehicleType || !expectedValuation || !features || !accidents || !transmission){
-          return { success: false, message: `Vehicle full details are required` };
+          return { success: false, message: `Old Vehicle full details are required` };
         }
 
-        if(!newVehicleBrand || !newVehicleModel || !newVehiclePriceRange || !downpayment || !finance ){
+        if(!newVehicleBrand || !newVehicleModel || !newVehiclePriceRange || !downPayment || !finance ){
           return { success: false, message: `New vehicle all details are required` };
         }
         const newUser=new User({
-            fullname,
+            fullName,
             email,
             phone,
             city
@@ -62,14 +62,14 @@ export async function registerEvExchangeDetails(data:any){
         const newExchangeEV= new ExchangeEV({
             user: newUser._id,
             sellCar: newSellCar._id,
-            downpayment,
+            downPayment,
             finance,
             newVehicleBrand,
             newVehicleModel,
             newVehiclePriceRange
         })
         await newExchangeEV.save();
-        return { success: true, data };
+        return { success: true, data:newExchangeEV};
     }catch(error){
         console.error(`Error registering EV exchange details:`, error);
         return { success: false, message: `Failed to register EV exchange details` };

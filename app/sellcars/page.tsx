@@ -1,8 +1,7 @@
-"use client";
 import React from "react";
 import Link from "next/link";
 
-interface Car {
+interface SellCarDetail {
   title: string;
   type: string;
   color: string;
@@ -14,7 +13,7 @@ interface Car {
   icon: string;
 }
 
-const cars: Car[] = [
+const cars: SellCarDetail[] = [
   {
     title: "2019 Toyota Corolla",
     type: "Sedan",
@@ -61,10 +60,18 @@ const cars: Car[] = [
   },
 ];
 
-const AvailableCars: React.FC = () => {
-  const handleContact = (title: string) => {
-    alert(`Contacting seller for ${title}. Phone: +977-98XXXXXXXX`);
-  };
+
+
+const AvailableCars: React.FC = async () => {
+
+  const response= await fetch(`${process.env.CLIENT_URL}/api/sellcars`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  const carsDetail=await response.json();
+  console.log(carsDetail);
 
   return (
     <main className="min-h-screen bg-gray-100 text-gray-800">
