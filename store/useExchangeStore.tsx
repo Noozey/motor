@@ -8,6 +8,7 @@ type ExchangeStoreState = {
   isSubmitSuccess: boolean;
   isSubmitError: boolean;
   exchangeEvSubmit: (data: ExchangeEVDataDetail) => void;
+  resetSubmitSuccess: () => void;
 };
 
 export const useExchangeStore = create<ExchangeStoreState>((set) => ({
@@ -15,6 +16,7 @@ export const useExchangeStore = create<ExchangeStoreState>((set) => ({
   isSubmitLoading: false,
   isSubmitSuccess: false,
   isSubmitError: false,
+  resetSubmitSuccess: () => set({ isSubmitSuccess: false, isSubmitError: false }),
   exchangeEvSubmit:async(data)=>{
     set({ isSubmitLoading: true, isSubmitSuccess: false, isSubmitError: false });
        try{

@@ -1,64 +1,64 @@
 import React from "react";
 import Link from "next/link";
 
-interface SellCarDetail {
-  title: string;
-  type: string;
-  color: string;
-  km: number;
-  fuel: string;
-  transmission: string;
-  city: string;
-  price: string;
-  icon: string;
-}
+// interface SellCarDetail {
+//   title: string;
+//   type: string;
+//   color: string;
+//   km: number;
+//   fuel: string;
+//   transmission: string;
+//   city: string;
+//   price: string;
+//   icon: string;
+// }
 
-const cars: SellCarDetail[] = [
-  {
-    title: "2019 Toyota Corolla",
-    type: "Sedan",
-    color: "White",
-    km: 45000,
-    fuel: "Petrol",
-    transmission: "Automatic",
-    city: "Kathmandu",
-    price: "NPR 35,00,000",
-    icon: "/carTypeImage/hyundai-i22.png",
-  },
-  {
-    title: "2020 Honda CR-V",
-    type: "SUV",
-    color: "Silver",
-    km: 32000,
-    fuel: "Petrol",
-    transmission: "Automatic",
-    city: "Pokhara",
-    price: "NPR 55,00,000",
-    icon: "/carTypeImage/tata-nexon-ev.png",
-  },
-  {
-    title: "2021 Hyundai Elantra",
-    type: "Sedan",
-    color: "Black",
-    km: 28000,
-    fuel: "Petrol",
-    transmission: "Manual",
-    city: "Lalitpur",
-    price: "NPR 42,00,000",
-    icon: "/carTypeImage/suzuki-brezza.png",
-  },
-  {
-    title: "2022 Nissan Leaf",
-    type: "Hatch",
-    color: "Blue",
-    km: 15000,
-    fuel: "Electric",
-    transmission: "Automatic",
-    city: "Kathmandu",
-    price: "NPR 48,00,000",
-    icon: "/carTypeImage/hyundai-creta.png",
-  },
-];
+// const cars: SellCarDetail[] = [
+//   {
+//     title: "2019 Toyota Corolla",
+//     type: "Sedan",
+//     color: "White",
+//     km: 45000,
+//     fuel: "Petrol",
+//     transmission: "Automatic",
+//     city: "Kathmandu",
+//     price: "NPR 35,00,000",
+//     icon: "/carTypeImage/hyundai-i22.png",
+//   },
+//   {
+//     title: "2020 Honda CR-V",
+//     type: "SUV",
+//     color: "Silver",
+//     km: 32000,
+//     fuel: "Petrol",
+//     transmission: "Automatic",
+//     city: "Pokhara",
+//     price: "NPR 55,00,000",
+//     icon: "/carTypeImage/tata-nexon-ev.png",
+//   },
+//   {
+//     title: "2021 Hyundai Elantra",
+//     type: "Sedan",
+//     color: "Black",
+//     km: 28000,
+//     fuel: "Petrol",
+//     transmission: "Manual",
+//     city: "Lalitpur",
+//     price: "NPR 42,00,000",
+//     icon: "/carTypeImage/suzuki-brezza.png",
+//   },
+//   {
+//     title: "2022 Nissan Leaf",
+//     type: "Hatch",
+//     color: "Blue",
+//     km: 15000,
+//     fuel: "Electric",
+//     transmission: "Automatic",
+//     city: "Kathmandu",
+//     price: "NPR 48,00,000",
+//     icon: "/carTypeImage/hyundai-creta.png",
+//   },
+// ];
 
 
 
@@ -198,5 +198,6 @@ const AvailableCars: React.FC = async () => {
     </main>
   );
 };
+
 
 export default AvailableCars;
