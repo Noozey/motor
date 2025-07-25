@@ -27,8 +27,6 @@ export const useExchangeStore = create<ExchangeStoreState>((set) => ({
         });
 
         const responseData = await response.json();
-        
-        console.log(responseData);
          if (!responseData.success) {
       toast.error(responseData.message || 'Failed to submit exchange');
       set({ isSubmitLoading: false, isSubmitError: true });

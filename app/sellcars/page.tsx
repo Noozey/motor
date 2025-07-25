@@ -64,14 +64,14 @@ const cars: SellCarDetail[] = [
 
 const AvailableCars: React.FC = async () => {
 
-  const response= await fetch(`${process.env.CLIENT_URL}/api/sellcars`, {
+  const response= await fetch(`${process.env.CLIENT_URL}/api/sellCarsDetail`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
     },
   });
-  const carsDetail=await response.json();
-  console.log(carsDetail);
+  const {sellCarDetail}=await response.json();
+  console.log(sellCarDetail);
 
   return (
     <main className="min-h-screen bg-gray-100 text-gray-800">
@@ -149,40 +149,40 @@ const AvailableCars: React.FC = async () => {
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {cars.map((car, index) => (
+          {sellCarDetail.map((car:any) => (
             <div
-              key={index}
+              key={car._id}
               className="bg-white rounded-xl shadow-md overflow-hidden border-t-4 border-cyan-400 hover:-translate-y-1 transition"
             >
               <div className="bg-gradient-to-br from-teal-600 to-cyan-400 text-white flex items-center justify-center text-5xl">
-                <img src={car.icon} alt={car.title} className="w-full h-auto" />
+                <img src={car?.icon || '/carTabsImage/Sedan/honda_city.png'} alt={car?.vehicleModel} className="w-full h-auto" />
               </div>
               <div className="p-5">
                 <h3 className="text-xl font-bold text-teal-700 mb-2">
-                  {car.title}
+                  {car?.vehicleModel} ({car?.makeYear})
                 </h3>
                 <div className="grid grid-cols-2 gap-2 text-sm text-gray-600 mb-3">
                   <span>
-                    <strong>Type:</strong> {car.type}
+                    <strong>Type:</strong> {car?.vehicleType}
                   </span>
                   <span>
-                    <strong>Color:</strong> {car.color}
+                    <strong>Color:</strong> {car?.vehicleColor}
                   </span>
                   <span>
-                    <strong>KM:</strong> {car.km.toLocaleString()}
+                    <strong>KM:</strong> {car?.kmDriven} km
                   </span>
                   <span>
-                    <strong>Fuel:</strong> {car.fuel}
+                    <strong>Fuel:</strong> {car?.fuelType}
                   </span>
                   <span>
-                    <strong>Transmission:</strong> {car.transmission}
+                    <strong>Transmission:</strong> {car?.transmission}
                   </span>
                   <span>
-                    <strong>City:</strong> {car.city}
+                    <strong>City:</strong> {car?.user?.city}
                   </span>
                 </div>
                 <div className="text-cyan-500 text-lg font-semibold mb-4">
-                  {car.price}
+                  {car?.expectedValuation}
                 </div>
                 <Link
                   href={`/cardescription`}
