@@ -43,14 +43,14 @@ export type typeCarDetail={
 export type ExchangeEVDataDetail={
  fullName: string;
   email: string;
-  phone: string;
+  phone: number;
   city: string;
   vehicleModel: string;
   vehicleType: string;
-  makeYear: string;
+  makeYear: number;
   vehicleColor: string;
-  kmDriven: string;
-  expectedValuation: string;
+  kmDriven: number;
+  expectedValuation: number;
   features: string;
   fuelType: string;
   condition: string;
@@ -60,7 +60,7 @@ export type ExchangeEVDataDetail={
   newVehicleBrand: string;
   newVehicleModel: string;
   newVehiclePriceRange: string;
-  downpayment: string;
+  downpayment: number;
   finance: string;
   additionalInfo?: string;
 }

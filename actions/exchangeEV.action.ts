@@ -70,7 +70,13 @@ export async function registerEvExchangeDetails(data:ExchangeEVDataDetail){
         })
         await newExchangeEV.save();
         return { success: true, data:newExchangeEV};
-    }catch(error){
+    }catch(error:any){
+        if (error.name === 'ValidationError') {
+  return {
+    success: false,
+    message: Object.values(error.errors).map((err:any) => err.message).join(', ')
+  };
+}
         console.error(`Error registering EV exchange details:`, error);
         return { success: false, message: `Failed to register EV exchange details` };
     }

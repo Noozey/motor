@@ -39,9 +39,10 @@ interface InputFieldProps {
   placeholder?: string;
   type?: 'text' | 'email' | 'number' | 'tel';
   required?: boolean;
+  maxLength?: number;
 }
 
-const InputField: FC<InputFieldProps> = ({ id, name, label, value, onChange, placeholder, type = 'text', required = false }) => (
+const InputField: FC<InputFieldProps> = ({ id, name, label, value, onChange, placeholder, type = 'text', required = false, maxLength }) => (
   <div>
     <label htmlFor={id} className="block text-sm font-medium text-gray-300 mb-1">
       {label}
@@ -54,6 +55,7 @@ const InputField: FC<InputFieldProps> = ({ id, name, label, value, onChange, pla
       onChange={onChange}
       placeholder={placeholder || label}
       required={required}
+      maxLength={maxLength}
       className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-400"
     />
   </div>
@@ -163,14 +165,14 @@ const CustomSelect: FC<CustomSelectProps> = ({ id, label, options, selectedValue
 interface FormDataState {
   fullName: string;
   email: string;
-  phone: string;
+  phone: number ;
   city: string;
   vehicleModel: string;
   vehicleType: string;
-  makeYear: string;
+  makeYear: number ;
   vehicleColor: string;
-  kmDriven: string;
-  expectedValuation: string;
+  kmDriven: number ;
+  expectedValuation: number;
   features: string;
   fuelType: string;
   condition: string;
@@ -180,7 +182,7 @@ interface FormDataState {
   newVehicleBrand: string;
   newVehicleModel: string;
   newVehiclePriceRange: string;
-  downpayment: string;
+  downpayment: number;
   finance: string;
   additionalInfo: string;
   //  fullName:string
@@ -208,13 +210,30 @@ interface FormDataState {
 }
 
 // Define the initial state for the form
-const initialFormState: FormDataState = {
-  fullName: '', email: '', phone: '', city: '',
-  vehicleModel: '', vehicleType: '', makeYear: '', vehicleColor: '', kmDriven: '', expectedValuation: '',
-  features: '', fuelType: '', condition: '', accidents: '', accidentInfo: '', transmission: '',
-  newVehicleBrand: '', newVehicleModel: '', newVehiclePriceRange: '', downpayment: '',
-  finance: '', additionalInfo: '',
-};
+  const initialFormState: FormDataState = {
+    fullName: '',
+    email: '',
+    phone: 0,
+    city: '',
+    vehicleModel: '',
+    vehicleType: '',
+    makeYear: 0,
+    vehicleColor: '',
+    kmDriven: 0,
+    expectedValuation: 0,
+    features: '',
+    fuelType: '',
+    condition: '',
+    accidents: '',
+    accidentInfo: '',
+    transmission: '',
+    newVehicleBrand: '',
+    newVehicleModel: '',
+    newVehiclePriceRange: '',
+    downpayment: 0,
+    finance: '',
+    additionalInfo: '',
+  };
 
 const VehicleValuationForm: FC = () => {
   const {isSubmitLoading, isSubmitSuccess, isSubmitError,resetSubmitSuccess ,singleCarExchangeData,exchangeEvSubmit}=useExchangeStore()
@@ -222,8 +241,22 @@ const VehicleValuationForm: FC = () => {
     const [formData, setFormData] = useState<FormDataState>(initialFormState);
 
     const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-      const { name, value } = e.target;
-      setFormData(prev => ({ ...prev, [name]: value }));
+      const { name, value, type } = e.target;
+      // Restrict phone to 10 digits and makeYear to 4 digits
+      if (name === "phone") {
+        // Remove non-digits, limit to 10
+        let cleaned = value.replace(/\D/g, "").slice(0, 10);
+        setFormData(prev => ({ ...prev, phone: cleaned === '' ? 0 : Number(cleaned) }));
+      } else if (name === "makeYear") {
+        let cleaned = value.replace(/\D/g, "").slice(0, 4);
+        setFormData(prev => ({ ...prev, makeYear: cleaned === '' ? 0 : Number(cleaned) }));
+      } else if (["kmDriven", "expectedValuation"].includes(name)) {
+        // Only allow non-negative numbers
+        const num = value === '' ? '' : Math.max(0, Number(value));
+        setFormData(prev => ({ ...prev, [name]: num }));
+      } else {
+        setFormData(prev => ({ ...prev, [name]: value }));
+      }
     };
 
     // Handler factory for custom select components
@@ -258,7 +291,7 @@ const VehicleValuationForm: FC = () => {
 
     const closeModal = () => {
         setIsModalOpen(false);
-        handleReset(); // Reset form when closing modal
+        // handleReset(); // Reset form when closing modal
     };
     
     // Options for select dropdowns
@@ -307,16 +340,16 @@ const VehicleValuationForm: FC = () => {
                             <h2 className="text-xl font-semibold text-white md:col-span-2">1. Owner Details</h2>
                             <InputField id="fullName" name="fullName" label="Full Name" value={formData.fullName} onChange={handleChange} placeholder="Prajwol Shrestha" required />
                             <InputField id="email" name="email" label="Email Address" type="email" value={formData.email} onChange={handleChange} placeholder="prajwolstha@example.com" required />
-                            <InputField id="phone" name="phone" label="Phone Number" type="tel" value={formData.phone} onChange={handleChange} placeholder="98XXXXXXXX" required />
+                            <InputField id="phone" name="phone" label="Phone Number" type="tel" value={formData.phone === 0 ? '' : String(formData.phone)} onChange={handleChange} placeholder="98XXXXXXXX" required maxLength={10} />
                             <CustomSelect id="city" label="City" options={cityOptions} placeholder="Select your city" selectedValue={formData.city} onSelect={handleSelectChange('city')} />
                             
                             <h2 className="text-xl font-semibold text-white md:col-span-2 mt-4">2. Vehicle Details</h2>
                             <InputField id="vehicleModel" name="vehicleModel" label="Vehicle Model" value={formData.vehicleModel} onChange={handleChange} placeholder="e.g., Maruti Suzuki Alto 800" required />
                             <CustomSelect id="vehicleType" label="Vehicle Type" options={carTypesOptions} placeholder="Select your vehicle type" selectedValue={formData.vehicleType} onSelect={handleSelectChange('vehicleType')} />
-                            <InputField id="makeYear" name="makeYear" label="Make year" value={formData.makeYear} onChange={handleChange} placeholder="e.g., 2078 (2021)" required />
+                            <InputField id="makeYear" name="makeYear" label="Make year" type="tel" value={formData.makeYear === 0 ? '' : String(formData.makeYear)} onChange={handleChange} placeholder="e.g., 2078 (2021)" required maxLength={4} />
                             <CustomSelect id="vehicleColor" label="Vehicle Color" options={carColorOptions} placeholder="Select vehicle color" selectedValue={formData.vehicleColor} onSelect={handleSelectChange('vehicleColor')} />
-                            <InputField id="kmDriven" name="kmDriven" label="KM driven" value={formData.kmDriven} onChange={handleChange} placeholder="e.g., 35,000" required />
-                            <InputField id="expectedValuation" name="expectedValuation" label="Expected Valuation amount (in NPR)" type="text" value={formData.expectedValuation} onChange={handleChange} placeholder="e.g., NPR 12,50,000" required />
+                            <InputField id="kmDriven" name="kmDriven" label="KM driven" type="number" value={formData.kmDriven === 0 ? '' : String(formData.kmDriven)} onChange={handleChange} placeholder="e.g., 35,000" required />
+                            <InputField id="expectedValuation" name="expectedValuation" label="Expected Valuation amount (in NPR)" type="number" value={formData.expectedValuation === 0 ? '' : String(formData.expectedValuation)} onChange={handleChange} placeholder="e.g., NPR 12,50,000" required />
 
                             <RadioGroup label="Features:" name="features" options={[{ value: 'full', label: 'Full Option' }, { value: 'mid', label: 'Mid Option' }, { value: 'unknown', label: "I don't know" }]} selectedValue={formData.features} onChange={handleChange} />
                             <RadioGroup label="Fuel Type:" name="fuelType" options={[{ value: 'petrol', label: 'Petrol' }, { value: 'diesel', label: 'Diesel' }, { value: 'electric', label: 'Electric' }, { value: 'hybrid', label: 'Hybrid' }]} selectedValue={formData.fuelType} onChange={handleChange} />
@@ -336,7 +369,7 @@ const VehicleValuationForm: FC = () => {
                             <InputField id="newVehicleBrand" name="newVehicleBrand" label="Vehicle Brand" value={formData.newVehicleBrand} onChange={handleChange} placeholder="Leave empty if not applicable" />
                             <InputField id="newVehicleModel" name="newVehicleModel" label="Vehicle Model" value={formData.newVehicleModel} onChange={handleChange} placeholder="Leave empty if not applicable" />
                             <CustomSelect id="newVehiclePriceRange" label="Price Range" options={priceRangeOptions} placeholder="Select price range" selectedValue={formData.newVehiclePriceRange} onSelect={handleSelectChange('newVehiclePriceRange')} />
-                            <InputField id="downpayment" name="downpayment" label="Downpayment amount" type="number" value={formData.downpayment} onChange={handleChange} placeholder="NPR" />
+                            <InputField id="downpayment" name="downpayment" label="Downpayment amount" type="number" value={formData.downpayment === 0 ? '' : String(formData.downpayment)} onChange={handleChange} placeholder="NPR" />
 
                             <RadioGroup label="Looking to Finance?:" name="finance" options={[{ value: 'yes', label: 'Yes' }, { value: 'no', 'label': 'No' }]} selectedValue={formData.finance} onChange={handleChange}/>
                             <div className="md:col-span-2">
