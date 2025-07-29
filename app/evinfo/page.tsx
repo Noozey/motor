@@ -141,7 +141,7 @@ const ElectricVehicleGuide: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-100">
       {/* Header */}
-      <section className="relative overflow-hidden py-20 px-4 sm:px-8 lg:px-16">
+      <section className="relative overflow-hidden pt-20  px-4 sm:px-8 lg:px-16">
         <div className="relative z-10 max-w-6xl mx-auto">
           {/* Breadcrumb */}
           <nav className="mb-12 flex space-x-2 text-sm font-medium w-full items-center justify-center">
@@ -174,7 +174,7 @@ const ElectricVehicleGuide: React.FC = () => {
           </nav>
 
           {/* Main Title */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-5">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-black mb-8 leading-tight">
               <span
                 className="bg-gradient-to-r bg-clip-text text-transparent"
@@ -195,7 +195,7 @@ const ElectricVehicleGuide: React.FC = () => {
       </section>
 
       {/* Benefits Section */}
-      <section id="benefits" className="py-16 my-8">
+      <section id="benefits" className=" my-8">
         <div className="max-w-6xl mx-auto px-8">
           <h2 className="text-center text-4xl font-bold text-teal-800 mb-12 relative">
             Why Choose Electric?

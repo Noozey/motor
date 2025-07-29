@@ -43,7 +43,7 @@ const Footer: React.FC = () => {
               type="text"
               className="border-none py-2 px-2 flex-1 focus:outline-none "
             />
-            <button className="bg-[#1B72EB] px-3 py-3 text-white text-sm cursor-pointer">
+            <button className="bg-gradient-to-r from-[#004D40] via-[#008080] to-[#00BCD4] px-3 py-3 text-white text-sm cursor-pointer">
               Sign Up
             </button>
           </div>
@@ -107,7 +107,7 @@ const Footer: React.FC = () => {
             <Link href={"/contact"} className="hover:text-[#1B72EB]">
               Your Ad Choices
             </Link>
-            <Link href={"/contact"} className="hover:text-[#1B72EB]">
+            <Link href={"/privacy-policy"} className="hover:text-[#1B72EB]">
               Privacy Statement
             </Link>
           </div>
