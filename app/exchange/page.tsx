@@ -13,6 +13,7 @@ import SubmitPortal from "@/components/SubmitPortal";
 import Image from "next/image";
 import { FaCheckCircle } from "react-icons/fa";
 import { useExchangeStore } from "@/store/useExchangeStore";
+import { Upload } from "lucide-react";
 
 interface OptionType {
   value: string;
@@ -287,6 +288,42 @@ const initialFormState: FormDataState = {
   downpayment: 0,
   finance: "",
   additionalInfo: "",
+};
+
+const ImageUpload = () => {
+  return (
+    <div className="md:col-span-2">
+      <label className="block text-sm font-medium text-gray-800 mb-2">
+        Vehicle Images (up to 5)
+      </label>
+
+      <div className="mb-4">
+        <label
+          htmlFor="image-upload"
+          className="flex flex-col items-center justify-center w-full h-32 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100 transition-colors"
+        >
+          <div className="flex flex-col items-center justify-center pt-5 pb-6">
+            <Upload className="w-8 h-8 mb-2 text-gray-400" />
+            <p className="mb-2 text-sm text-gray-500">
+              <span className="font-semibold">Click to upload</span> vehicle
+              images
+            </p>
+            <p className="text-xs text-gray-500">
+              PNG, JPG, JPEG up to 10MB each
+            </p>
+            <p className="text-xs text-gray-500">0/5 images uploaded</p>
+          </div>
+          <input
+            id="image-upload"
+            type="file"
+            multiple
+            accept="image/*"
+            className="hidden"
+          />
+        </label>
+      </div>
+    </div>
+  );
 };
 
 const VehicleValuationForm: FC = () => {
@@ -617,6 +654,7 @@ const VehicleValuationForm: FC = () => {
                   selectedValue={formData.accidents}
                   onChange={handleChange}
                 />
+                <ImageUpload />
                 <div className="md:col-span-2">
                   <label
                     htmlFor="accidentInfo"
