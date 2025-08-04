@@ -363,13 +363,13 @@ function InputWithDelete() {
   };
 
   return (
-    <div className="w-full mt-8 bg-white flex-col items-center justify-center">
-      <div className="flex">
+    <div className="w-full mt-8 bg-white flex-col items-center justify-center ">
+      <div className="flex w-full mb-3">
         <h2 className="text-base font-semibold text-gray-800 md:w-1/3">
           Additional Featues:
         </h2>
 
-        <div className="mb-4">
+        <div className="w-full">
           <input
             type="text"
             value={inputValue}
@@ -383,12 +383,12 @@ function InputWithDelete() {
               }
             }}
             placeholder="Type something and press Enter..."
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-[105%] px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           />
         </div>
       </div>
 
-      <div className="flex gap-2 flex-wrap">
+      <div className="flex gap-2 flex-wrap ">
         {items.map((item) => (
           <div
             key={item.id}
