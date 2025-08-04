@@ -61,15 +61,19 @@ import Link from "next/link";
 // ];
 
 const AvailableCars: React.FC = async () => {
-  const response = await fetch(`${process.env.CLIENT_URL}/api/sellCarsDetail`, {
+  const response = await fetch("http://localhost:3000/api/sellCarsDetail", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
     },
   });
-  const { sellCarDetail } = await response.json();
-  console.log(sellCarDetail);
 
+  const { sellCarDetail } = await response.json();
+
+  if (!Array.isArray(sellCarDetail)) {
+    console.error("sellCarDetail not found or not an array");
+    return <div>Failed to load cars.</div>;
+  }
   return (
     <main className="min-h-screen bg-gray-100 text-gray-800">
       <section className="relative overflow-hidden py-20 px-4 sm:px-8 lg:px-16">
