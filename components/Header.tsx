@@ -6,6 +6,7 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import SideMenu from "./SideMenu";
 import { usePathname } from "next/navigation";
+import mainlogo from "../public/MainLogo.png";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
@@ -40,12 +41,7 @@ const Header = () => {
 
         {/* Logo Section */}
         <Link href="/" className="flex items-center">
-          <Image
-            src={"/MainLogo.png"}
-            alt="Nepal Motor Logo"
-            width={40}
-            height={40}
-          />
+          <Image src={mainlogo} alt="Nepal Motor Logo" width={40} height={40} />
           <span className="text-white text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold ml-2 sm:ml-3">
             Nepal Motor
           </span>
@@ -85,14 +81,6 @@ const Header = () => {
               Buy Old Cars
             </Link>
 
-            {/* <Link
-              href="/rent"
-              className={`text-sm md:text-base font-semibold transition-colors ${
-                pathname === '/rent' ? 'text-[#00F3FF]' : 'text-white hover:text-[#00F3FF]'
-              }`}
-            >
-              Rent
-            </Link> */}
             <Link
               href="/about"
               className={`text-sm md:text-base font-semibold transition-colors ${

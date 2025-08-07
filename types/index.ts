@@ -1,4 +1,3 @@
-
 export interface DropdownOption {
   value: string;
   label: string;
@@ -11,26 +10,25 @@ export interface DropdownFieldProps {
   id: string;
 }
 
-
-export enum CarTabs{
-    suv="SUV",
-    hatchback="Hatchback",
-    sedan="Sedan",
-    muv="MUV",
-    luxury="Luxury"
+export enum CarTabs {
+  suv = "SUV",
+  hatchback = "Hatchback",
+  sedan = "Sedan",
+  muv = "MUV",
+  luxury = "Luxury",
 }
-export type CarDetails={
-    name:string,
-    price:string,
-    image:string
-}
+export type CarDetails = {
+  name: string;
+  price: string;
+  image: string;
+};
 
-export type CarData={
-    [key in CarTabs]: CarDetails[]
-}
+export type CarData = {
+  [key in CarTabs]: CarDetails[];
+};
 
-export type typeCarDetail={
-     imageUrl: string;
+export type typeCarDetail = {
+  imageUrl: string;
   year: number;
   make: string;
   model: string;
@@ -38,10 +36,15 @@ export type typeCarDetail={
   mileage: number;
   transmission: string;
   price: number;
-}
+};
 
-export type ExchangeEVDataDetail={
- fullName: string;
+type AdditionalFeatures = {
+  id: number;
+  text: string;
+};
+
+export type ExchangeEVDataDetail = {
+  fullName: string;
   email: string;
   phone: number;
   city: string;
@@ -55,12 +58,15 @@ export type ExchangeEVDataDetail={
   fuelType: string;
   condition: string;
   accidents: string;
-  accidentInfo?: string;
+  accidentInfo: string;
   transmission: string;
   newVehicleBrand: string;
   newVehicleModel: string;
   newVehiclePriceRange: string;
   downpayment: number;
   finance: string;
-  additionalInfo?: string;
-}
+  additionalInfo: string;
+  images: File[];
+  additionalFeatures: AdditionalFeatures[];
+  engineType: string;
+};

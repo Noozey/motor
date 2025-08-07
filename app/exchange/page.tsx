@@ -15,10 +15,99 @@ import { FaCheckCircle } from "react-icons/fa";
 import { useExchangeStore } from "@/store/useExchangeStore";
 import { Upload, X } from "lucide-react";
 
-interface OptionType {
+type OptionType = {
   value: string;
   label: string;
-}
+};
+type InputFieldProps = {
+  id: string; // Should be the same as name
+  name: string;
+  label: string;
+  value: string;
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  placeholder?: string;
+  type?: "text" | "email" | "number" | "tel";
+  required?: boolean;
+  maxLength?: number;
+};
+
+type RadioGroupProps = {
+  label: string;
+  name: string;
+  options: OptionType[];
+  selectedValue: string;
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+};
+
+type CustomSelectProps = {
+  id: string;
+  label: string;
+  options: OptionType[];
+  selectedValue: string;
+  onSelect: (value: string) => void;
+  placeholder: string;
+};
+
+type AdditionalFeatures = {
+  id: number;
+  text: string;
+};
+
+type FormDataState = {
+  fullName: string;
+  email: string;
+  phone: number;
+  city: string;
+  vehicleModel: string;
+  vehicleType: string;
+  makeYear: number;
+  vehicleColor: string;
+  kmDriven: number;
+  expectedValuation: number;
+  features: string;
+  fuelType: string;
+  condition: string;
+  accidents: string;
+  accidentInfo: string;
+  transmission: string;
+  newVehicleBrand: string;
+  newVehicleModel: string;
+  newVehiclePriceRange: string;
+  downpayment: number;
+  finance: string;
+  additionalInfo: string;
+  image: File[];
+  additionalFeatures: AdditionalFeatures[];
+  engineType: string;
+};
+
+const initialFormState: FormDataState = {
+  fullName: "",
+  email: "",
+  phone: 0,
+  city: "",
+  vehicleModel: "",
+  vehicleType: "",
+  makeYear: 0,
+  vehicleColor: "",
+  kmDriven: 0,
+  expectedValuation: 0,
+  features: "",
+  fuelType: "",
+  condition: "",
+  accidents: "",
+  accidentInfo: "",
+  transmission: "",
+  newVehicleBrand: "",
+  newVehicleModel: "",
+  newVehiclePriceRange: "",
+  downpayment: 0,
+  finance: "",
+  additionalInfo: "",
+  image: [],
+  engineType: "",
+  additionalFeatures: [],
+};
 
 const useOnClickOutside = <T extends HTMLElement>(
   ref: RefObject<T>,
@@ -39,18 +128,6 @@ const useOnClickOutside = <T extends HTMLElement>(
     };
   }, [ref, handler]);
 };
-
-interface InputFieldProps {
-  id: string; // Should be the same as name
-  name: string;
-  label: string;
-  value: string;
-  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
-  placeholder?: string;
-  type?: "text" | "email" | "number" | "tel";
-  required?: boolean;
-  maxLength?: number;
-}
 
 const InputField: FC<InputFieldProps> = ({
   id,
@@ -83,14 +160,6 @@ const InputField: FC<InputFieldProps> = ({
     />
   </div>
 );
-
-interface RadioGroupProps {
-  label: string;
-  name: string;
-  options: OptionType[];
-  selectedValue: string;
-  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
-}
 
 const RadioGroup: FC<RadioGroupProps> = ({
   label,
@@ -126,15 +195,6 @@ const RadioGroup: FC<RadioGroupProps> = ({
     </div>
   </div>
 );
-
-interface CustomSelectProps {
-  id: string;
-  label: string;
-  options: OptionType[];
-  selectedValue: string;
-  onSelect: (value: string) => void;
-  placeholder: string;
-}
 
 const CustomSelect: FC<CustomSelectProps> = ({
   id,
@@ -214,207 +274,6 @@ const CustomSelect: FC<CustomSelectProps> = ({
   );
 };
 
-// --- Main Form Component ---
-
-// Define the shape of our form data
-interface FormDataState {
-  fullName: string;
-  email: string;
-  phone: number;
-  city: string;
-  vehicleModel: string;
-  vehicleType: string;
-  makeYear: number;
-  vehicleColor: string;
-  kmDriven: number;
-  expectedValuation: number;
-  features: string;
-  fuelType: string;
-  condition: string;
-  accidents: string;
-  accidentInfo: string;
-  transmission: string;
-  newVehicleBrand: string;
-  newVehicleModel: string;
-  newVehiclePriceRange: string;
-  downpayment: number;
-  finance: string;
-  additionalInfo: string;
-  //  fullName:string
-  // email:string
-  // phone:string
-  // city:string
-  // vehicleModel:string
-  // accidents:string
-  // accidentInfo?:string
-  // additionalInfo?:string
-  // condition:string
-  // downpayment:Number
-  // expectedValuation:Number
-  // features:string
-  // finance:string
-  // fuelType:string
-  // kmDriven:Number
-  // makeYear:string
-  // newVehicleBrand:string
-  // newVehicleModel:string
-  // newVehiclePriceRange:string
-  // transmission:string
-  // vehicleColor:string
-  // vehicleType:string
-}
-
-// Define the initial state for the form
-const initialFormState: FormDataState = {
-  fullName: "",
-  email: "",
-  phone: 0,
-  city: "",
-  vehicleModel: "",
-  vehicleType: "",
-  makeYear: 0,
-  vehicleColor: "",
-  kmDriven: 0,
-  expectedValuation: 0,
-  features: "",
-  fuelType: "",
-  condition: "",
-  accidents: "",
-  accidentInfo: "",
-  transmission: "",
-  newVehicleBrand: "",
-  newVehicleModel: "",
-  newVehiclePriceRange: "",
-  downpayment: 0,
-  finance: "",
-  additionalInfo: "",
-};
-
-const ImageUpload = () => {
-  const [images, setImages] = useState<File[]>([]);
-
-  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const selectedFiles = Array.from(e.target.files || []);
-    const totalImages = images.length + selectedFiles.length;
-
-    if (totalImages > 5) {
-      alert("You can only upload up to 5 images.");
-      return;
-    }
-
-    setImages((prevImages) => [...prevImages, ...selectedFiles]);
-  };
-
-  return (
-    <div className="md:col-span-2">
-      <label className="block text-sm font-medium text-gray-800 mb-2">
-        Vehicle Images (up to 5)
-      </label>
-
-      <div className="mb-4">
-        <label
-          htmlFor="image-upload"
-          className="flex flex-col items-center justify-center w-full h-32 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100 transition-colors"
-        >
-          <div className="flex flex-col items-center justify-center pt-5 pb-6">
-            <Upload className="w-8 h-8 mb-2 text-gray-400" />
-            <p className="mb-2 text-sm text-gray-500">
-              <span className="font-semibold">Click to upload</span> vehicle
-              images
-            </p>
-            <p className="text-xs text-gray-500">
-              PNG, JPG, JPEG up to 10MB each
-            </p>
-            <p className="text-xs text-gray-500">
-              {images.length}/5 images uploaded
-            </p>
-          </div>
-          <input
-            id="image-upload"
-            type="file"
-            multiple
-            accept="image/*"
-            className="hidden"
-            onChange={handleImageChange}
-          />
-        </label>
-      </div>
-    </div>
-  );
-};
-
-function InputWithDelete() {
-  const [inputValue, setInputValue] = useState("");
-  const [items, setItems] = useState<{ id: number; text: string }[]>([]);
-  console.log("Items before adding:", items);
-
-  const handleKeyDown = () => {
-    if (inputValue.trim() === "") return;
-    console.log("Input value:", inputValue);
-    setItems((prevItems) => [
-      ...prevItems,
-      { id: Date.now(), text: inputValue.trim() },
-    ]);
-    setInputValue("");
-  };
-
-  const deleteItem = (id: number) => {
-    setItems(items.filter((item) => item.id !== id));
-  };
-
-  return (
-    <div className="w-full mt-8 bg-white flex-col items-center justify-center ">
-      <div className="flex w-full mb-3">
-        <h2 className="text-base font-semibold text-gray-800 md:w-1/3">
-          Additional Featues:
-        </h2>
-
-        <div className="w-full">
-          <input
-            type="text"
-            value={inputValue}
-            onChange={(e) => {
-              setInputValue(e.target.value);
-            }}
-            onKeyDown={(e) => {
-              if (e.key === "Enter") {
-                e.preventDefault();
-                handleKeyDown();
-              }
-            }}
-            placeholder="Type something and press Enter..."
-            className="w-[105%] px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-          />
-        </div>
-      </div>
-
-      <div className="flex gap-2 flex-wrap ">
-        {items.map((item) => (
-          <div
-            key={item.id}
-            className="flex items-center justify-between bg-gray-50 p-1 rounded-lg border w-fit"
-          >
-            <span className="text-gray-700 flex-1">{item.text}</span>
-            <button
-              onClick={() => deleteItem(item.id)}
-              className="ml-3 p-1 text-red-500 hover:text-red-700 hover:bg-red-50 rounded-full transition-colors"
-              aria-label="Delete item"
-            >
-              <X size={16} />
-            </button>
-          </div>
-        ))}
-      </div>
-
-      {items.length === 0 && (
-        <p className="text-gray-500 text-center mt-4 italic">
-          No items yet. Type something and press Enter to add!
-        </p>
-      )}
-    </div>
-  );
-}
-
 const VehicleValuationForm: FC = () => {
   const {
     isSubmitLoading,
@@ -426,6 +285,10 @@ const VehicleValuationForm: FC = () => {
   } = useExchangeStore();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [formData, setFormData] = useState<FormDataState>(initialFormState);
+  const [images, setImages] = useState<File[]>([]);
+  const [items, setItems] = useState<{ id: number; text: string }[]>([]);
+
+  console.log(formData);
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -463,10 +326,29 @@ const VehicleValuationForm: FC = () => {
   const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
 
-    console.log("Submitting Form Data:", formData);
-    await exchangeEvSubmit(formData);
+    // Reset any previous success/error states
+    resetSubmitSuccess();
 
-    // await new Promise(resolve => setTimeout(resolve, 1500)); // Simulate API call
+    const submitData = new FormData();
+
+    // Append all regular form fields (excluding image and additionalFeatures)
+    const fieldsToExclude = ["image", "additionalFeatures"];
+    Object.entries(formData).forEach(([key, value]) => {
+      if (!fieldsToExclude.includes(key)) {
+        submitData.append(key, String(value));
+      }
+    });
+
+    // Append each image file
+    images.forEach((file) => {
+      submitData.append("images", file); // Backend will receive array of files
+    });
+
+    // Append additional features as JSON string
+    submitData.append("additionalFeatures", JSON.stringify(items));
+
+    // Use the store method instead of direct fetch
+    exchangeEvSubmit(submitData);
   };
 
   useEffect(() => {
@@ -485,10 +367,8 @@ const VehicleValuationForm: FC = () => {
 
   const closeModal = () => {
     setIsModalOpen(false);
-    // handleReset(); // Reset form when closing modal
   };
 
-  // Options for select dropdowns
   const cityOptions: OptionType[] = [
     { value: "Kathmandu", label: "Kathmandu" },
     { value: "Pokhara", label: "Pokhara" },
@@ -532,8 +412,113 @@ const VehicleValuationForm: FC = () => {
     "Navy Blue",
   ].map((color) => ({ value: color.toLowerCase(), label: color }));
 
-  console.log(singleCarExchangeData);
-  console.log(isSubmitSuccess);
+  const ImageUpload = () => {
+    const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      const selectedFiles = Array.from(e.target.files || []);
+      const totalImages = images.length + selectedFiles.length;
+
+      if (totalImages > 5) {
+        alert("You can only upload up to 5 images.");
+        return;
+      }
+
+      setImages((prevImages) => [...prevImages, ...selectedFiles]);
+    };
+
+    return (
+      <div className="md:col-span-2">
+        <label className="block text-sm font-medium text-gray-800 mb-2">
+          Vehicle Images (up to 5)
+        </label>
+
+        <div className="mb-4">
+          <label
+            htmlFor="image-upload"
+            className="flex flex-col items-center justify-center w-full h-32 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100 transition-colors"
+          >
+            <div className="flex flex-col items-center justify-center pt-5 pb-6">
+              <Upload className="w-8 h-8 mb-2 text-gray-400" />
+              <p className="mb-2 text-sm text-gray-500">
+                <span className="font-semibold">Click to upload</span> vehicle
+                images
+              </p>
+              <p className="text-xs text-gray-500">
+                PNG, JPG, JPEG up to 10MB each
+              </p>
+              <p className="text-xs text-gray-500">
+                {images.length}/5 images uploaded
+              </p>
+            </div>
+            <input
+              id="image-upload"
+              type="file"
+              multiple
+              accept="image/*"
+              className="hidden"
+              onChange={handleImageChange}
+            />
+          </label>
+        </div>
+      </div>
+    );
+  };
+
+  function InputWithDelete() {
+    const [inputValue, setInputValue] = useState("");
+
+    const handleKeyDown = () => {
+      if (inputValue.trim() === "") return;
+      setItems((prevItems) => [
+        ...prevItems,
+        { id: Date.now(), text: inputValue.trim() },
+      ]);
+      setInputValue("");
+    };
+
+    const deleteItem = (id: number) => {
+      setItems(items.filter((item) => item.id !== id));
+    };
+
+    return (
+      <div className="w-full">
+        <label className="text-base font-semibold text-gray-800 md:w-1/3">
+          Additional Features:
+        </label>
+        <div className="flex items-center gap-2 w-full">
+          <input
+            type="text"
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                e.preventDefault();
+                handleKeyDown();
+              }
+            }}
+            placeholder="Add a feature and press Enter"
+            className="flex-1 px-4 py-2 border border-gray-300 rounded-md  focus:ring-2 focus:ring-blue-500 focus:outline-none"
+          />
+        </div>
+
+        <div className="flex flex-wrap gap-2 mt-3">
+          {items.map((item) => (
+            <div
+              key={item.id}
+              className="flex items-center bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium"
+            >
+              <span>{item.text}</span>
+              <button
+                onClick={() => deleteItem(item.id)}
+                className="ml-2 text-blue-600 hover:text-blue-800 focus:outline-none"
+              >
+                <X size={14} className="cursor-pointer" />
+              </button>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <main className="py-16 w-full">
@@ -692,6 +677,21 @@ const VehicleValuationForm: FC = () => {
                   }
                   onChange={handleChange}
                   placeholder="e.g., NPR 12,50,000"
+                  required
+                />
+
+                <InputField
+                  id="engineType"
+                  name="engineType"
+                  label="Engine type"
+                  type="text"
+                  value={
+                    formData.engineType === ""
+                      ? ""
+                      : String(formData.engineType)
+                  }
+                  onChange={handleChange}
+                  placeholder="1.8L 4-Cylinder"
                   required
                 />
 

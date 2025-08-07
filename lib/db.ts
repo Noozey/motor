@@ -1,5 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import mongoose, { Mongoose } from "mongoose";
+import "@/model/user.model";
+import "@/model/sellCar.model";
 
 const MONGODB_URL = process.env.MONGODB_URL!;
 console.log(MONGODB_URL);
