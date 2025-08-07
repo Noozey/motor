@@ -20,36 +20,40 @@ const imageSchema = new Schema(
   { _id: false },
 );
 
-const sellCarSchema = new mongoose.Schema({
-  user: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "User",
-    required: false, // Make optional if not always available
+const sellCarSchema = new mongoose.Schema(
+  {
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
+    },
+
+    // Current Vehicle Information
+    vehicleModel: { type: String, required: true },
+    vehicleType: { type: String, required: true },
+    makeYear: { type: Number, required: true }, // Changed from String to Number
+    vehicleColor: { type: String, required: true },
+    kmDriven: { type: Number, required: true }, // Changed from String to Number
+    expectedValuation: { type: Number, required: true }, // Changed from String to Number
+    features: { type: String, required: true },
+    fuelType: { type: String, required: true },
+    condition: { type: String, required: true },
+    accidents: { type: String, required: true },
+    accidentInfo: { type: String, default: "" },
+    engineType: { type: String, required: true }, // Added required: true
+    transmission: { type: String, required: true },
+
+    // Additional Information
+    additionalInfo: { type: String, default: "" },
+
+    // Files and Features
+    images: [imageSchema], // Array of image objects with metadata
+    additionalFeatures: [additionalFeatureSchema],
   },
+  { timestamps: true },
+);
 
-  // Current Vehicle Information
-  vehicleModel: { type: String, required: true },
-  vehicleType: { type: String, required: true },
-  makeYear: { type: Number, required: true }, // Changed from String to Number
-  vehicleColor: { type: String, required: true },
-  kmDriven: { type: Number, required: true }, // Changed from String to Number
-  expectedValuation: { type: Number, required: true }, // Changed from String to Number
-  features: { type: String, required: true },
-  fuelType: { type: String, required: true },
-  condition: { type: String, required: true },
-  accidents: { type: String, required: true },
-  accidentInfo: { type: String, default: "" },
-  engineType: { type: String, required: true }, // Added required: true
-  transmission: { type: String, required: true },
-
-  // Additional Information
-  additionalInfo: { type: String, default: "" },
-
-  // Files and Features
-  images: [imageSchema], // Array of image objects with metadata
-  additionalFeatures: [additionalFeatureSchema],
-});
-
-const SellCar = mongoose.model("SellCar", sellCarSchema);
+const SellCar =
+  mongoose.models.SellCar || mongoose.model("SellCar", sellCarSchema);
 
 export default SellCar;

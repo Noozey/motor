@@ -2,6 +2,7 @@ import {
   getAllNewEVVehicleDetails,
   registerEvExchangeDetails,
 } from "@/actions/exchangeEV.action";
+import { uploadFileToCloudinary } from "@/lib/cloudinary"; // Import from your separate file
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
@@ -50,28 +51,29 @@ export async function POST(req: NextRequest) {
 
       // Process images if any exist
       if (images.length > 0) {
-        // Here you would upload to cloud storage and get URLs
-        const imageUrls = await Promise.all(
+        console.log(`Processing ${images.length} images for upload...`);
+
+        const imageResults = await Promise.all(
           images.map(async (file, index) => {
             try {
-              // Upload to your cloud service (implement this function)
-              const cloudUrl = await uploadFileToCloud(file);
-              return {
-                url: cloudUrl,
-                originalName: file.name,
-                size: file.size,
-                mimeType: file.type,
-                uploadedAt: new Date().toISOString(),
-              };
+              // Use the imported Cloudinary function
+              const uploadResult = await uploadFileToCloudinary(file);
+              return uploadResult;
             } catch (error) {
-              console.error(`Error uploading image ${index}:`, error);
+              console.error(
+                `Error uploading image ${index} (${file.name}):`,
+                error,
+              );
               return null;
             }
           }),
         );
 
-        // Filter out failed uploads and add to data
-        data.images = imageUrls.filter((img) => img !== null);
+        // Filter out failed uploads
+        data.images = imageResults.filter((result) => result !== null);
+        console.log(
+          `Successfully uploaded ${data.images.length} out of ${images.length} images`,
+        );
       } else {
         data.images = [];
       }
@@ -82,7 +84,7 @@ export async function POST(req: NextRequest) {
 
     console.log("Processed data:", {
       ...data,
-      images: data.images?.length || 0 + " images",
+      images: `${data.images?.length || 0} images`,
     });
 
     // Pass the processed data to your action
@@ -136,64 +138,4 @@ export async function GET(req: NextRequest) {
       { status: 500 },
     );
   }
-}
-
-// Placeholder function - implement based on your cloud storage choice
-async function uploadFileToCloud(file: File): Promise<string> {
-  // Example implementation for different cloud providers:
-
-  // Option 1: AWS S3 (you'll need to install aws-sdk)
-  /*
-  const AWS = require('aws-sdk');
-  const s3 = new AWS.S3();
-
-  const buffer = await file.arrayBuffer();
-  const uploadParams = {
-    Bucket: process.env.S3_BUCKET_NAME,
-    Key: `uploads/${Date.now()}-${file.name}`,
-    Body: Buffer.from(buffer),
-    ContentType: file.type,
-    ACL: 'public-read',
-  };
-
-  const result = await s3.upload(uploadParams).promise();
-  return result.Location;
-  */
-
-  // Option 2: Cloudinary (you'll need to install cloudinary)
-  /*
-  const cloudinary = require('cloudinary').v2;
-  const buffer = await file.arrayBuffer();
-
-  return new Promise((resolve, reject) => {
-    cloudinary.uploader.upload_stream(
-      { resource_type: 'auto' },
-      (error, result) => {
-        if (error) reject(error);
-        else resolve(result.secure_url);
-      }
-    ).end(Buffer.from(buffer));
-  });
-  */
-
-  // Option 3: Local storage (for development/testing)
-  /*
-  const fs = require('fs').promises;
-  const path = require('path');
-
-  const uploadDir = path.join(process.cwd(), 'public', 'uploads');
-  await fs.mkdir(uploadDir, { recursive: true });
-
-  const filename = `${Date.now()}-${file.name}`;
-  const filepath = path.join(uploadDir, filename);
-
-  const buffer = await file.arrayBuffer();
-  await fs.writeFile(filepath, Buffer.from(buffer));
-
-  return `/uploads/${filename}`;
-  */
-
-  // For now, return a placeholder URL
-  console.log(`Would upload file: ${file.name} (${file.size} bytes)`);
-  return `https://placeholder-storage.com/uploads/${Date.now()}-${file.name}`;
 }

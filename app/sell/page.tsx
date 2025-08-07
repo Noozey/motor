@@ -26,6 +26,8 @@ const AvailableCars: React.FC = async () => {
     .sort({ createdAt: -1 })
     .populate("user", "phone city");
 
+  console.log(sellCarDetail);
+
   return (
     <main className="min-h-screen bg-gray-100 text-gray-800">
       <section className="relative overflow-hidden py-20 px-4 sm:px-8 lg:px-16">
@@ -102,14 +104,17 @@ const AvailableCars: React.FC = async () => {
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {sellCarDetail?.map((car: any) => (
+          {sellCarDetail?.map((car: any, index) => (
             <div
               key={car._id}
               className="bg-white rounded-xl shadow-md overflow-hidden border-t-4 border-cyan-400 hover:-translate-y-1 transition"
             >
               <div className="bg-gradient-to-br from-teal-600 to-cyan-400 text-white flex items-center justify-center text-5xl">
                 <img
-                  src={car?.icon || "/carTabsImage/Sedan/honda_city.png"}
+                  src={
+                    sellCarDetail[index].images[0].url ||
+                    "/carTabsImage/Sedan/honda_city.png"
+                  }
                   alt={car?.vehicleModel}
                   className="w-full h-auto"
                 />
@@ -142,7 +147,7 @@ const AvailableCars: React.FC = async () => {
                   {car?.expectedValuation}
                 </div>
                 <Link
-                  href={`/cardescription`}
+                  href={`/cardescription/${car._id}`}
                   className="block w-full bg-teal-600 hover:bg-teal-800 text-white font-semibold py-2 rounded-full transition text-center"
                 >
                   View Details
