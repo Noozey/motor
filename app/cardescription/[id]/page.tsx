@@ -123,7 +123,7 @@ const CarDetailsPage: React.FC<CarDescriptionProps> = async ({ params }) => {
               </Link>
               <span className="text-gray-400">/</span>
               <Link
-                href="/available-cars"
+                href="/sell"
                 className="transition-colors duration-200 hover:opacity-80"
                 style={{ color: "#008080" }}
               >

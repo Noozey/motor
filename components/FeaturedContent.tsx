@@ -11,7 +11,7 @@ const logosStripImageSrc = "/images/featured-logos-strip.png";
 const FeaturedContent: React.FC = () => {
   return (
     <div className="w-full">
-      <div className="w-full mx-auto p-10 bg-[#F3F4F6]">
+      <div className="w-full mx-auto p-10">
         {/* Featured In Section */}
         <div className="max-w-screen-2xl mx-auto">
           <section className="mb-12 md:mb-16 text-center">
@@ -30,7 +30,6 @@ const FeaturedContent: React.FC = () => {
             height={60}
             className="object-contain w-full h-auto max-w-4xl"
           /> */}
-              <LogoScroller />
             </div>
           </section>
 

@@ -1,21 +1,17 @@
-// import React from 'react'
+import React from "react";
+import Image from "next/image";
+import {
+  ArrowRight,
+  ArrowLeft,
+  Bookmark,
+  Gauge,
+  Fuel,
+  Settings,
+} from "lucide-react";
 
-// const SingleCarCard = () => {
-//   return (
-//     <div>SingleCarCard</div>
-//   )
-// }
-
-// export default SingleCarCard
-
-
-import React from 'react';
-import Image from 'next/image';
-
-type CarCardProps={
-    car:CarCardDetails;
-}
-
+type CarCardProps = {
+  car: CarCardDetails;
+};
 
 type CarCardDetails = {
   imageUrl: string;
@@ -27,14 +23,6 @@ type CarCardDetails = {
   transmission: string;
   price: number;
 };
-//  imageUrl: '/cars/silver-suv.png', // Replace with your image path in the /public folder
-//       year: 2022,
-//       make: 'Ford',
-//       model: 'Everest Sport',
-//       variant: '(4WD)',
-//       mileage: 91628,
-//       transmission: 'Automatic',
-//       price: 47990,
 
 const HeartIcon = () => (
   <svg
@@ -53,56 +41,70 @@ const HeartIcon = () => (
   </svg>
 );
 
-const SingleCarCard = ({car}: CarCardProps) => {
+const SingleCarCard = ({ car }: CarCardProps) => {
+  const { imageUrl, year, make, model, variant, mileage, transmission, price } =
+    car;
 
-  const {imageUrl,
-  year,
-  make,
-  model,
-  variant,
-  mileage,
-  transmission,
-  price,}=car
-    
   return (
-    <div className="group flex w-full max-w-sm flex-col overflow-hidden rounded-xl bg-white p-4 shadow-sm transition-shadow duration-300 hover:shadow-lg">
-      
-      {/* Car Image Section */}
-      <div className="relative mb-4 h-48 w-full">
-        <Image
-          src={imageUrl}
-          alt={`${year} ${make} ${model}`}
-          layout="fill"
-          objectFit="contain" 
+    <div className="w-[328px] bg-white rounded-2xl shadow-lg overflow-hidden">
+      {/* Image Section */}
+      <div className="relative">
+        <img
+          src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+          alt={`${car.make} ${car.model} ${car.year}`}
+          className="w-full h-48 object-cover"
         />
-      </div>
 
-      {/* Car Details Section */}
-      <div className="flex flex-grow flex-col justify-between">
-        <div>
-          {/* Title and Favorite Icon */}
-          <div className="flex items-start justify-between">
-            <div>
-              <h3 className="text-sm font-bold line-clamp-1 uppercase tracking-wider text-gray-800">
-                {year} {make} {model}
-              </h3>
-              <p className="text-xs uppercase text-gray-500">{variant}</p>
-            </div>
-            <button aria-label="Add to favorites">
-              <HeartIcon />
-            </button>
-          </div>
-
-          {/* Specs */}
-          <p className="mt-3 text-sm text-gray-600">
-            {mileage.toLocaleString('en-US')} km · {transmission}
-          </p>
+        {/* Great Price Badge */}
+        <div className="absolute top-4 left-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+          Great Price
         </div>
 
-        {/* Price */}
-        <p className="mt-4 text-2xl font-bold text-black">
-          Rs. {price.toLocaleString('en-US')}
-        </p>
+        {/* Bookmark Icon */}
+        <div className="absolute top-4 right-4 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md">
+          <Bookmark className="w-5 h-5 text-gray-600" />
+        </div>
+      </div>
+
+      {/* Content Section */}
+      <div className="p-6">
+        {/* Title */}
+        <h2 className="text-xl font-bold text-gray-900 mb-1">
+          {car.make} {car.model} – {car.year}
+        </h2>
+
+        {/* Subtitle */}
+        <p className="text-gray-600 text-sm mb-4">{car.variant}</p>
+
+        {/* Specs Row */}
+        <div className="flex justify-between items-center mb-6">
+          <div className="flex flex-col items-center">
+            <Gauge className="w-6 h-6 text-gray-400 mb-1" />
+            <span className="text-sm font-medium text-gray-900"></span>
+          </div>
+
+          <div className="flex flex-col items-center">
+            <Fuel className="w-6 h-6 text-gray-400 mb-1" />
+            <span className="text-sm font-medium text-gray-900">Petrol</span>
+          </div>
+
+          <div className="flex flex-col items-center">
+            <Settings className="w-6 h-6 text-gray-400 mb-1" />
+            <span className="text-sm font-medium text-gray-900">
+              {car.transmission}
+            </span>
+          </div>
+        </div>
+
+        {/* Price and View Details */}
+        <div className="flex justify-between items-center">
+          <span className="text-2xl font-bold text-gray-900"></span>
+
+          <button className="flex items-center gap-2 text-blue-500 font-medium text-sm hover:text-blue-600 transition-colors">
+            View Details
+            <ArrowRight className="w-4 h-4" />
+          </button>
+        </div>
       </div>
     </div>
   );

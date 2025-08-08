@@ -1,115 +1,117 @@
-import { typeCarDetail } from "@/types";
 import React, { useRef, useEffect, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
-import { ArrowRight, ArrowLeft } from "lucide-react";
+import {
+  ArrowRight,
+  ArrowLeft,
+  Bookmark,
+  Gauge,
+  Fuel,
+  Settings,
+} from "lucide-react";
 
-import { Autoplay } from "swiper/modules";
+type CarDetails = {
+  imageUrl: string;
+  year: number;
+  make: string;
+  model: string;
+  variant: string;
+  mileage: number;
+  transmission: "Automatic" | "Manual";
+  price: number;
+};
 
-import "swiper/css";
-import "swiper/css/navigation";
-import SingleCarCard from "./SingleCarCard";
+type ResponseResult = CarDetails[];
 
-type ResponseResult = typeCarDetail[];
-
-const CarSearchDisplay = () => {
-  // const responseResult:ResponseResult=[
-  //       {
-  //   imageUrl: '/carTypeImage/ford.png', // Replace with your image path in the /public folder
-  //   year: 2022,
-  //   make: 'Ford',
-  //   model: 'Everest Sport',
-  //   variant: '(4WD)',
-  //   mileage: 91628,
-  //   transmission: 'Automatic',
-  //   price: 47990,
-  // },
-  // {
-  //   imageUrl: '/carTypeImage/mazda922.png',
-  //   year: 2022,
-  //   make: 'Mazda',
-  //   model: 'CX-9',
-  //   variant: 'Azami (AWD)',
-  //   mileage: 50402,
-  //   transmission: 'Automatic',
-  //   price: 49990,
-  // },
-  // {
-  //   imageUrl: '/carTypeImage/mazda3021.png',
-  //   year: 2021,
-  //   make: 'Mazda',
-  //   model: 'CX-30',
-  //   variant: 'G20 Evolve (FWD)',
-  //   mileage: 54127,
-  //   transmission: 'Automatic',
-  //   price: 26990,
-  // },
-  // {
-  //   imageUrl: '/carTypeImage/mazda920.png',
-  //   year: 2023,
-  //   make: 'Mazda',
-  //   model: 'CX-9',
-  //   variant: 'Touring (FWD)',
-  //   mileage: 15549,
-  //   transmission: 'Automatic',
-  //   price: 46990,
-  // },
-  //       {
-  //   imageUrl: '/carTypeImage/ford.png', // Replace with your image path in the /public folder
-  //   year: 2022,
-  //   make: 'Ford',
-  //   model: 'Everest Sport',
-  //   variant: '(4WD)',
-  //   mileage: 91628,
-  //   transmission: 'Automatic',
-  //   price: 47990,
-  // },
-  // {
-  //   imageUrl: '/carTypeImage/mazda922.png',
-  //   year: 2022,
-  //   make: 'Mazda',
-  //   model: 'CX-9',
-  //   variant: 'Azami (AWD)',
-  //   mileage: 50402,
-  //   transmission: 'Automatic',
-  //   price: 49990,
-  // },
-  // {
-  //   imageUrl: '/carTypeImage/mazda3021.png',
-  //   year: 2021,
-  //   make: 'Mazda',
-  //   model: 'CX-30',
-  //   variant: 'G20 Evolve (FWD)',
-  //   mileage: 54127,
-  //   transmission: 'Automatic',
-  //   price: 26990,
-  // },
-  // {
-  //   imageUrl: '/carTypeImage/mazda920.png',
-  //   year: 2023,
-  //   make: 'Mazda',
-  //   model: 'CX-9',
-  //   variant: 'Touring (FWD)',
-  //   mileage: 15549,
-  //   transmission: 'Automatic',
-  //   price: 46990,
-  // },
-  // ]
-
-  // Define the type for better code quality and readability
-  type CarDetails = {
-    imageUrl: string;
-    year: number;
-    make: string;
-    model: string;
-    variant: string;
-    mileage: number;
-    transmission: "Automatic" | "Manual";
-    price: number;
+// SingleCarCard Component
+const SingleCarCard: React.FC<{ car: CarDetails }> = ({ car }) => {
+  // Format price to display in lakhs/crores for Indian currency
+  const formatPrice = (price: number) => {
+    if (price >= 10000000) {
+      return `₹${(price / 10000000).toFixed(1)} Cr`;
+    } else if (price >= 100000) {
+      return `₹${(price / 100000).toFixed(1)} L`;
+    } else {
+      return `₹${price.toLocaleString()}`;
+    }
   };
 
-  type ResponseResult = CarDetails[];
+  // Format mileage
+  const formatMileage = (mileage: number) => {
+    if (mileage >= 1000) {
+      return `${Math.floor(mileage / 1000)}k Miles`;
+    }
+    return `${mileage} Miles`;
+  };
 
+  return (
+    <div className="w-[328px] bg-white rounded-2xl shadow-lg overflow-hidden">
+      {/* Image Section */}
+      <div className="relative">
+        <img
+          src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+          alt={`${car.make} ${car.model} ${car.year}`}
+          className="w-full h-48 object-cover"
+        />
+
+        {/* Great Price Badge */}
+        <div className="absolute top-4 left-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+          Great Price
+        </div>
+
+        {/* Bookmark Icon */}
+        <div className="absolute top-4 right-4 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md">
+          <Bookmark className="w-5 h-5 text-gray-600" />
+        </div>
+      </div>
+
+      {/* Content Section */}
+      <div className="p-6">
+        {/* Title */}
+        <h2 className="text-xl font-bold text-gray-900 mb-1">
+          {car.make} {car.model} – {car.year}
+        </h2>
+
+        {/* Subtitle */}
+        <p className="text-gray-600 text-sm mb-4">{car.variant}</p>
+
+        {/* Specs Row */}
+        <div className="flex justify-between items-center mb-6">
+          <div className="flex flex-col items-center">
+            <Gauge className="w-6 h-6 text-gray-400 mb-1" />
+            <span className="text-sm font-medium text-gray-900">
+              {formatMileage(car.mileage)}
+            </span>
+          </div>
+
+          <div className="flex flex-col items-center">
+            <Fuel className="w-6 h-6 text-gray-400 mb-1" />
+            <span className="text-sm font-medium text-gray-900">Petrol</span>
+          </div>
+
+          <div className="flex flex-col items-center">
+            <Settings className="w-6 h-6 text-gray-400 mb-1" />
+            <span className="text-sm font-medium text-gray-900">
+              {car.transmission}
+            </span>
+          </div>
+        </div>
+
+        {/* Price and View Details */}
+        <div className="flex justify-between items-center">
+          <span className="text-2xl font-bold text-gray-900">
+            {formatPrice(car.price)}
+          </span>
+
+          <button className="flex items-center gap-2 text-blue-500 font-medium text-sm hover:text-blue-600 transition-colors">
+            View Details
+            <ArrowRight className="w-4 h-4" />
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const CarSearchDisplay = () => {
   const responseResult: ResponseResult = [
     {
       imageUrl: "/carTypeImage/ford.png",
@@ -193,74 +195,101 @@ const CarSearchDisplay = () => {
     },
   ];
 
-  const prevRef = useRef(null);
-  const nextRef = useRef(null);
-  const [swiperReady, setSwiperReady] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [slidesPerView, setSlidesPerView] = useState(1);
+  const containerRef = useRef<HTMLDivElement>(null);
 
+  // Handle responsive slides per view
   useEffect(() => {
-    setSwiperReady(true);
+    const handleResize = () => {
+      const width = window.innerWidth;
+      if (width >= 1024) {
+        setSlidesPerView(4);
+      } else if (width >= 768) {
+        setSlidesPerView(3);
+      } else if (width >= 640) {
+        setSlidesPerView(2);
+      } else {
+        setSlidesPerView(1);
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // Auto-scroll functionality
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => {
+        const maxIndex = responseResult.length - slidesPerView;
+        return prev >= maxIndex ? 0 : prev + 1;
+      });
+    }, 10000);
+
+    return () => clearInterval(interval);
+  }, [responseResult.length, slidesPerView]);
+
+  const goToPrev = () => {
+    setCurrentIndex((prev) => {
+      const maxIndex = responseResult.length - slidesPerView;
+      return prev <= 0 ? maxIndex : prev - 1;
+    });
+  };
+
+  const goToNext = () => {
+    setCurrentIndex((prev) => {
+      const maxIndex = responseResult.length - slidesPerView;
+      return prev >= maxIndex ? 0 : prev + 1;
+    });
+  };
+
+  const getVisibleCards = () => {
+    const cards = [];
+    for (let i = 0; i < slidesPerView; i++) {
+      const index = (currentIndex + i) % responseResult.length;
+      cards.push(responseResult[index]);
+    }
+    return cards;
+  };
+
   return (
-    <div className="relative  py-8">
-      {/* Custom Navigation Buttons */}
-      <div
-        ref={prevRef}
-        className="absolute z-10 -left-5 top-1/3  w-12 h-12 flex items-center justify-center rounded-full bg-white shadow-lg border border-gray-300 text-black hover:bg-secondary hover:shadow-xl cursor-pointer transition transform hover:scale-110"
-      >
-        <ArrowLeft className="w-5 h-5 text-black" />
-      </div>
-
-      <div
-        ref={nextRef}
-        className="absolute z-10 -right-5 top-1/3  w-12 h-12 flex items-center justify-center rounded-full bg-white shadow-lg border border-gray-300 text-black hover:bg-secondary hover:shadow-xl cursor-pointer transition transform hover:scale-110"
-      >
-        <ArrowRight className="w-5 h-5 text-black" />
-      </div>
-
-      {swiperReady && (
-        <Swiper
-          modules={[Navigation, Autoplay]}
-          spaceBetween={20}
-          slidesPerView={1}
-          loop={true}
-          navigation={{
-            prevEl: prevRef.current,
-            nextEl: nextRef.current,
-          }}
-          autoplay={{
-            delay: 10000,
-            disableOnInteraction: false, // Keep autoplay even after user interaction
-            pauseOnMouseEnter: true, // Optional: pause on hover for better UX
-          }}
-          onInit={(swiper: any) => {
-            // Link navigation manually on init
-            swiper.params.navigation.prevEl = prevRef.current;
-            swiper.params.navigation.nextEl = nextRef.current;
-            swiper.navigation.init();
-            swiper.navigation.update();
-          }}
-          //   speed={10000}
-          breakpoints={{
-            640: {
-              slidesPerView: 2,
-            },
-            768: {
-              slidesPerView: 3,
-            },
-            1024: {
-              slidesPerView: 4,
-            },
+    <div className="relative py-8  mx-auto px-4">
+      {/* Carousel Container */}
+      <div ref={containerRef} className="overflow-hidden">
+        <div
+          className="flex transition-transform duration-500 ease-in-out gap-5"
+          style={{
+            transform: `translateX(-${currentIndex * (100 / slidesPerView)}%)`,
           }}
         >
           {responseResult.map((car, index) => (
-            <SwiperSlide key={index} className="py-2">
-              {/* <CarCard  /> */}
+            <div key={index} className="p-4">
               <SingleCarCard car={car} />
-            </SwiperSlide>
+            </div>
           ))}
-        </Swiper>
-      )}
+        </div>
+      </div>
+
+      {/* Dots Indicator */}
+      <div className="flex justify-center mt-6 space-x-2">
+        <div className="flex gap-2">
+          <button
+            onClick={goToPrev}
+            className="top-1/3 w-14 h-8 flex items-center justify-center rounded-lg bg-white shadow-lg border border-gray-300 text-black hover:bg-gray-100 hover:shadow-xl cursor-pointer transition transform hover:scale-110"
+          >
+            <ArrowLeft className="w-5 h-5 text-black" />
+          </button>
+
+          <button
+            onClick={goToNext}
+            className="top-1/3 w-14 h-8 flex items-center justify-center rounded-lg bg-white shadow-lg border border-gray-300 text-black hover:bg-gray-100 hover:shadow-xl cursor-pointer transition transform hover:scale-110"
+          >
+            <ArrowRight className="w-5 h-5 text-black" />
+          </button>
+        </div>
+      </div>
     </div>
   );
 };

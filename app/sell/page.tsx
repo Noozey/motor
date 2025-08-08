@@ -144,7 +144,7 @@ const AvailableCars: React.FC = async () => {
                   </span>
                 </div>
                 <div className="text-cyan-500 text-lg font-semibold mb-4">
-                  {car?.expectedValuation}
+                  Rs.{car?.expectedValuation}
                 </div>
                 <Link
                   href={`/cardescription/${car._id}`}

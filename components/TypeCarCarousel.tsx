@@ -1,24 +1,21 @@
 import React, { useRef, useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
-import { ArrowRight,ArrowLeft } from "lucide-react";
+import { ArrowRight, ArrowLeft } from "lucide-react";
 
-import { Autoplay} from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import SingleCarCard from "./SingleCarCard";
 import { typeCarDetail } from "@/types";
 
+type carCarouselProps = {
+  cars: typeCarDetail[];
+};
 
-
-
-type carCarouselProps={
-    cars:typeCarDetail[];
-}
-
-const TypeCarCarousel = ({cars}:carCarouselProps) => {
-    const prevRef = useRef(null);
+const TypeCarCarousel = ({ cars }: carCarouselProps) => {
+  const prevRef = useRef(null);
   const nextRef = useRef(null);
   const [swiperReady, setSwiperReady] = useState(false);
 
@@ -27,26 +24,12 @@ const TypeCarCarousel = ({cars}:carCarouselProps) => {
     setSwiperReady(true);
   }, []);
   return (
-        <div className="relative  py-2 md:py-8">
+    <div className="relative  py-2 md:py-8">
       {/* Custom Navigation Buttons */}
-  <div
-         ref={prevRef}
-         className="absolute z-10 -left-10 top-1/3  w-12 h-12 flex  items-center justify-center rounded-full bg-white shadow-lg border border-gray-300 text-black hover:bg-secondary hover:shadow-xl cursor-pointer transition transform hover:scale-110"
-       >
-         <ArrowLeft className="w-5 h-5 text-black" />
-       </div>
- 
-       <div
-         ref={nextRef}
-         className="absolute z-10 -right-10 top-1/3  w-12 h-12 flex items-center justify-center rounded-full bg-white shadow-lg border border-gray-300 text-black hover:bg-secondary hover:shadow-xl cursor-pointer transition transform hover:scale-110"
-       >
-         <ArrowRight className="w-5 h-5 text-black" />
-       </div>
-
 
       {swiperReady && (
         <Swiper
-          modules={[Navigation,Autoplay]}
+          modules={[Navigation, Autoplay]}
           spaceBetween={20}
           slidesPerView={1}
           loop={true}
@@ -56,17 +39,17 @@ const TypeCarCarousel = ({cars}:carCarouselProps) => {
           }}
           autoplay={{
             delay: 10000,
-            disableOnInteraction: false,   // Keep autoplay even after user interaction
-            pauseOnMouseEnter: true,       // Optional: pause on hover for better UX
+            disableOnInteraction: false, // Keep autoplay even after user interaction
+            pauseOnMouseEnter: true, // Optional: pause on hover for better UX
           }}
-          onInit={(swiper:any) => {
+          onInit={(swiper: any) => {
             // Link navigation manually on init
             swiper.params.navigation.prevEl = prevRef.current;
             swiper.params.navigation.nextEl = nextRef.current;
             swiper.navigation.init();
             swiper.navigation.update();
           }}
-        //   speed={10000}
+          //   speed={10000}
           breakpoints={{
             640: {
               slidesPerView: 2,
@@ -80,15 +63,33 @@ const TypeCarCarousel = ({cars}:carCarouselProps) => {
           }}
         >
           {cars.map((car, index) => (
-            <SwiperSlide key={index} className="py-2">
-               {/* <CarCard  /> */}
-               <SingleCarCard car={car} />
+            <SwiperSlide key={index} className="p-4">
+              {/* <CarCard  /> */}
+              <SingleCarCard car={car} />
             </SwiperSlide>
           ))}
         </Swiper>
       )}
-    </div>
-  )
-}
 
-export default TypeCarCarousel
+      <div className="flex justify-center mt-6 space-x-2">
+        <div className="flex gap-2">
+          <div
+            ref={prevRef}
+            className="top-1/3 w-14 h-8 flex items-center justify-center rounded-lg bg-white shadow-lg border border-gray-300 text-black hover:bg-gray-100 hover:shadow-xl cursor-pointer transition transform hover:scale-110"
+          >
+            <ArrowLeft className="w-5 h-5 text-black" />
+          </div>
+
+          <div
+            ref={nextRef}
+            className="top-1/3 w-14 h-8 flex items-center justify-center rounded-lg bg-white shadow-lg border border-gray-300 text-black hover:bg-gray-100 hover:shadow-xl cursor-pointer transition transform hover:scale-110"
+          >
+            <ArrowRight className="w-5 h-5 text-black" />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default TypeCarCarousel;

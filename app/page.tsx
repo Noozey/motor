@@ -26,15 +26,9 @@ import { CarTabs } from "@/types";
 //   { name: "Mercedes-Benz G-Class", image: "/heropageImage/mercedies.png" },
 // ];
 
-type LandingPageProps = {
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
-};
+type LandingPageProps = {};
 
 export default async function LandingPage(props: LandingPageProps) {
-  const searchParams = await props.searchParams;
-  const viewAll = searchParams.viewAll == "true";
-  const type = searchParams.type ?? CarTabs.suv;
-
   return (
     <div className="w-full">
       {/* Hero Section */}
@@ -54,11 +48,8 @@ export default async function LandingPage(props: LandingPageProps) {
       {/* Why Choose Us Section */}
       <WhyChooseUs />
       {/* Car Tabs */}
-      <CarTabsSection viewAll={viewAll as boolean} type={type as CarTabs} />
       {/* Testimonials Section */}
       <Testimonials />
-      {/* latest new section */}
-      <LatestNews />
       {/* blog section */}
       <BlogSection />
     </div>

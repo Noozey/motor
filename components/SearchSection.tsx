@@ -7,7 +7,7 @@ import CarSearchDisplay from "./CarSearchDisplay";
 const SearchSection = () => {
   const [tab, setTab] = useState<"model" | "type">("model");
   return (
-    <div className="w-full p-8 bg-[#F3F4F6]">
+    <div className="w-full p-8">
       <div className="max-w-screen-2xl mx-auto">
         <h1 className="text-2xl text-center md:text-3xl font-bold mb-4 text-[#004D40]">
           Find Cars
